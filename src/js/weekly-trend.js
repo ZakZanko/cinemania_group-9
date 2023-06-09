@@ -32,8 +32,8 @@ function handlerPagination(entries, observer) {
     })
 }
 
-function serviceMovie(page = 1) {
-    return fetch(`${BASE_URL}${ENDPOINT}?api_key=${API_KEY}&page=${page}`)
+async function serviceMovie(page = 1) {
+    return fetch(`${BASE_URL}${ENDPOINT}?api_key=${API_KEY}&page=${page}&minimum=3`)
         .then(resp => {
             if (!resp.ok) {
                 throw new Error(resp.statusText);
@@ -61,21 +61,3 @@ function createMarkup(arr) {
     <div class='cards__list-text'>${genre_names} | ${release_date}<span class='cards__list-span'></span></div>
 </li>`).join('')
 }
-
-async function fetchtrends() {
-    const params = new URLSearchParams({
-      _limit: 3,
-      // Change the group number here
-      _page: 1
-    });
-  
-    return fetch(`https://api.themoviedb.org/3/trending/movie/week?${params}`).then(
-      (response) => {
-        if (!response.ok) {
-          throw new Error(response.status);
-        }
-        return response.json();
-      }
-    );
-  }
-  
