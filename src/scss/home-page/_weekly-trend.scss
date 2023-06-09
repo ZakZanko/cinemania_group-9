@@ -1,0 +1,112 @@
+
+.weekly-trends {
+    background-color: var(--secondary-black);
+  }
+
+.flex_wrapper {
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        margin-top: 40px;
+    @media screen and (min-width: 768px) {
+         margin-top: 52px;   
+        }
+    
+        @media screen and (min-width:1280px) {
+           margin-top: 80px;
+           margin-bottom: 28px;
+        }
+}
+
+  .weekly-trends__title {
+    color: #FFFFFF;
+        text-transform: uppercase;
+        font-size: 16px;
+        line-height: 19px;
+        @media screen and (min-width: 768px) {
+                font-size: 24px;
+                line-height: 28px;
+            }
+        
+            @media screen and (min-width:1280px) {
+                font-size: 28px;
+                line-height: 33px;
+            }
+        
+}
+  
+  .weekly-trends__link {
+ color: #F87719;
+    font-size: 16px;
+    line-height: 19px;
+    @media screen and (min-width: 768px) {
+            font-size: 24px;
+            line-height: 28px;
+        }
+    
+        @media screen and (min-width:1280px) {
+            font-size: 28px;
+            line-height: 33px;
+        }
+        
+}
+
+.weekly-trends__link:hover{
+    transform: scale(1.12) translateZ(0);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.js-list{
+    display: flex;
+    gap: 16px;
+    
+}
+    
+.cards-list-item{
+    position: relative;
+    width: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%);
+    border-radius: 5px;
+    &:hover {
+      box-shadow: 7px -7px 21px rgba(128, 69, 206, 0.6);
+    }
+    }
+
+
+    @media screen and (max-width: 767px) {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  
+    @media screen and (min-width: 768px) {
+      width: calc((100% - 32px) / 3);
+      margin-left: 32px;
+      margin-bottom: 32px;
+    }
+  
+    @media screen and (min-width: 1024px) {
+      width: calc((100% - 48px) / 3);
+      margin-left: 16px;
+    }
+  
+
+
+
+.cards__list-text{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.17;
+    text-transform: uppercase;
+  
+}

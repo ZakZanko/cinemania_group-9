@@ -32,7 +32,7 @@ function handlerPagination(entries, observer) {
     })
 }
 
-async function serviceMovie(page = 1) {
+async function getTrending(page = 1) {
     return fetch(`${BASE_URL}${ENDPOINT}?api_key=${API_KEY}&page=${page}&minimum=3`)
         .then(resp => {
             if (!resp.ok) {
@@ -44,13 +44,10 @@ async function serviceMovie(page = 1) {
         })
 }
 
-serviceMovie()
+getTrending()
     .then(data => {
         list.insertAdjacentHTML('beforeend', createMarkup(data.results))
-        if (data.total_pages > data.page) {
-            observer.observe(guard);
-        }
-        
+                
     })
     .catch(err => console.log(err))
 
@@ -62,9 +59,12 @@ serviceMovie()
 // </li>`).join('')
 // }
 function createMarkup(arr) {
-    return arr.slice(0, 3).map(({ original_title, poster_path, release_date, genre_names}) => `<li class='cards__list-item'>
+    return arr.slice(0, 3).map(({ original_title, poster_path, release_date, genre}) => `<li class='cards-list-item'>
        <img class='cards__list-img' src="https://image.tmdb.org/t/p/w400${poster_path}" alt="${original_title}">
+       <div class='weekly-trends__overlay'></div>
+       <div class='cards__bloc-stars'>
      <h2 class='cards__list-title'>${original_title}</h2>
-    <div class='cards__list-text'>${genre_names} | ${release_date}<span class='cards__list-span'></span></div>
-     </li>`).join('')
+    <div class='cards__list-text'>${genre} | ${release_date}<span class='cards__list-span'></span></div>
+</div></li>`).join('')
 }
+
