@@ -2,14 +2,14 @@
   "name": "cinemania_group",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://ZakZanko.github.io/Cinemania_group-9",
+  "homepage": "https://ZakZanko.github.io/cinemania_group-9",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /Cinemania_group-9/"
+    "build": "parcel build src/*.html --public-url /cinemania_group-9/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZakZanko/Cinemania_group-9.git"
+    "url": "git+https://github.com/ZakZanko/cinemania_group-9.git"
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
