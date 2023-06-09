@@ -1,8 +1,8 @@
 const BASE_URL = "https://api.themoviedb.org/3";
 const ENDPOINT = "/trending/movie/week";
 const API_KEY = "b90b64a7e05f9e36894001e36eb3b3c7";
-const IMG_W400 = `/w400`;
-// const IMG_PATH = "https://image.tmdb.org/t/p/w300";
+// const IMG_W400 = `/w400`;
+const IMG_PATH = "https://image.tmdb.org/t/p/w300";
 
 
 const list = document.querySelector('.js-list');
@@ -54,10 +54,17 @@ serviceMovie()
     })
     .catch(err => console.log(err))
 
+// function createMarkup(arr) {
+//     return arr.map(({ original_title, poster_path, release_date, genre_names}) => `<li class='cards__list-item'>
+//     <img class='cards__list-img' src="https://image.tmdb.org/t/p/w400${poster_path}" alt="${original_title}">
+//     <h2 class='cards__list-title'>${original_title}</h2>
+//     <div class='cards__list-text'>${genre_names} | ${release_date}<span class='cards__list-span'></span></div>
+// </li>`).join('')
+// }
 function createMarkup(arr) {
-    return arr.map(({ original_title, poster_path, release_date, genre_names}) => `<li class='cards__list-item'>
-    <img class='cards__list-img' src="https://image.tmdb.org/t/p/w400${poster_path}" alt="${original_title}">
-    <h2 class='cards__list-title'>${original_title}</h2>
+    return arr.slice(0, 3).map(({ original_title, poster_path, release_date, genre_names}) => `<li class='cards__list-item'>
+       <img class='cards__list-img' src="https://image.tmdb.org/t/p/w400${poster_path}" alt="${original_title}">
+     <h2 class='cards__list-title'>${original_title}</h2>
     <div class='cards__list-text'>${genre_names} | ${release_date}<span class='cards__list-span'></span></div>
-</li>`).join('')
+     </li>`).join('')
 }
