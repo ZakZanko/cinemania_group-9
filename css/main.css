@@ -104,4 +104,8 @@ body {
     font-size: 16px;
     line-height: 1.5;
   }
+}
+
+body {
+  background-attachment: fixed;
 }/*# sourceMappingURL=main.css.map */
