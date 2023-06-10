@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/main.min.css" />
-    <script type="module" src="./hero.js"></script>
-  </head>
-  <body></body>
-</html>
+<section class="section-hero hero-container">
+  <div class="hero-content">
+    <div class="hero-info">
+    <h1 class="hero-title"></h1>
+    <p class="hero-rating"></p>
+    <p class="hero-overview"></p>
+    <button class="hero-trailer-btn">Watch trailer</button>
+    <button class="hero-details-btn">More details</button>
+  </div>
+  </div>
+  <div class="hero-img" id="hero">
+    <div class="hero-gradient"></div>
+  </div>
+
+<div class="modal" id="detailsModal">
+  <div class="modal-content">
+    <h2 class="modal-title"></h2>
+    <p class="modal-overview"></p>
+    <button class="modal-close-btn">Close</button>
+  </div>
+</div>
+
+<div class="modal" id="trailerModal">
+  <div class="modal-content">
+    <h2 class="modal-title"></h2>
+    <div class="modal-trailer"></div>
+    <button class="modal-close-btn">Close</button>
+  </div>
+</div>
+</section>
