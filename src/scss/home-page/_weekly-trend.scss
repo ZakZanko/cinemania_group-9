@@ -1,3 +1,4 @@
+
 .weekly__trends-all {
   padding: 52px 32px 22px 32px;
   @media (max-width: 767px) {
@@ -77,24 +78,22 @@ background-color:  #111111;
     }
   }
 .cards-list-item:not(:first-child) {
-      @media (max-width: 767px) {
-        position: absolute;
-        width: 1px;
-        height: 1px;
-        margin: -1px;
-        padding: 0;
-        border: 0;
-        clip: rect(0 0 0 0);
-        overflow: hidden;
+        @media (max-width: 767px) {
+          position: absolute;
+          padding: 0;
+          border: 0;
+          clip: rect(0 0 0 0);
+          overflow: hidden;
+        }
+
       }
-    }
     
     .weekly-trends__overlay {
       position: absolute;
       bottom: 0;
       left: 0;
       right: 0;
-      height: 50%;
+      height: 60%;
       background-image: linear-gradient(
         to bottom,
         rgba(0, 0, 0, 0),
@@ -103,8 +102,35 @@ background-color:  #111111;
     }
 
     .cards__bloc-stars{
-color: aliceblue;
+      position: absolute;
+      width: 223px;
+      height: 54px;
+      left: 20px;
+      bottom: 20px;
+      z-index:100;
     }
 
+    .cards__list-text{
+      color:#FFFFFF;
+      max-width: 290px;
+    }
 
+.cards__list-title{
+color:#FFFFFF;
+font-weight: 500;
+ font-family: "Roboto";
+ width: 230px;
+font-size: 12px;
+line-height: 1.67;
+text-transform: uppercase;
+@media screen and (min-width: 768px) {
+  font-size: 14px;
+  line-height: 1.29;
+}
+@media screen and (min-width:1280px) {
+  font-size: 20px;
+  line-height: 1.17;
+}
+
+}
 
