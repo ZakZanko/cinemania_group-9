@@ -106,8 +106,14 @@ body {
   }
 }
 
-.weekly-trends {
-  background-color: var(--secondary-black);
+.weekly__trends-all {
+  padding: 52px 32px 22px 32px;
+  background-color: #111111;
+}
+@media (max-width: 767px) {
+  .weekly__trends-all {
+    padding: 40px 20px 16px 20px;
+  }
 }
 
 .flex_wrapper {
@@ -135,36 +141,36 @@ body {
   color: #FFFFFF;
   text-transform: uppercase;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.19;
 }
 @media screen and (min-width: 768px) {
   .weekly-trends__title {
     font-size: 24px;
-    line-height: 28px;
+    line-height: 1.17;
   }
 }
 @media screen and (min-width: 1280px) {
   .weekly-trends__title {
     font-size: 28px;
-    line-height: 33px;
+    line-height: 1.18;
   }
 }
 
 .weekly-trends__link {
   color: #F87719;
   font-size: 16px;
-  line-height: 19px;
+  line-height: 1.19;
 }
 @media screen and (min-width: 768px) {
   .weekly-trends__link {
     font-size: 24px;
-    line-height: 28px;
+    line-height: 1.17;
   }
 }
 @media screen and (min-width: 1280px) {
   .weekly-trends__link {
     font-size: 28px;
-    line-height: 33px;
+    line-height: 1.18;
   }
 }
 
@@ -176,6 +182,7 @@ body {
 .js-list {
   display: flex;
   gap: 16px;
+  justify-content: center;
 }
 
 .cards-list-item {
@@ -183,36 +190,35 @@ body {
   width: 100%;
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%);
   border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .cards-list-item:hover {
-  box-shadow: 7px -7px 21px rgba(128, 69, 206, 0.6);
-  transform: scale(1.12) translateZ(0);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 7px -7px 21px rgba(171, 67, 175, 0.6);
 }
 
-@media screen and (max-width: 767px) {
-  .cards-list-item:not(:last-child) {
-    margin-bottom: 20px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .cards-list-item {
-    width: calc((100% - 32px) / 3);
-    margin-left: 32px;
-    margin-bottom: 32px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .cards-list-item {
-    width: calc((100% - 48px) / 3);
-    margin-left: 16px;
+@media (max-width: 767px) {
+  .cards-list-item:not(:first-child) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
   }
 }
 
-.cards__list-title {
+.weekly-trends__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+}
+
+.cards__bloc-stars {
   color: aliceblue;
-}
-
-.cards__list-text {
-  color: #B7B7B7;
 }/*# sourceMappingURL=main.css.map */
