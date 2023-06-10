@@ -1,4 +1,4 @@
-const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89dd';
+const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89d';
 const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
 const backdropBaseUrl = 'https://image.tmdb.org/t/p/original/';
 const trailerBaseUrl = 'https://api.themoviedb.org/3/movie/';
