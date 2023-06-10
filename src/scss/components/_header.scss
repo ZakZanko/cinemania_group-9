@@ -8,11 +8,57 @@
 
 .header-container {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  @media screen and (max-width: 767px) {
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 768px) {
+  }
 }
 .header-menu {
   font-size: 12px;
   line-height: 1.17;
+  color: #b7b7b7;
+}
+
+.header-logo-icon {
+  @media screen and (min-width: 768px) {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+.header-logo-text {
+  margin-left: 8px;
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: calc(28px / 24px);
+
+  color: #ffffff;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.menu-list {
+  display: flex;
+  gap: 40px;
+  margin-right: 417px;
+  margin-right: auto;
+  margin-left: auto;
+  @media screen and (max-width: 1279px) {
+    gap: 32px;
+  }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+.menu-item {
+}
+.menu-link {
+  font-size: 14px;
+  line-height: calc(16px / 14px);
+
   color: #b7b7b7;
 }
 // mobile menu styles
