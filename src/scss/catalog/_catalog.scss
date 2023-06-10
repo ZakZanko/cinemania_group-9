@@ -1,0 +1,188 @@
+.visualy_hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+body {
+  background-color: red;
+}
+.container {
+  padding: 0 20px;
+}
+
+// img {
+//    object-fit: cover;
+//   object-position: center;
+//   display: block;
+// }
+
+@media screen and (min-width: 375px) {
+  .container {
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.section-catalog {
+  background-color: var(--background);
+  padding-bottom: 16px;
+  padding-top: 40px;
+}
+
+.section-catalog-title {
+  display: none;
+}
+.search-form {
+  background-color: var(--background);
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  gap: 10px;
+}
+.search-input {
+  background-color: var(--background);
+  color: var(--grey);
+  width: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  border: 1px solid var(--white);
+  border-radius: 8px;
+  //border: none;
+}
+.search-input::placeholder {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--grey);
+}
+
+.btn-search-fake {
+  // stroke: var(--orange);
+  // fill: var(--orange);
+
+  // background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAABS2lUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxNDIgNzkuMTYwOTI0LCAyMDE3LzA3LzEzLTAxOjA2OjM5ICAgICAgICAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgo8P3hwYWNrZXQgZW5kPSJyIj8+nhxg7wAAAWhJREFUOI2d0j1IlWEYxvGfxzRIDFpE8BAhB0EyyBxcdbMgCUoXUaGCoEkEUee29hDcnBwiEUQiGkqsMQ4ODhIEKkjhYFCkhR8N733k5T3Hg3jBA8/Dc/O/r/ujprujT0bX0I87OMEXLOFnNrCkS5n3FUxiNGCwh3a8wH4lSC51b8FnTKAB63EaAvwJzdUg9WH5Nt7gJrridGAxyluK2DJII54G4C0GsZ2K2cJDvAvocCVIP8ZwEKWcpWn8i4RlkFtoxZGkB2epiGNcrwT5Ey4on1ZapV6UTSiH91jFZQxVgQwHqJj9qM03FXawgWeSCXzAj0xcJ2YkJQ/ILF5tvqlwgp3Ich/3cBV/kccTvJT0YgWzkt6cqia19vWYkkwhlwrM4RCv8By7eIC1tJPS/SgyzeMXfuMrXuMxFtCGHtzFR3zPOjmv5jCCb3iEYtrJebWIG+gNV2sXgcAyCgGqq7Zc1XSIcWxi+T+AFk1gSzDkmgAAAABJRU5ErkJggg==);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border: none;
+}
+.btn-close-search {
+  display: none;
+}
+.message-no-success {
+  display: none;
+}
+.select-year {
+  display: none;
+}
+//==============галлерея===============//
+
+.movies {
+  background-color: var(--background);
+}
+
+.movies__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 16px;
+}
+.movies-card {
+  position: relative;
+  width: 100%;
+}
+
+.movies-card-photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: var(--liner-grey);
+}
+
+// .wrapper-info-all {
+//   width: 100%;
+//   position: absolute;
+//   display: flex;
+//   // flex-direction: row;
+//   // align-items: flex-end;
+
+//   left: 12px;
+//   bottom: 50x;
+//   //flex-wrap: wrap;
+// }
+// .wrapper-info {
+//   //width: 112px;
+//   //height: 40px;
+
+//   font-family: 'Roboto';
+//   font-style: normal;
+//   font-weight: 500;
+//   font-size: 12px;
+//   line-height: 1.67;
+//   /* or 167% */
+// }
+.movies-card-title {
+  text-transform: uppercase;
+  color: var(--white);
+  position: absolute;
+  left: 12px;
+  bottom: 40px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+}
+
+.movies-card-genres {
+  color: var(--grey);
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+}
+.movies-card-rating {
+  color: var(--grey);
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    width: 1440px;
+  }
+}

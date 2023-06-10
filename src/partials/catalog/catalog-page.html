@@ -1,0 +1,45 @@
+<section id="catalog" class="section-catalog">
+  <div class="container">
+    <h2 class="section-catalog-title"></h2>
+    <div class="container-search">
+      <form class="search-form" id="search-form">
+        <label class="search-form-label">
+          <input
+            class="search-input"
+            type="text"
+            name="searchQuery"
+            autocomplete="off"
+            placeholder="Search"
+          />
+        </label>
+
+        <button class="btn-close-search" type="submit">
+          <svg
+            class="btn-search-fake"
+            width="40px"
+            height="40px"
+            fill="url(#linear-gradient)"
+          >
+            <!-- <use href="/src/images/symbol-defs.svg#icon-Ellipse-1-1"></use> -->
+
+            <!-- Градиент -->
+            <linearGradient id="linear-gradient">
+              <stop offset="9.4%" stop-color="#ffc226" />
+              <stop offset="91.91" stop-color="#f84119" />
+            </linearGradient>
+            -->
+          </svg>
+        </button>
+
+        <select class="select-year" name="" id=""></select>
+        <button class="btn-submit-search" type="submit"></button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="movies">
+  <div class="container">
+    <ul class="movies__list"></ul>
+  </div>
+</section>
