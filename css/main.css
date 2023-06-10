@@ -408,8 +408,8 @@ body {
   .modal-content {
     background-color: #abafa1;
     padding: 24px;
-    max-width: 560px;
-    height: 450px;
+    max-width: 700px;
+    height: 360px;
     text-align: center;
     border-radius: 5px;
   }

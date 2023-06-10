@@ -1,4 +1,4 @@
-const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89d';
+const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89dd';
 const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
 const backdropBaseUrl = 'https://image.tmdb.org/t/p/original/';
 const trailerBaseUrl = 'https://api.themoviedb.org/3/movie/';
@@ -30,7 +30,7 @@ async function getTrendingMovie() {
       const movie = data.results[Math.floor(Math.random() * data.results.length)];
       displayMovieInfo(movie);
 
-      console.log(movie);
+      // console.log(movie);
 
     } else {
       displayDefaultHeroContent();
@@ -62,7 +62,7 @@ function displayMovieInfo(movie) {
 function displayDefaultHeroContent() {
   const windowWidth = window.innerWidth;
 
-  let backgroundImageURL = '../css/hero-images/hero-desktop-1x.jpg';
+  let backgroundImageURL = '../src/images/img/hero-img/hero-desktop-1x.jpg';
 
   if (windowWidth <= 480) {
     backgroundImageURL = '../css/hero-images/hero-mobile-1x.jpg';
@@ -72,7 +72,7 @@ function displayDefaultHeroContent() {
 
   hero.style.backgroundImage = `url(${backgroundImageURL})`;
 
-  
+
   heroTitle.textContent = 'Let’s Make Your Own Cinema';
   heroRating.textContent = '';
   heroOverview.textContent = 'Is a guide to creating a personalized movie theater experience. You"ll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.';
@@ -92,7 +92,7 @@ function openDetailsModal(movie) {
 
 // Відкриття модального трейлера
 async function openTrailerModal(movieId) {
-  trailerModalTitle.textContent = 'Trailer';
+
   trailerModalTrailer.innerHTML = '';
  
   try {
