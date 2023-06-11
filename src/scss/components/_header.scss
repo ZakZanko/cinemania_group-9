@@ -53,8 +53,11 @@
     display: none;
   }
 }
-.menu-item {
-}
+
+// body.current-page__home &.current-page__home:is(:hover, :focus) {
+//   color: #f87719;
+// }
+
 .menu-link {
   font-size: 14px;
   line-height: calc(16px / 14px);
@@ -130,9 +133,8 @@
 
   color: #ffffff;
 }
-// current
-.current {
+// active page
+.active {
   color: #f87719;
 }
-
 // icon-switcher
