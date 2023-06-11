@@ -1,3 +1,4 @@
+import './js/modal';
 import './js/header';
 import './js/hero';
 import './js/footer';
@@ -97,3 +98,4 @@ window.onload = function () {
     document.body.classList.remove('loaded_hiding');
   }, 500);
 };
+
