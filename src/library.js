@@ -22,7 +22,7 @@ if (refs.loadMoreButton) {
 }
 
 // localStorage
-function addMovieToLibrary(movieId) {
+export function addMovieToLibrary(movieId) {
   getMovieById2(movieId).then(movie => {
     movie.genre_names = movie.genres
       .map(genre => {
@@ -39,14 +39,14 @@ function addMovieToLibrary(movieId) {
   });
 }
 
-function removeMovieFromLibrary(movieId) {
+export function removeMovieFromLibrary(movieId) {
   let libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
   delete libraries[movieId];
   localStorage.setItem(librariesKey, JSON.stringify(libraries));
   if (refs.libraryList) renderLibraryData();
 }
 
-function getMovieFromLibrary(movieId) {
+export function getMovieFromLibrary(movieId) {
   const libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
   return libraries[movieId];
 }
@@ -56,7 +56,7 @@ function getMoviesFromLibrary() {
   return Object.values(libraries);
 }
 
-function renderLibraryData() {
+export function renderLibraryData() {
   let movieMarkup = renderMovies();
   if (!movieMarkup) {
     movieMarkup = `
