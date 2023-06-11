@@ -119,23 +119,18 @@ body {
   margin: -1px;
 }
 
-body {
-  background-color: red;
-}
-
 .container {
   padding: 0 20px;
 }
 
-@media screen and (min-width: 375px) {
-  .container {
-    width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+.container {
+  width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
+
 .section-catalog {
   background-color: var(--background);
   padding-bottom: 16px;

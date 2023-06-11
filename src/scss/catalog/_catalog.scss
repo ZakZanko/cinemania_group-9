@@ -10,9 +10,7 @@
   clip-path: inset(50%);
   margin: -1px;
 }
-body {
-  background-color: red;
-}
+
 .container {
   padding: 0 20px;
 }
@@ -23,14 +21,12 @@ body {
 //   display: block;
 // }
 
-@media screen and (min-width: 375px) {
-  .container {
-    width: 375px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+.container {
+  width: 375px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .section-catalog {

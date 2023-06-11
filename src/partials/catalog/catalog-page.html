@@ -1,6 +1,6 @@
 <section id="catalog" class="section-catalog">
   <div class="container">
-    <h2 class="section-catalog-title"></h2>
+    <h2 class="section-catalog-title">Catalog</h2>
     <div class="container-search">
       <form class="search-form" id="search-form">
         <label class="search-form-label">
@@ -12,24 +12,21 @@
             placeholder="Search"
           />
         </label>
+        <svg
+          class="btn-search-fake"
+          width="40px"
+          height="40px"
+          fill="url(#linear-gradient)"
+        >
+          <!-- <use href="/src/images/symbol-defs.svg#icon-Ellipse-1-1"></use> -->
 
-        <button class="btn-close-search" type="submit">
-          <svg
-            class="btn-search-fake"
-            width="40px"
-            height="40px"
-            fill="url(#linear-gradient)"
-          >
-            <!-- <use href="/src/images/symbol-defs.svg#icon-Ellipse-1-1"></use> -->
-
-            <!-- Градиент -->
-            <linearGradient id="linear-gradient">
-              <stop offset="9.4%" stop-color="#ffc226" />
-              <stop offset="91.91" stop-color="#f84119" />
-            </linearGradient>
-            -->
-          </svg>
-        </button>
+          <!-- Градиент -->
+          <linearGradient id="linear-gradient">
+            <stop offset="9.4%" stop-color="#ffc226" />
+            <stop offset="91.91" stop-color="#f84119" />
+          </linearGradient>
+        </svg>
+        <button class="btn-close-search" type="submit"></button>
 
         <select class="select-year" name="" id=""></select>
         <button class="btn-submit-search" type="submit"></button>
