@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { KEY, BASE_URL } from './api-key';
 
-
 export async function getDayTrending(page = 1) {
   const url = `${BASE_URL}/trending/all/day?api_key=${KEY}&language=en-US&page=${page}`;
   return await axios
@@ -23,7 +22,7 @@ export async function getVideos(movie_id) {
 }
 
 // Фетч фильма по его ID
-export async function getMovieById(id) {
+export async function getMovieById2(id) {
   try {
     const { data } = await axios.get(`${ID_URL}${id}?api_key=${KEY}`);
 
