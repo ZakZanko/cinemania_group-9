@@ -38,7 +38,8 @@
   }
   @include desktop {
     // font: (14, 400, 19);
-
+    font-weight: 400;
+    line-height: 1.2;
     margin-left: 117px;
     max-width: 464px;
     padding-bottom: 224px;
