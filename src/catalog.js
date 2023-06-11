@@ -1,4 +1,3 @@
 import './js/header';
-import './js/hero';
-import './js/catalog';
+//import './js/hero';
 import './js/footer';
