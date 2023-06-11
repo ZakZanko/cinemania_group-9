@@ -1,9 +1,15 @@
 // main styles
+body {
+  background-color: #000000;
+  color: #b7b7b7;
+}
+
+
 .header {
   padding-top: 8px;
   padding-bottom: 8px;
 
-  background-color: #000000;
+  // background-color: #000000;
 }
 
 .header-container {
@@ -40,6 +46,15 @@
     display: none;
   }
 }
+
+// !========= Add Andriy
+.day-logo-text{
+  color: #282828;
+}
+// !===========
+
+
+
 .menu-list {
   display: flex;
   gap: 40px;
@@ -61,6 +76,16 @@
 
   color: #b7b7b7;
 }
+
+
+// !========= Add Andriy
+.day-menu-link {
+  color: #595959;
+}
+
+// !===========
+
+
 // mobile menu styles
 .mobile-menu-open {
   padding: 0;
@@ -136,3 +161,52 @@
 }
 
 // icon-switcher
+
+
+.bkg-white {
+  background-color: #ffffff;
+  color: #595959;
+}
+
+
+.icon-day {
+
+  padding: 0;
+  width: 44px;
+  height: 18px;
+  border-radius: 194px;
+  outline: none;
+  border: none;
+  
+  background-image: url(.././src/img/icon-day-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-night {
+
+  padding: 0;
+  width: 44px;
+  height: 18px;
+  border-radius: 194px;
+  outline: none;
+  border: none;    
+  background-image: url(.././src/img/icon-night-mobile.svg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 768px) {
+  .icon-night{
+    width: 60px;
+    height: 24px;
+    background-image: url(.././src/img/icon-night.svg);
+    
+  }
+  .icon-day{
+    width: 60px;
+    height: 24px;
+    background-image: url(.././src/img/icon-day.svg);
+  }
+}

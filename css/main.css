@@ -106,10 +106,14 @@ body {
   }
 }
 
+body {
+  background-color: #000000;
+  color: #b7b7b7;
+}
+
 .header {
   padding-top: 8px;
   padding-bottom: 8px;
-  background-color: #000000;
 }
 
 .header-container {
@@ -147,6 +151,10 @@ body {
   }
 }
 
+.day-logo-text {
+  color: #282828;
+}
+
 .menu-list {
   display: flex;
   gap: 40px;
@@ -169,6 +177,10 @@ body {
   font-size: 14px;
   line-height: 1.1428571429;
   color: #b7b7b7;
+}
+
+.day-menu-link {
+  color: #595959;
 }
 
 .mobile-menu-open {
@@ -247,6 +259,47 @@ body {
   color: #f87719;
 }
 
+.bkg-white {
+  background-color: #ffffff;
+  color: #595959;
+}
+
+.icon-day {
+  padding: 0;
+  width: 44px;
+  height: 18px;
+  border-radius: 194px;
+  outline: none;
+  border: none;
+  background-image: url(.././src/img/icon-day-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-night {
+  padding: 0;
+  width: 44px;
+  height: 18px;
+  border-radius: 194px;
+  outline: none;
+  border: none;
+  background-image: url(.././src/img/icon-night-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 768px) {
+  .icon-night {
+    width: 60px;
+    height: 24px;
+    background-image: url(.././src/img/icon-night.svg);
+  }
+  .icon-day {
+    width: 60px;
+    height: 24px;
+    background-image: url(.././src/img/icon-day.svg);
+  }
+}
 body {
   background-attachment: fixed;
 }/*# sourceMappingURL=main.css.map */
