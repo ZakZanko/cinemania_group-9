@@ -21,6 +21,8 @@ if (refs.loadMoreButton) {
   });
 }
 
+
+// localStorage
 export function addMovieToLibrary(movieId) {
   getMovieById2(movieId).then(movie => {
     movie.genre_names = movie.genres
@@ -88,6 +90,10 @@ function renderMovies() {
   }
   return markup;
 }
+
+
+
+// spiner?
 window.onload = function () {
     document.body.classList.add('loaded_hiding');
     window.setTimeout(function () {
