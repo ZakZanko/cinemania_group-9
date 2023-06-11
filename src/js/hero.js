@@ -13,13 +13,21 @@ const trailerBtn = document.querySelector('.hero-trailer-btn');
 
 const detailsModal = document.getElementById('detailsModal');
 const detailsModalTitle = document.querySelector('#detailsModal .modal-title');
-const detailsModalOverview = document.querySelector('#detailsModal .modal-overview');
-const detailsModalCloseBtn = document.querySelector('#detailsModal .modal-close-btn');
+const detailsModalOverview = document.querySelector(
+  '#detailsModal .modal-overview'
+);
+const detailsModalCloseBtn = document.querySelector(
+  '#detailsModal .modal-close-btn'
+);
 
 const trailerModal = document.getElementById('trailerModal');
 const trailerModalTitle = document.querySelector('#trailerModal .modal-title');
-const trailerModalTrailer = document.querySelector('#trailerModal .modal-trailer');
-const trailerModalCloseBtn = document.querySelector('#trailerModal .modal-close-btn');
+const trailerModalTrailer = document.querySelector(
+  '#trailerModal .modal-trailer'
+);
+const trailerModalCloseBtn = document.querySelector(
+  '#trailerModal .modal-close-btn'
+);
 
 // Пошук фільму дня
 async function getTrendingMovie() {
@@ -27,11 +35,11 @@ async function getTrendingMovie() {
     const response = await fetch(trendingMoviesUrl);
     const data = await response.json();
     if (data.results.length > 0) {
-      const movie = data.results[Math.floor(Math.random() * data.results.length)];
+      const movie =
+        data.results[Math.floor(Math.random() * data.results.length)];
       displayMovieInfo(movie);
 
       console.log(movie);
-
     } else {
       displayDefaultHeroContent();
     }
@@ -41,7 +49,7 @@ async function getTrendingMovie() {
   }
 }
 
-// Відображення в герої інформації про фільм дня 
+// Відображення в герої інформації про фільм дня
 
 function displayMovieInfo(movie) {
   hero.style.backgroundImage = `url(${backdropBaseUrl}${movie.backdrop_path})`;
@@ -68,13 +76,13 @@ function displayMovieRating(rating) {
 
   const starsElement = document.querySelector('.stars');
   const ratingValueElement = document.querySelector('.rating-value');
- 
+
   let stars = '';
   for (let i = 0; i < 5; i++) {
     if (i < roundedRating / 2) {
-      stars += '★'; 
+      stars += '★';
     } else {
-      stars += '☆'; 
+      stars += '☆';
     }
   }
 
@@ -82,11 +90,10 @@ function displayMovieRating(rating) {
   ratingValueElement.textContent = `Rating: ${rating.toFixed(1)}`;
 }
 
-
 // Інформація в герої за замовчуванням
 function displayDefaultHeroContent() {
   const windowWidth = window.innerWidth;
-  
+
   let backgroundImageURL = '/src/images/hero-desktop-1x.jpg';
 
   if (windowWidth <= 480) {
@@ -97,10 +104,10 @@ function displayDefaultHeroContent() {
 
   hero.style.backgroundImage = `url(${backgroundImageURL})`;
 
-
   heroTitle.textContent = 'Let’s Make Your Own Cinema';
   heroRating.textContent = '';
-  heroOverview.textContent = 'Is a guide to creating a personalized movie theater experience. You"ll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.';
+  heroOverview.textContent =
+    'Is a guide to creating a personalized movie theater experience. You"ll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.';
   detailsBtn.textContent = 'Get started';
   detailsBtn.addEventListener('click', () => {
     window.location.href = 'catalog.html';
@@ -117,11 +124,12 @@ function openDetailsModal(movie) {
 
 // Відкриття модального трейлера
 async function openTrailerModal(movieId) {
-
   trailerModalTrailer.innerHTML = '';
- 
+
   try {
-    const response = await fetch(`${trailerBaseUrl}${movieId}/${trailerParams}`);
+    const response = await fetch(
+      `${trailerBaseUrl}${movieId}/${trailerParams}`
+    );
     const data = await response.json();
     if (data.results.length > 0) {
       const trailerKey = data.results[0].key;
@@ -131,11 +139,10 @@ async function openTrailerModal(movieId) {
       trailerIframe.src = `https://www.youtube.com/embed/${trailerKey}`;
       trailerIframe.allowFullscreen = true;
       trailerModalTrailer.appendChild(trailerIframe);
-     
+
       trailerModalCloseBtn.style.background = 'none';
       trailerModalCloseBtn.style.outline = '1px solid orange';
       trailerModalCloseBtn.style.color = 'orange';
-     
     } else {
       trailerModalTrailer.textContent = 'Trailer not available.';
     }
@@ -147,7 +154,7 @@ async function openTrailerModal(movieId) {
   trailerModal.style.display = 'flex';
 }
 
-// Закриття модального вікна 
+// Закриття модального вікна
 detailsModalCloseBtn.addEventListener('click', () => {
   detailsModal.style.display = 'none';
 });
@@ -158,4 +165,3 @@ trailerModalCloseBtn.addEventListener('click', () => {
 });
 
 getTrendingMovie();
-

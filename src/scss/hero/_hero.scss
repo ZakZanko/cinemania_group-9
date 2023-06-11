@@ -6,7 +6,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   position: relative;
- 
 }
 .section-hero {
   display: flex;
@@ -53,7 +52,6 @@ body {
 
 .hero-details-btn,
 .hero-trailer-btn {
-  
   color: #000;
   border: none;
   font-size: 12px;
@@ -92,7 +90,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .hero-gradient {
@@ -210,7 +207,6 @@ body {
     line-height: 1.18;
     margin-bottom: 12px;
   }
-  
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -357,9 +353,8 @@ body {
     max-height: 360px;
     text-align: center;
     border-radius: 5px;
-    
   }
- 
+
   .modal-title {
     font-size: 24px;
     margin-bottom: 16px;
@@ -379,7 +374,7 @@ body {
     padding: 8px 16px;
     margin-right: 16px;
   }
-  .trailer-close-btn { 
+  .trailer-close-btn {
     top: 48px;
     right: 10px;
   }
