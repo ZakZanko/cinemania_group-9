@@ -123,6 +123,10 @@ body {
   background-color: #000;
 }
 
+<<<<<<< Updated upstream
+=======
+/* _________текстовий контент__________ */
+>>>>>>> Stashed changes
 .hero-info {
   display: block;
   position: absolute;
@@ -131,6 +135,7 @@ body {
   top: 40px;
 }
 
+<<<<<<< Updated upstream
 /* ------------- Рейтинг ----------- */
 .movie-rating {
   display: flex;
@@ -148,6 +153,9 @@ body {
 }
 
 /* ----------- /рейтинг ----------------- */
+=======
+/* _________/текстовий контент__________ */
+>>>>>>> Stashed changes
 .hero-img {
   position: relative;
   background-position: right;
@@ -156,6 +164,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< Updated upstream
+=======
+  /* background: url(./hero-images/hero-desktop-1x.jpg); */
+>>>>>>> Stashed changes
 }
 
 .hero-gradient {
@@ -301,7 +313,11 @@ body {
 }
 @media screen and (min-width: 480px) {
   .container {
+<<<<<<< Updated upstream
     max-width: 320px;
+=======
+    max-width: 380px;
+>>>>>>> Stashed changes
     margin-right: auto;
     margin-left: auto;
   }
@@ -370,11 +386,19 @@ body {
     line-height: 1.16;
   }
 }
+<<<<<<< Updated upstream
 @media screen and (min-width: 1280px) {
   .hero-container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1280px;
+=======
+@media screen and (min-width: 1200px) {
+  .hero-container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1158px;
+>>>>>>> Stashed changes
   }
   .hero-info {
     left: 135px;
@@ -422,8 +446,13 @@ body {
   .modal-content {
     background-color: #abafa1;
     padding: 24px;
+<<<<<<< Updated upstream
     max-width: 700px;
     height: 360px;
+=======
+    max-width: 560px;
+    height: 450px;
+>>>>>>> Stashed changes
     text-align: center;
     border-radius: 5px;
   }
