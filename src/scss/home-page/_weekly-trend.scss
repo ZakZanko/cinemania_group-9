@@ -70,9 +70,9 @@ gap: 16px;
     // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%);
     border-radius: 5px;
     cursor: pointer;
-    &:hover {
-      box-shadow: 7px -7px 21px rgba(126, 13, 233, 0.6);
-    }
+    // &:hover {
+    //   box-shadow: 7px -7px 21px rgba(126, 13, 233, 0.6);
+    // }
   }
 .cards-list-item:not(:first-child) {
         @media (max-width: 767px) {
@@ -138,12 +138,13 @@ gap: 16px;
 
       @media screen and (min-width: 768px) {
         line-height: 1.5;
+        max-width: 100px;
        
     }
 @media screen and (min-width:1280px) {
         font-size: 20px;
         line-height: 1.15;
-        max-width: 223px;
+       
     }
     }
 
