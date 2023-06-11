@@ -121,6 +121,13 @@ body {
     justify-content: space-between;
   }
 }
+@media screen and (min-width: 768px) {
+  .header-link {
+    display: flex;
+    align-items: center;
+  }
+}
+
 .header-menu {
   font-size: 12px;
   line-height: 1.17;
