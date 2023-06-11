@@ -1,1 +1,22 @@
-{"version":3,"sourceRoot":"","sources":["../src/scss/utils/_reset.scss","../src/scss/utils/_variables.scss","../src/scss/utils/_common.scss"],"names":[],"mappings":"AAAA,oBAOE,SAEF,EACE,qBAGF,GACE,gBACA,eACA,SAGF,IACE,cACA,eACA,YCtBF,MACE,mGAKA,kBACA,yEACA,kGAKA,4BACA,2BACA,sBACA,0BACA,gBACA,iBClBF,KACE,gCAEF,SACE,iBACA,oBACA,qCAHF,SAII,iBACA,qBAGJ,WACE,iBACA,kBAEA,eAEA,qCANF,WAOI,gBACA,kBACA,oBAGF,qCAZF,WAaI,gBAEA,kBACA,oBAGF,sCAnBF,WAoBI,iBAEA,kBACA,oBAIJ,aACE,gBACA,eACA,iBACA,wBACA,qCALF,aAMI,eACA,iBAEF,sCATF,aAUI,eACA","file":"main.min.css"}
+{
+    "version": 3,
+    "mappings": "AEAA,AAAA,EAAE,CACF,EAAE,CACF,EAAE,CACF,EAAE,CACF,EAAE,CACF,EAAE,CACF,CAAC,AAAC,CACA,MAAM,CAAE,CAAC,CACV,AACD,AAAA,CAAC,AAAC,CACA,eAAe,CAAE,IAAI,CACtB,AAED,AAAA,EAAE,AAAC,CACD,UAAU,CAAE,IAAI,CAChB,YAAY,CAAE,CAAC,CACf,MAAM,CAAE,CAAC,CACV,AAED,AAAA,GAAG,AAAC,CACF,OAAO,CAAE,KAAK,CACd,SAAS,CAAE,IAAI,CACf,MAAM,CAAE,IAAI,CACb,ACvBD,AAAA,KAAK,AAAC,CACJ,YAAY,CAAA;;;;GAAC,CAKb,QAAQ,CAAA,QAAC,CACT,cAAc,CAAA,yDAAC,CACf,oBAAoB,CAAA;;;;GAAC,CAKrB,kBAAkB,CAAA,QAAC,CACnB,iBAAiB,CAAA,QAAC,CAClB,YAAY,CAAA,QAAC,CACb,gBAAgB,CAAA,QAAC,CACjB,MAAM,CAAA,QAAC,CACP,OAAO,CAAA,QAAC,CACT,ACnBD,AAAA,IAAI,AAAC,CACH,WAAW,CAAE,oBAAoB,CAClC,AACD,AAAA,QAAQ,AAAC,CACP,WAAW,CAAE,IAAI,CACjB,cAAc,CAAE,IAAI,CAKrB,AAJC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,EAHrC,AAAA,QAAQ,AAAC,CAIL,WAAW,CAAE,IAAI,CACjB,cAAc,CAAE,IAAI,CAEvB,CACD,AAAA,UAAU,AAAC,CACT,WAAW,CAAE,IAAI,CACjB,YAAY,CAAE,IAAI,CAElB,SAAS,CAAE,IAAI,CAqBhB,AAnBC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,EANrC,AAAA,UAAU,AAAC,CAOP,SAAS,CAAE,KAAK,CAChB,YAAY,CAAE,IAAI,CAClB,aAAa,CAAE,IAAI,CAgBtB,CAbC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,EAZrC,AAAA,UAAU,AAAC,CAaP,SAAS,CAAE,KAAK,CAEhB,YAAY,CAAE,IAAI,CAClB,aAAa,CAAE,IAAI,CAStB,CANC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM,EAnBtC,AAAA,UAAU,AAAC,CAoBP,SAAS,CAAE,MAAM,CAEjB,YAAY,CAAE,IAAI,CAClB,aAAa,CAAE,IAAI,CAEtB,CAED,AAAA,YAAY,AAAC,CACX,WAAW,CAAE,GAAG,CAChB,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,IAAI,CACjB,KAAK,CAAE,iBAAiB,CASzB,AARC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK,EALrC,AAAA,YAAY,AAAC,CAMT,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,GAAG,CAMnB,CAJC,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,MAAM,EATtC,AAAA,YAAY,AAAC,CAUT,SAAS,CAAE,IAAI,CACf,WAAW,CAAE,GAAG,CAEnB",
+    "sources": [
+        "../src/scss/main.scss",
+        "../src/scss/utils/_mixin.scss",
+        "../src/scss/utils/_reset.scss",
+        "../src/scss/utils/_variables.scss",
+        "../src/scss/utils/_common.scss",
+        "../src/scss/components/_footer.scss",
+        "../src/scss/components/_header.scss",
+        "../src/scss/hero/_hero.scss",
+        "../src/scss/home-page/_upcoming-this-month.scss",
+        "../src/scss/home-page/_weekly-trend.scss",
+        "../src/scss/catalog/_catalog.scss",
+        "../src/scss/library/_library.scss",
+        "../src/scss/modal/_modal.scss",
+        "../src/scss/pagination-catalog/_pagination-catalog.scss"
+    ],
+    "names": [],
+    "file": "main.min.css"
+}
