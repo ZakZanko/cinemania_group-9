@@ -52,16 +52,16 @@ export const getSecondMovieById = async id => {
   }
 };
 
-export const getMovieById2 = async id => {
-  try {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
-    );
-    const result = {
-      ...data,
-    };
-    return result;
-  } catch (error) {
-    console.error('Smth wrong with api ID fetch' + error);
-  }
-};
+  export const getMovieById2 = async id => {
+    try {
+      const { data } = await axios.get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
+      );
+      const result = {
+        ...data,
+      };
+      return result;
+    } catch (error) {
+      console.error('Smth wrong with api ID fetch' + error);
+    }
+  };
