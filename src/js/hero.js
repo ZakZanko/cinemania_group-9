@@ -22,10 +22,29 @@ const trailerModalTrailer = document.querySelector('#trailerModal .modal-trailer
 const trailerModalCloseBtn = document.querySelector('#trailerModal .modal-close-btn');
 
 // Пошук фільму дня
+// async function getTrendingMovie() {
+//   try {
+//     const response = await fetch(trendingMoviesUrl);
+//     const data = await response.json();
+//     if (data.results.length > 0) {
+//       const movie = data.results[Math.floor(Math.random() * data.results.length)];
+//       displayMovieInfo(movie);
+
+//       console.log(movie);
+
+//     } else {
+//       displayDefaultHeroContent();
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     displayDefaultHeroContent();
+//   }
+// }
+
 async function getTrendingMovie() {
   try {
-    const response = await fetch(trendingMoviesUrl);
-    const data = await response.json();
+    const response = await axios.get(trendingMoviesUrl);
+    const data = response.data;
     if (data.results.length > 0) {
       const movie = data.results[Math.floor(Math.random() * data.results.length)];
       displayMovieInfo(movie);
@@ -40,7 +59,6 @@ async function getTrendingMovie() {
     displayDefaultHeroContent();
   }
 }
-
 // Відображення в герої інформації про фільм дня 
 
 function displayMovieInfo(movie) {
@@ -65,7 +83,6 @@ function displayMovieInfo(movie) {
 // відображення рейтингу в зірочках
 function displayMovieRating(rating) {
   const roundedRating = Math.round(rating);
-
   const starsElement = document.querySelector('.stars');
   const ratingValueElement = document.querySelector('.rating-value');
  
@@ -87,7 +104,7 @@ function displayMovieRating(rating) {
 function displayDefaultHeroContent() {
   const windowWidth = window.innerWidth;
   
-  let backgroundImageURL = '/src/images/hero-desktop-1x.jpg';
+  let backgroundImageURL = `./images/hero-desktop-1x.jpg`;
 
   if (windowWidth <= 480) {
     backgroundImageURL = '../css/hero-images/hero-mobile-1x.jpg';
@@ -96,7 +113,8 @@ function displayDefaultHeroContent() {
   }
 
   hero.style.backgroundImage = `url(${backgroundImageURL})`;
-
+  // тимчасовий фон
+  // hero.style.backgroundColor = 'red';
 
   heroTitle.textContent = 'Let’s Make Your Own Cinema';
   heroRating.textContent = '';
