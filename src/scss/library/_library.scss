@@ -1,24 +1,30 @@
 .library-hero__title {
-  // font: (32, 700, 38);
   display: flex;
   align-items: center;
   padding-top: 40px;
   margin-bottom: 8px;
   margin-left: 20px;
-
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 32;
+   line-height: 37.5px;
   @include tablet {
-    // font: (44, 700, 52);
     margin-bottom: 8px;
     margin-left: 32px;
     padding-top: 62px;
+    font-size: 44;
+    line-height: 52px;
   }
   @include desktop {
-    // font: (64, 700, 75);
     margin-bottom: 16px;
     padding-top: 170px;
     margin-left: 117px;
+    color: #FFFFFF;
+    font-size: 64;
+    line-height: 75px;
   }
 }
+
 .library-hero__description {
   max-width: 249px;
   font-weight: 400;
@@ -36,27 +42,28 @@
     margin-bottom: 8px;
   }
   @include desktop {
-    // font: (14, 400, 19);
 
+font-weight: 400;
+font-size: 16;
+line-height: 18.75;
     margin-left: 117px;
     max-width: 464px;
     padding-bottom: 224px;
+    color:#FFFFFF;
   }
 }
 
 // Фон
 
 .library-hero {
-  color: var(--white-color);
   min-height: 380px;
   max-height: 380px;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: var(--black-color);
-  background-image: url(/src/img/library_foto/Desktop.jpg);
+  background-image: url(/src/img/library_foto/library1xphone.jpg);
   background-size: cover;
   margin-bottom: 40px;
-  color: red;
+
 
   @include mobile {
     max-height: 380px;
@@ -73,14 +80,14 @@
   (min-resolution: 192dpi),
   (min-resolution: 2dppx) {
   .library-hero {
-    background-image: url(/src/img/library_foto/Desktop.jpg);
+    background-image: url(/src/img/library_foto/library1xphone.jpg);
   }
 }
 
 // фон телефон
 @include mobile {
   .library-hero {
-    background-image: url(/src/img/library_foto/Desktop.jpg);
+    background-image: url(/src/img/library_foto/HeroTabletLib.jpg);
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -88,7 +95,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .library-hero {
-      background-image: url(/src/img/library_foto/Desktop.jpg);
+      background-image: url(/src/img/library_foto/HeroTabletLib2x.jpg);
     }
   }
 }
@@ -97,7 +104,7 @@
 
 @include tablet {
   .library-hero {
-    background-image: url(/src/img/library_foto/Desktop.jpg);
+    background-image: url(/src/img/library_foto/HeroTabletLib.jpg);
   }
 
   @media (min-device-pixel-ratio: 2),
@@ -105,7 +112,7 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .library-hero {
-      background-image: url(/src/img/library_foto/Desktop.jpg);
+      background-image: url(/src/img/library_foto/HeroTabletLib2x.jpg);
     }
   }
 }
@@ -122,7 +129,9 @@
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .library-hero {
-      background-image: url(/src/img/library_foto/Desktop.jpg);
+      background-image: url(/src/img/library_foto/Desktop2x.jpg);
     }
   }
 }
+
+

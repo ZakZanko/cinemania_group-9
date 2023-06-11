@@ -98,3 +98,5 @@ export async function getMovieGenres() {
         .join('');
     }
   }
+
+  
