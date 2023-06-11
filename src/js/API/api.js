@@ -22,7 +22,7 @@ export async function getVideos(movie_id) {
 }
 
 // Фетч фильма по его ID
-export async function getMovieById2(id) {
+export async function getMovieById(id) {
   try {
     const { data } = await axios.get(`${ID_URL}${id}?api_key=${KEY}`);
 
@@ -42,6 +42,20 @@ export const getSecondMovieById = async id => {
   try {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY}`
+    );
+    const result = {
+      ...data,
+    };
+    return result;
+  } catch (error) {
+    console.error('Smth wrong with api ID fetch' + error);
+  }
+};
+
+export const getMovieById2 = async id => {
+  try {
+    const { data } = await axios.get(
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
     );
     const result = {
       ...data,
