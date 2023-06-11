@@ -1,5 +1,4 @@
 
-
 const BASE_URL = "https://api.themoviedb.org/3";
 const ENDPOINT = "/trending/movie/week";
 const API_KEY = "b90b64a7e05f9e36894001e36eb3b3c7";
@@ -33,7 +32,13 @@ function handlerPagination(entries, observer) {
     })
 }
 
+
+
+
+
+
 async function getTrending(page = 1) {
+
     return fetch(`${BASE_URL}${ENDPOINT}?api_key=${API_KEY}&page=${page}`)
         .then(resp => {
             if (!resp.ok) {
@@ -42,19 +47,14 @@ async function getTrending(page = 1) {
 
             return resp.json()
             
-        })
-       
+        }) 
 }
-
 getTrending()
     .then(data => {
-        list.insertAdjacentHTML('beforeend', createMarkup(data.results))
-                
+        list.insertAdjacentHTML('beforeend', createMarkup(data.results))          
     })
     .catch(err => console.log(err))
    
-    
-    
     
 function createMarkup(arr) {
     return arr.slice(0, 3).map(({ original_title, poster_path, release_date, genre}) => `<li class='cards-list-item'>
