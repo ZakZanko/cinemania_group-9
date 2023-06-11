@@ -1,6 +1,6 @@
 
 .weekly__trends-all{
-    background-color: #111111;
+    // background-color: #111111;
     padding: 40px 20px 16px 20px;
     @media screen and (min-width: 768px) {
         padding: 52px 32px 22px 32px;
@@ -30,6 +30,9 @@
                 line-height: 1.18;
             }
 }
+
+
+
 
 
   .weekly-trends__link {
@@ -148,3 +151,6 @@ gap: 16px;
     }
     }
 
+.weekly-trend-day{
+  color: #111111;
+}
