@@ -1,3 +1,4 @@
+// for mobile menu
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.js-open-menu');
@@ -25,3 +26,17 @@
     bodyScrollLock.enableBodyScroll(document.body);
   });
 })();
+
+// for active page
+const doc = window.document;
+const links = doc.querySelectorAll('a');
+const linksCount = links.length;
+const currentURL = doc.URL;
+
+for (let i = 0; i < linksCount; i++) {
+  let linkURL = links[i].href;
+
+  if (currentURL.startsWith(linkURL)) {
+    links[i].classList.add('active');
+  }
+}
