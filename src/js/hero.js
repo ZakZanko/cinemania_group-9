@@ -30,7 +30,7 @@ async function getTrendingMovie() {
       const movie = data.results[Math.floor(Math.random() * data.results.length)];
       displayMovieInfo(movie);
 
-      // console.log(movie);
+      console.log(movie);
 
     } else {
       displayDefaultHeroContent();
@@ -42,12 +42,12 @@ async function getTrendingMovie() {
 }
 
 // Відображення в герої інформації про фільм дня 
+
 function displayMovieInfo(movie) {
   hero.style.backgroundImage = `url(${backdropBaseUrl}${movie.backdrop_path})`;
   heroTitle.textContent = movie.title;
-  heroRating.textContent = `Rating: ${movie.vote_average}`;
+  // heroRating.textContent = `Rating: ${movie.vote_average}`;
   heroOverview.textContent = movie.overview;
-  
   detailsBtn.addEventListener('click', () => {
     openDetailsModal(movie);
   });
@@ -55,14 +55,39 @@ function displayMovieInfo(movie) {
   trailerBtn.addEventListener('click', () => {
     openTrailerModal(movie.id);
   });
+
+  // Отримання рейтингу фільму
+  const movieRating = movie.vote_average;
+
+  // Відображення рейтингу фільму
+  displayMovieRating(movieRating);
+}
+// відображення рейтингу в зірочках
+function displayMovieRating(rating) {
+  const roundedRating = Math.round(rating);
+
+  const starsElement = document.querySelector('.stars');
+  const ratingValueElement = document.querySelector('.rating-value');
+ 
+  let stars = '';
+  for (let i = 0; i < 5; i++) {
+    if (i < roundedRating / 2) {
+      stars += '★'; 
+    } else {
+      stars += '☆'; 
+    }
+  }
+
+  starsElement.textContent = stars;
+  ratingValueElement.textContent = `Rating: ${rating.toFixed(1)}`;
 }
 
 
 // Інформація в герої за замовчуванням
 function displayDefaultHeroContent() {
   const windowWidth = window.innerWidth;
-
-  let backgroundImageURL = '../src/images/img/hero-img/hero-desktop-1x.jpg';
+  
+  let backgroundImageURL = '/src/images/hero-desktop-1x.jpg';
 
   if (windowWidth <= 480) {
     backgroundImageURL = '../css/hero-images/hero-mobile-1x.jpg';

@@ -123,7 +123,6 @@ body {
   background-color: #000;
 }
 
-/* _________текстовий контент__________ */
 .hero-info {
   display: block;
   position: absolute;
@@ -132,7 +131,23 @@ body {
   top: 40px;
 }
 
-/* _________/текстовий контент__________ */
+/* ------------- Рейтинг ----------- */
+.movie-rating {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.stars {
+  color: gold;
+  font-size: 24px;
+}
+
+.rating-value {
+  margin-left: 10px;
+}
+
+/* ----------- /рейтинг ----------------- */
 .hero-img {
   position: relative;
   background-position: right;
@@ -141,7 +156,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: url(./hero-images/hero-desktop-1x.jpg); */
 }
 
 .hero-gradient {
