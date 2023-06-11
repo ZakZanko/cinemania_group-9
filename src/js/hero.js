@@ -1,3 +1,9 @@
+import Defoltimg from '../images/hero-desktop-1x.jpg';
+import DefoltImgTablet from '../images/hero-tablet-1x.jpg';
+import DefoltImgMobil from '../images/hero-mobile-1x.jpg';
+import DefoltImgPopup from '../images/pop-up.jpg';
+
+
 const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89dd';
 const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
 const backdropBaseUrl = 'https://image.tmdb.org/t/p/original/';
@@ -20,6 +26,7 @@ const trailerModal = document.getElementById('trailerModal');
 const trailerModalTitle = document.querySelector('#trailerModal .modal-title');
 const trailerModalTrailer = document.querySelector('#trailerModal .modal-trailer');
 const trailerModalCloseBtn = document.querySelector('#trailerModal .modal-close-btn');
+const trailerModalContent = document.querySelector('.trailer-modal-content');
 
 // Пошук фільму дня
 // async function getTrendingMovie() {
@@ -104,17 +111,16 @@ function displayMovieRating(rating) {
 function displayDefaultHeroContent() {
   const windowWidth = window.innerWidth;
   
-  let backgroundImageURL = `./images/hero-desktop-1x.jpg`;
+  let backgroundImageURL = Defoltimg;
 
   if (windowWidth <= 480) {
-    backgroundImageURL = '../css/hero-images/hero-mobile-1x.jpg';
-  } else if (windowWidth <= 768) {
-    backgroundImageURL = '../css/hero-images/hero-tablet-1x.jpg';
+    backgroundImageURL = DefoltImgMobil;
+  } else if (windowWidth <= 1158) {
+    backgroundImageURL = DefoltImgTablet;
   }
 
   hero.style.backgroundImage = `url(${backgroundImageURL})`;
-  // тимчасовий фон
-  // hero.style.backgroundColor = 'red';
+ 
 
   heroTitle.textContent = 'Let’s Make Your Own Cinema';
   heroRating.textContent = '';
@@ -155,11 +161,14 @@ async function openTrailerModal(movieId) {
       trailerModalCloseBtn.style.color = 'orange';
      
     } else {
-      trailerModalTrailer.textContent = 'Trailer not available.';
+      trailerModalTrailer.textContent = 'Failed to load trailer.';
+      trailerModalContent.classList.remove('trailer-modal-content');
+      
     }
   } catch (error) {
     console.error(error);
-    trailerModalTrailer.textContent = 'Failed to load trailer.';
+    trailerModalContent.classList.remove('trailer-modal-content');
+    trailerModalTrailer.innerHTML = '<div class="modal-trailer-defolt"><h3>OOPS...</h3><p>We are very sorry!</p><p>But we couldn"t the trailer</p><img></img></div>';
   }
 
   trailerModal.style.display = 'flex';

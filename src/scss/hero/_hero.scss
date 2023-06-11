@@ -75,9 +75,11 @@ body {
 }
 .stars {
   color: gold;
-  font-size: 16px;
+  font-size: 24px;
 }
-
+.orange {
+  color: #F87719;
+}
 .rating-value {
   margin-left: 10px;
 }
@@ -146,10 +148,19 @@ body {
   max-width: 320px;
   text-align: center;
   border-radius: 5px;
+  position: relative;
 }
+
 .trailer-modal-content {
   position: relative;
+  padding: 0;
   background-color: transparent;
+}
+
+.modal-trailer-defolt {
+  
+  max-width: 60%;
+  font-size: 20px;
 }
 
 .modal-title {
@@ -180,7 +191,7 @@ body {
 }
 /* ---------------- /модалка ----------------- */
 
-// ______________________MEDIA ___________________________
+
 
 /* ---------------- /mobile ----------------- */
 @media screen and (max-width: 479px) {
@@ -210,7 +221,6 @@ body {
     line-height: 1.18;
     margin-bottom: 12px;
   }
-  
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -289,9 +299,6 @@ body {
     margin-right: 8px;
     font-size: 14px;
     line-height: 1.16;
-  }
-  .stars {
-    font-size: 20px;
   }
 }
 
@@ -383,7 +390,5 @@ body {
     top: 48px;
     right: 10px;
   }
-  .stars {
-    font-size: 24px;
-  }
+
 }
