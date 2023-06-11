@@ -2,7 +2,7 @@
  import './js/hero';
 import './js/footer';
 import { createListMarkup } from './render';
-import { getMovieById2 } from './API/ap\i';
+import { getMovieById2 } from './API/api';
 
 const librariesKey = 'b90b64a7e05f9e36894001e36eb3b3c7';
 let page = 1;
