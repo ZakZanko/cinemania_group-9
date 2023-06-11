@@ -107,7 +107,6 @@ body {
 }
 
 .library-hero__title {
-  font: 32, 700, 38;
   display: flex;
   align-items: center;
   padding-top: 40px;
@@ -116,7 +115,6 @@ body {
 }
 @media screen and (min-width: 768px) {
   .library-hero__title {
-    font: 44, 700, 52;
     margin-bottom: 8px;
     margin-left: 32px;
     padding-top: 62px;
@@ -124,7 +122,6 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .library-hero__title {
-    font: 64, 700, 75;
     margin-bottom: 16px;
     padding-top: 170px;
     margin-left: 117px;
@@ -152,7 +149,6 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .library-hero__description {
-    font: 14, 400, 19;
     margin-left: 117px;
     max-width: 464px;
     padding-bottom: 224px;

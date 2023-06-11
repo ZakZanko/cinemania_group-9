@@ -1,5 +1,5 @@
 .library-hero__title {
-  font: (32, 700, 38);
+  // font: (32, 700, 38);
   display: flex;
   align-items: center;
   padding-top: 40px;
@@ -7,13 +7,13 @@
   margin-left: 20px;
 
   @include tablet {
-    font: (44, 700, 52);
+    // font: (44, 700, 52);
     margin-bottom: 8px;
     margin-left: 32px;
     padding-top: 62px;
   }
   @include desktop {
-    font: (64, 700, 75);
+    // font: (64, 700, 75);
     margin-bottom: 16px;
     padding-top: 170px;
     margin-left: 117px;
@@ -36,7 +36,7 @@
     margin-bottom: 8px;
   }
   @include desktop {
-    font: (14, 400, 19);
+    // font: (14, 400, 19);
 
     margin-left: 117px;
     max-width: 464px;
