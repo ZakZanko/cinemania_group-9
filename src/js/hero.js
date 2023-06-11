@@ -131,6 +131,11 @@ async function openTrailerModal(movieId) {
       trailerIframe.src = `https://www.youtube.com/embed/${trailerKey}`;
       trailerIframe.allowFullscreen = true;
       trailerModalTrailer.appendChild(trailerIframe);
+     
+      trailerModalCloseBtn.style.background = 'none';
+      trailerModalCloseBtn.style.outline = '1px solid orange';
+      trailerModalCloseBtn.style.color = 'orange';
+     
     } else {
       trailerModalTrailer.textContent = 'Trailer not available.';
     }

@@ -123,68 +123,14 @@ body {
   background-color: #000;
 }
 
-<<<<<<< Updated upstream
-=======
-/* _________текстовий контент__________ */
->>>>>>> Stashed changes
+/* ------------- Текстовий контент ----------- */
 .hero-info {
-  display: block;
+  display: flex;
+  justify-content: flex-start;
   position: absolute;
   z-index: 4;
   left: 20px;
   top: 40px;
-}
-
-<<<<<<< Updated upstream
-/* ------------- Рейтинг ----------- */
-.movie-rating {
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
-}
-
-.stars {
-  color: gold;
-  font-size: 24px;
-}
-
-.rating-value {
-  margin-left: 10px;
-}
-
-/* ----------- /рейтинг ----------------- */
-=======
-/* _________/текстовий контент__________ */
->>>>>>> Stashed changes
-.hero-img {
-  position: relative;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-<<<<<<< Updated upstream
-=======
-  /* background: url(./hero-images/hero-desktop-1x.jpg); */
->>>>>>> Stashed changes
-}
-
-.hero-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(83.06deg, #111111 11.91%, rgba(17, 17, 17, 0) 73.11%);
-  z-index: 1;
-}
-
-.hero-content {
-  text-align: center;
-  color: #fff;
-  max-width: 500px;
-  margin-right: auto;
 }
 
 .hero-title {
@@ -218,7 +164,6 @@ body {
 
 .hero-details-btn,
 .hero-trailer-btn {
-  background-color: #dfc1c1;
   color: #000;
   border: none;
   font-size: 12px;
@@ -231,12 +176,64 @@ body {
   border-radius: 74px;
 }
 
+/* ------------- /Текстовий контент ----------- */
+/* ------------- Рейтинг ----------- */
+.movie-rating {
+  display: flex;
+  align-items: center;
+}
+
+.stars {
+  color: gold;
+  font-size: 16px;
+}
+
+.rating-value {
+  margin-left: 10px;
+}
+
+/* ----------- /рейтинг ----------------- */
+.hero-img {
+  position: relative;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(83.06deg, #111111 11.91%, rgba(17, 17, 17, 0) 73.11%);
+  z-index: 1;
+}
+
+.hero-content {
+  text-align: start;
+  color: #fff;
+  max-width: 500px;
+  margin-right: auto;
+}
+
 .hero-details-btn {
   background: none;
   color: #fff;
   border: 1px solid #ffffff;
 }
 
+.trailer-close-btn {
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  background: none;
+}
+
+/* ---------------- модалка ----------------- */
 .modal {
   position: fixed;
   top: 0;
@@ -258,6 +255,11 @@ body {
   border-radius: 5px;
 }
 
+.trailer-modal-content {
+  position: relative;
+  background-color: transparent;
+}
+
 .modal-title {
   font-size: 12px;
   margin-bottom: 16px;
@@ -268,6 +270,7 @@ body {
 }
 
 .modal-trailer {
+  position: relative;
   max-width: 100%;
   margin-bottom: 12px;
 }
@@ -284,6 +287,8 @@ body {
   border-radius: 74px;
 }
 
+/* ---------------- /модалка ----------------- */
+/* ---------------- /mobile ----------------- */
 @media screen and (max-width: 479px) {
   .container {
     max-width: 380px;
@@ -313,11 +318,7 @@ body {
 }
 @media screen and (min-width: 480px) {
   .container {
-<<<<<<< Updated upstream
     max-width: 320px;
-=======
-    max-width: 380px;
->>>>>>> Stashed changes
     margin-right: auto;
     margin-left: auto;
   }
@@ -352,6 +353,7 @@ body {
     line-height: 1.16;
   }
 }
+/* ---------------- tablet ----------------- */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -385,20 +387,16 @@ body {
     font-size: 14px;
     line-height: 1.16;
   }
+  .stars {
+    font-size: 20px;
+  }
 }
-<<<<<<< Updated upstream
+/* ---------------- /desktop ----------------- */
 @media screen and (min-width: 1280px) {
   .hero-container {
     margin-left: auto;
     margin-right: auto;
     max-width: 1280px;
-=======
-@media screen and (min-width: 1200px) {
-  .hero-container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1158px;
->>>>>>> Stashed changes
   }
   .hero-info {
     left: 135px;
@@ -444,15 +442,9 @@ body {
     margin-right: 14px;
   }
   .modal-content {
-    background-color: #abafa1;
     padding: 24px;
-<<<<<<< Updated upstream
-    max-width: 700px;
-    height: 360px;
-=======
-    max-width: 560px;
-    height: 450px;
->>>>>>> Stashed changes
+    max-width: 420px;
+    max-height: 360px;
     text-align: center;
     border-radius: 5px;
   }
@@ -471,5 +463,12 @@ body {
   .modal-close-btn {
     padding: 8px 16px;
     margin-right: 16px;
+  }
+  .trailer-close-btn {
+    top: 48px;
+    right: 10px;
+  }
+  .stars {
+    font-size: 24px;
   }
 }/*# sourceMappingURL=main.css.map */

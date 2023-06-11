@@ -12,60 +12,14 @@ body {
   display: flex;
   background-color: #000;
 }
-
+/* ------------- Текстовий контент ----------- */
 .hero-info {
-  display: block;
+  display: flex;
+  justify-content: flex-start;
   position: absolute;
   z-index: 4;
   left: 20px;
   top: 40px;
-}
-/* ------------- Рейтинг ----------- */
-.movie-rating {
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
-}
-.stars {
-  color: gold;
-  font-size: 24px;
-}
-
-.rating-value {
-  margin-left: 10px;
-}
-
-/* ----------- /рейтинг ----------------- */
-
-.hero-img {
-  position: relative;
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  // background: url(/src/images/hero-desktop-1x.jpg);
-}
-
-.hero-gradient {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(
-    83.06deg,
-    #111111 11.91%,
-    rgba(17, 17, 17, 0) 73.11%
-  );
-  z-index: 1;
-}
-.hero-content {
-  text-align: center;
-  color: #fff;
-  max-width: 500px;
-  margin-right: auto;
 }
 
 .hero-title {
@@ -77,7 +31,6 @@ body {
   font-size: 36px;
   margin-bottom: 12px;
   color: #ffffff;
-  
 }
 
 .hero-rating {
@@ -100,7 +53,7 @@ body {
 
 .hero-details-btn,
 .hero-trailer-btn {
-  background-color: #dfc1c1;
+  
   color: #000;
   border: none;
   font-size: 12px;
@@ -113,11 +66,67 @@ body {
   border-radius: 74px;
 }
 
+/* ------------- /Текстовий контент ----------- */
+
+/* ------------- Рейтинг ----------- */
+.movie-rating {
+  display: flex;
+  align-items: center;
+}
+.stars {
+  color: gold;
+  font-size: 16px;
+}
+
+.rating-value {
+  margin-left: 10px;
+}
+
+/* ----------- /рейтинг ----------------- */
+
+.hero-img {
+  position: relative;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.hero-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    83.06deg,
+    #111111 11.91%,
+    rgba(17, 17, 17, 0) 73.11%
+  );
+  z-index: 1;
+}
+.hero-content {
+  text-align: start;
+  color: #fff;
+  max-width: 500px;
+  margin-right: auto;
+}
+
 .hero-details-btn {
   background: none;
   color: #fff;
   border: 1px solid #ffffff;
 }
+.trailer-close-btn {
+  position: absolute;
+  top: 35px;
+  right: 15px;
+  background: none;
+}
+/* ---------------- модалка ----------------- */
 .modal {
   position: fixed;
   top: 0;
@@ -138,6 +147,10 @@ body {
   text-align: center;
   border-radius: 5px;
 }
+.trailer-modal-content {
+  position: relative;
+  background-color: transparent;
+}
 
 .modal-title {
   font-size: 12px;
@@ -149,6 +162,7 @@ body {
 }
 
 .modal-trailer {
+  position: relative;
   max-width: 100%;
   margin-bottom: 12px;
 }
@@ -164,9 +178,11 @@ body {
   background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
   border-radius: 74px;
 }
+/* ---------------- /модалка ----------------- */
 
-// ____________________________________ MEDIA________________________________________________
+// ______________________MEDIA ___________________________
 
+/* ---------------- /mobile ----------------- */
 @media screen and (max-width: 479px) {
   .container {
     max-width: 380px;
@@ -194,6 +210,7 @@ body {
     line-height: 1.18;
     margin-bottom: 12px;
   }
+  
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -236,7 +253,7 @@ body {
     line-height: 1.16;
   }
 }
-
+/* ---------------- tablet ----------------- */
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
@@ -273,7 +290,12 @@ body {
     font-size: 14px;
     line-height: 1.16;
   }
+  .stars {
+    font-size: 20px;
+  }
 }
+
+/* ---------------- /desktop ----------------- */
 @media screen and (min-width: 1280px) {
   .hero-container {
     margin-left: auto;
@@ -328,15 +350,16 @@ body {
     padding: 8px 16px;
     margin-right: 14px;
   }
+
   .modal-content {
-    background-color: #abafa1;
     padding: 24px;
     max-width: 420px;
-    height: 360px;
+    max-height: 360px;
     text-align: center;
     border-radius: 5px;
+    
   }
-
+ 
   .modal-title {
     font-size: 24px;
     margin-bottom: 16px;
@@ -355,5 +378,12 @@ body {
   .modal-close-btn {
     padding: 8px 16px;
     margin-right: 16px;
+  }
+  .trailer-close-btn { 
+    top: 48px;
+    right: 10px;
+  }
+  .stars {
+    font-size: 24px;
   }
 }
