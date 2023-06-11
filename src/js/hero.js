@@ -1,3 +1,4 @@
+import defaultImg from '../images/img/img.png';
 const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89dd';
 const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
 const backdropBaseUrl = 'https://image.tmdb.org/t/p/original/';
@@ -30,10 +31,29 @@ const trailerModalCloseBtn = document.querySelector(
 );
 
 // Пошук фільму дня
+// async function getTrendingMovie() {
+//   try {
+//     const response = await fetch(trendingMoviesUrl);
+//     const data = await response.json();
+//     if (data.results.length > 0) {
+//       const movie = data.results[Math.floor(Math.random() * data.results.length)];
+//       displayMovieInfo(movie);
+
+//       console.log(movie);
+
+//     } else {
+//       displayDefaultHeroContent();
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     displayDefaultHeroContent();
+//   }
+// }
+
 async function getTrendingMovie() {
   try {
-    const response = await fetch(trendingMoviesUrl);
-    const data = await response.json();
+    const response = await axios.get(trendingMoviesUrl);
+    const data = response.data;
     if (data.results.length > 0) {
       const movie =
         data.results[Math.floor(Math.random() * data.results.length)];
@@ -48,8 +68,6 @@ async function getTrendingMovie() {
     displayDefaultHeroContent();
   }
 }
-
-// Відображення в герої інформації про фільм дня
 
 function displayMovieInfo(movie) {
   hero.style.backgroundImage = `url(${backdropBaseUrl}${movie.backdrop_path})`;
@@ -73,7 +91,6 @@ function displayMovieInfo(movie) {
 // відображення рейтингу в зірочках
 function displayMovieRating(rating) {
   const roundedRating = Math.round(rating);
-
   const starsElement = document.querySelector('.stars');
   const ratingValueElement = document.querySelector('.rating-value');
 
@@ -94,7 +111,7 @@ function displayMovieRating(rating) {
 function displayDefaultHeroContent() {
   const windowWidth = window.innerWidth;
 
-  let backgroundImageURL = '/src/images/hero-desktop-1x.jpg';
+  let backgroundImageURL = defaultImg;
 
   if (windowWidth <= 480) {
     backgroundImageURL = '../css/hero-images/hero-mobile-1x.jpg';
