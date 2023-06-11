@@ -21,7 +21,6 @@ if (refs.loadMoreButton) {
   });
 }
 
-
 // localStorage
 export function addMovieToLibrary(movieId) {
   getMovieById2(movieId).then(movie => {
@@ -44,8 +43,7 @@ export function removeMovieFromLibrary(movieId) {
   let libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
   delete libraries[movieId];
   localStorage.setItem(librariesKey, JSON.stringify(libraries));
- if (refs.libraryList) renderLibraryData();
-
+  if (refs.libraryList) renderLibraryData();
 }
 
 export function getMovieFromLibrary(movieId) {
@@ -91,13 +89,11 @@ function renderMovies() {
   return markup;
 }
 
-
-
 // spiner?
 window.onload = function () {
-    document.body.classList.add('loaded_hiding');
-    window.setTimeout(function () {
-      document.body.classList.add('loaded');
-      document.body.classList.remove('loaded_hiding');
-    }, 500);
-  }
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
+};

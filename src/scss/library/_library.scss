@@ -1,129 +1,128 @@
 .library-hero__title {
-    @include font(32, 700, 38);
-    display: flex;
-    align-items: center;
-    padding-top: 40px;
+  font: (32, 700, 38);
+  display: flex;
+  align-items: center;
+  padding-top: 40px;
+  margin-bottom: 8px;
+  margin-left: 20px;
+
+  @include tablet {
+    font: (44, 700, 52);
     margin-bottom: 8px;
-    margin-left: 20px;
-  
-    @include respond-min('tablets') {
-      @include font(44, 700, 52);
-      margin-bottom: 8px;
-      margin-left: 32px;
-      padding-top: 62px;
-    }
-    @include respond-min('pc') {
-      @include font(64, 700, 75);
-      margin-bottom: 16px;
-      padding-top: 170px;
-      margin-left: 117px;
-    }
+    margin-left: 32px;
+    padding-top: 62px;
   }
-  .library-hero__description {
-    max-width: 249px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-    padding-bottom: 114px;
-    @include respond-min('tablets') {
-      margin-left: 32px;
-      max-width: 357px;
-      max-height: 432px;
-      padding-bottom: 118px;
-      margin-bottom: 8px;
-    }
-    @include respond-min('pc') {
-      @include font(14, 400, 19);
-  
-      margin-left: 117px;
-      max-width: 464px;
-      padding-bottom: 224px;
-    }
+  @include desktop {
+    font: (64, 700, 75);
+    margin-bottom: 16px;
+    padding-top: 170px;
+    margin-left: 117px;
   }
-  
-  // Фон
-  
-  .library-hero {
-    color: var(--white-color);
-    min-height: 380px;
+}
+.library-hero__description {
+  max-width: 249px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  padding-bottom: 114px;
+  @include tablet {
+    margin-left: 32px;
+    max-width: 357px;
+    max-height: 432px;
+    padding-bottom: 118px;
+    margin-bottom: 8px;
+  }
+  @include desktop {
+    font: (14, 400, 19);
+
+    margin-left: 117px;
+    max-width: 464px;
+    padding-bottom: 224px;
+  }
+}
+
+// Фон
+
+.library-hero {
+  color: var(--white-color);
+  min-height: 380px;
+  max-height: 380px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--black-color);
+  background-image: url(/src/img/library_foto/Desktop.jpg);
+  background-size: cover;
+  margin-bottom: 40px;
+  color: red;
+
+  @include mobile {
     max-height: 380px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: var(--black-color);
-    background-image: url(../img/library_foto/library1xphone.jpg);
-    background-size: cover;
-    margin-bottom: 40px;
-  
-    @include respond-min('phone') {
-      max-height: 380px;
-    }
-    @include respond-min('tablets') {
-      max-height: 432px;
-    }
-    @include respond-min('pc') {
-      max-height: 720px;
-    }
   }
-  
+  @include tablet {
+    max-height: 432px;
+  }
+  @include desktop {
+    max-height: 720px;
+  }
+}
+
+@media (min-device-pixel-ratio: 2),
+  (min-resolution: 192dpi),
+  (min-resolution: 2dppx) {
+  .library-hero {
+    background-image: url(/src/img/library_foto/Desktop.jpg);
+  }
+}
+
+// фон телефон
+@include mobile {
+  .library-hero {
+    background-image: url(/src/img/library_foto/Desktop.jpg);
+  }
+
   @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
     (min-resolution: 2dppx) {
     .library-hero {
-      background-image: url(../img/library_foto/library1xphone.jpg);
+      background-image: url(/src/img/library_foto/Desktop.jpg);
     }
   }
-  
-  // фон телефон
-  @include respond-min('phone') {
+}
+
+//  таблет фон
+
+@include tablet {
+  .library-hero {
+    background-image: url(/src/img/library_foto/Desktop.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     .library-hero {
-      background-image: url(../img/library_foto/HeroTabletLib.jpg);
-    }
-  
-    @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      .library-hero {
-        background-image: url(../img/library_foto/HeroTabletLib2x.jpg);
-      }
+      background-image: url(/src/img/library_foto/Desktop.jpg);
     }
   }
-  
-  //  таблет фон
-  
-  @include respond-min('tablets') {
+}
+
+// декстоп фон
+
+@include desktop {
+  .library-hero {
+    background-image: url(/src/img/library_foto/Desktop.jpg);
+  }
+
+  @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
     .library-hero {
-      background-image: url(../img/library_foto/HeroTabletLib.jpg);
-    }
-  
-    @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      .library-hero {
-        background-image: url(../img/library_foto/HeroTabletLib2x.jpg);
-      }
+      background-image: url(/src/img/library_foto/Desktop.jpg);
     }
   }
-  
-  // декстоп фон
-  
-  @include respond-min('pc') {
-    .library-hero {
-      background-image: url(../img/library_foto/Desktop.jpg);
-    }
-  
-    @media (min-device-pixel-ratio: 2),
-      (-webkit-min-device-pixel-ratio: 2),
-      (min-resolution: 192dpi),
-      (min-resolution: 2dppx) {
-      .library-hero {
-        background-image: url(../img/library_foto/Desktop2x.jpg);
-      }
-    }
-  }
-  
- 
+}
