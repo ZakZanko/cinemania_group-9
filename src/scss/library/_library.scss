@@ -4,6 +4,7 @@
   padding-top: 40px;
   margin-bottom: 8px;
   margin-left: 20px;
+  color: #f8f8f8;
 
   font-weight: 700;
   font-size: 32;
@@ -14,25 +15,27 @@
     padding-top: 62px;
     font-size: 44;
     line-height: 52px;
+    color: #f8f8f8;
   }
   @include desktop {
     margin-bottom: 16px;
     padding-top: 170px;
     margin-left: 117px;
-    color: white;
+    color: #f8f8f8;
   }
 }
 
 .library-hero__description {
   max-width: 249px;
   font-weight: 400;
-  font-size: 14px;
-  line-height: 16px;
+  line-height: 1;
   display: flex;
   align-items: center;
   margin-left: 20px;
   padding-bottom: 114px;
+  color: #f8f8f8;
   @include tablet {
+    line-height: 1.2;
     margin-left: 32px;
     max-width: 357px;
     max-height: 432px;
@@ -41,12 +44,11 @@
   }
   @include desktop {
     font-weight: 400;
-    font-size: 16;
-    line-height: 18.75;
+    line-height: 1.2;
     margin-left: 117px;
     max-width: 464px;
     padding-bottom: 224px;
-    color: #ffffff;
+    color: #f8f8f8;
   }
 }
 
