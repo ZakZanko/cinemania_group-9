@@ -9,7 +9,7 @@ import { getSecondMovieById } from '../js/API/api';
 
 const refs = {
   backdrop: document.querySelector('.backdrop'),
-  openModal: document.querySelector('.modal-films'),
+  // openModal: document.querySelector('.modal-films'),
   cardList: document.querySelector('.modal-films'),
   libraryList: document.querySelector('.library-list'),
   modalCont: document.querySelector('.modal__container'),
