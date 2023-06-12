@@ -1,42 +1,51 @@
-<section id="catalog" class="section-catalog">
-  <div class="container">
-    <h2 class="section-catalog-title">Catalog</h2>
-    <div class="container-search">
-      <form class="search-form" id="search-form">
-        <label class="search-form-label">
+<section id="catalog" class="section-catalog section-ctg-search">
+  <div class="container container-catalog">
+    <h2 class="ctg-section-title">Catalog</h2>
+
+    <form class="ctg-search-form" id="search-form">
+      <div class="ctg-box-search">
+        <label class="ctg-search-form-label">
           <input
-            class="search-input"
+            class="ctg-search-input"
             type="text"
             name="searchQuery"
             autocomplete="off"
             placeholder="Search"
           />
         </label>
-        <svg
-          class="btn-search-fake"
-          width="40px"
-          height="40px"
-          fill="url(#linear-gradient)"
-        >
-          <!-- <use href="/src/images/symbol-defs.svg#icon-Ellipse-1-1"></use> -->
 
-          <!-- Градиент -->
+        <button class="ctg-btn-close-search" type="button">
+          <svg class="ctg-svg-close-cross" width="9px" height="9px">
+            <use href="/src/img/sprite.svg#icon-cross"></use>
+          </svg>
+        </button>
+      </div>
+      <!-- <select class="select-year" name="" id=""></select> -->
+      <button class="ctg-btn-submit-search" type="submit">
+        <svg class="ctg-svg-magnifying-glass" width="15px" height="15px">
+          <use href="/src/img/sprite.svg#icon-magnifying-glass"></use>
+        </svg>
+
+        <!-- Градиент
           <linearGradient id="linear-gradient">
             <stop offset="9.4%" stop-color="#ffc226" />
             <stop offset="91.91" stop-color="#f84119" />
-          </linearGradient>
-        </svg>
-        <button class="btn-close-search" type="submit"></button>
-
-        <select class="select-year" name="" id=""></select>
-        <button class="btn-submit-search" type="submit"></button>
-      </form>
-    </div>
+          </linearGradient> -->
+      </button>
+    </form>
   </div>
 </section>
 
-<section class="movies">
+<section class="section-catalog ctg-movies">
   <div class="container">
-    <ul class="movies__list"></ul>
+    <h2 class="ctg-section-title">Catalog Movies</h2>
+    <ul class="ctg-movies__list"></ul>
+  </div>
+</section>
+
+<section class="section-catalog section-pagination">
+  <div class="container">
+    <h2 class="ctg-section-title">Catalog Pagination</h2>
+    <div id="tui-pagination-container" class="tui-pagination"></div>
   </div>
 </section>
