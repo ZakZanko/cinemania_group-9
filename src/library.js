@@ -1,6 +1,7 @@
 import './js/header';
 import './js/hero';
 import './js/footer';
+
 import { createListMarkup } from './render';
 import { getMovieById2 } from './js/API/api';
 
@@ -97,3 +98,4 @@ window.onload = function () {
     document.body.classList.remove('loaded_hiding');
   }, 500);
 };
+

@@ -5,3 +5,4 @@ const UPCOMING_URL = `${BASE_URL}/movie/upcoming`;
 const IMG_W400 = `/w400`;
 
 export { KEY, BASE_URL, IMG_BASE_URL, IMG_W400, UPCOMING_URL };
+
