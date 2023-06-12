@@ -1,9 +1,15 @@
 // main styles
+body{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
 .header {
   padding-top: 8px;
   padding-bottom: 8px;
 
-  background-color: #000000;
+  // background-color: #000000;
 }
 
 .header-container {
@@ -47,6 +53,12 @@
     display: none;
   }
 }
+
+.day-logo-text{
+  color: #282828;
+}
+
+
 .menu-list {
   display: flex;
   gap: 40px;
@@ -71,6 +83,15 @@
 
   color: #b7b7b7;
 }
+
+// !========= Add Andriy
+
+.menu-link-day{
+  color: #595959;
+}
+
+// !===========
+
 // mobile menu styles
 .mobile-menu-open {
   padding: 0;
@@ -145,3 +166,50 @@
   color: #f87719;
 }
 // icon-switcher
+
+.bkg-white {
+ background-color: #ffffff;
+ color: #575757;
+}
+
+
+.icon-day {
+
+  padding: 0;
+  width: 44px;
+  height: 18px;
+  border-radius: 194px;
+  outline: none;
+  border: none;
+  background-image: url(../img/icon-day-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-night {
+
+  padding: 0;
+  width: 44px;
+  height: 18px;
+  border-radius: 194px;
+  outline: none;
+  border: none;
+  background-image: url(../img/icon-night-mobile.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+@media screen and (min-width: 768px) {
+.icon-day{
+  width: 60px;
+    height: 24px;
+  background-image: url(../img/icon-day.svg);
+}
+
+.icon-night {
+  width: 60px;
+    height: 24px;
+background-image: url(../img/icon-night.svg);
+}
+
+}
