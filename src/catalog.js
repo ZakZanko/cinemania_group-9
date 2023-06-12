@@ -4,7 +4,7 @@ import './js/hero';
 import './js/footer';
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import { key } from './js/API/api-key';
+import { KEY } from './js/API/api-key';
 import Pagination from 'tui-pagination';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
@@ -18,7 +18,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 
 async function onKeyWord(searchQuery, page) {
   try {
-    const url = `${BASE_URL}/search/movie?api_key=${key}&query=${searchQuery}&page=${page}`;
+    const url = `${BASE_URL}/search/movie?api_key=${KEY}&query=${searchQuery}&page=${page}`;
     const response = await axios.get(url);
     //console.log(response.data);
     // console.log(response.data.total_results);
@@ -31,12 +31,12 @@ async function onKeyWord(searchQuery, page) {
 
 const getWeeklyMovies = async page => {
   return await axios.get(
-    `${BASE_URL}/trending/movie/day?api_key=${key}&page=${page}`
+    `${BASE_URL}/trending/movie/day?api_key=${KEY}&page=${page}`
   );
 };
 
 const getGanres = async () => {
-  return await axios.get(`${BASE_URL}/genre/movie/list?api_key=${key}`);
+  return await axios.get(`${BASE_URL}/genre/movie/list?api_key=${KEY}`);
 };
 
 const refs = {
