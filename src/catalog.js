@@ -1,9 +1,10 @@
 import './js/header';
 import './js/switch-color-bkg';
 import './js/hero';
+import './js/modal';
 import './js/footer';
 import axios from 'axios';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 import { KEY } from './js/API/api-key';
 import Pagination from 'tui-pagination';
 
@@ -25,7 +26,7 @@ async function onKeyWord(searchQuery, page) {
     return response;
   } catch (error) {
     console.log(error);
-    Notify.failure('Oops, an error occurred');
+    // Notify.failure('Oops, an error occurred');
   }
 }
 
@@ -198,7 +199,7 @@ const markup = results => {
         release_date,
         genre_ids,
       }) =>
-        `<li class="movies-card" id="${id}">
+        `<li class="movies-card" data-id="${id}">
               <img
               class="movies-card-photo"
               src="${checkImg(poster_path)}"
