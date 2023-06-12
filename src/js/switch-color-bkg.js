@@ -21,14 +21,8 @@ const KEY_LOCAL_STOREG = 'background';
 function switchColor() {
   refs.body.classList.toggle('bkg-white');
   switchIcon();
-    switchColorLink();    
+  switchColorLink();
   refs.headerLogoText.classList.toggle('day-logo-text');
- 
-  
-
-  
-
-
 
   const audit = refs.body.classList.contains('bkg-white');
 
@@ -38,16 +32,16 @@ function switchColor() {
 function addClassColor() {
   const localValue = load(KEY_LOCAL_STOREG);
   //   console.log(localValue);
-    if (localValue) {
-      switchColorLinkOn();
+  if (localValue) {
+    switchColorLinkOn();
     refs.body.classList.add('bkg-white');
     refs.headerLogoText.classList.add('day-logo-text');
     refs.switchIcon.classList.add('icon-day');
     refs.switchIcon.classList.remove('icon-night');
-    } else {
-        switchColorLinkOff();
-      refs.switchIcon.classList.remove('icon-day');
-      refs.switchIcon.classList.add('icon-night');
+  } else {
+    switchColorLinkOff();
+    refs.switchIcon.classList.remove('icon-day');
+    refs.switchIcon.classList.add('icon-night');
     refs.headerLogoText.classList.remove('day-logo-text');
   }
 }
@@ -57,17 +51,16 @@ function switchIcon() {
   refs.switchIcon.classList.toggle('icon-night');
 }
 
-
 function switchColorLinkOn() {
-   refs.weeklyTrend.classList.add('weekly-trend-day');
-    refs.catalogLink.classList.add('menu-link-day');
-    refs.homeLink.classList.add('menu-link-day');
-    refs.myLiberyLink.classList.add('menu-link-day');
-    refs.menuLink.classList.add('menu-link-day');
+  refs.weeklyTrend.classList.add('weekly-trend-day');
+  refs.catalogLink.classList.add('menu-link-day');
+  refs.homeLink.classList.add('menu-link-day');
+  refs.myLiberyLink.classList.add('menu-link-day');
+  refs.menuLink.classList.add('menu-link-day');
 }
 
 function switchColorLinkOff() {
-   refs.weeklyTrend.classList.remove('weekly-trend-day');
+  refs.weeklyTrend.classList.remove('weekly-trend-day');
   refs.catalogLink.classList.remove('menu-link-day');
   refs.homeLink.classList.remove('menu-link-day');
   refs.myLiberyLink.classList.remove('menu-link-day');
@@ -76,14 +69,11 @@ function switchColorLinkOff() {
 
 function switchColorLink() {
   refs.weeklyTrend.classList.toggle('weekly-trend-day');
-    refs.catalogLink.classList.toggle('menu-link-day');
-    refs.homeLink.classList.toggle('menu-link-day');
-    refs.myLiberyLink.classList.toggle('menu-link-day');
-    refs.menuLink.classList.toggle('menu-link-day');
+  refs.catalogLink.classList.toggle('menu-link-day');
+  refs.homeLink.classList.toggle('menu-link-day');
+  refs.myLiberyLink.classList.toggle('menu-link-day');
+  refs.menuLink.classList.toggle('menu-link-day');
 }
-
-
-
 
 const save = (key, value) => {
   try {
