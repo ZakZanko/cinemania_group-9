@@ -1,5 +1,6 @@
-import { IMG_BASE_URL, IMG_W400 } from '../js/API/api-key';
-import { getSecondMovieById } from '../js/API/api';
+import { IMG_BASE_URL, IMG_W400 } from './API/api-key';
+con;
+import { getSecondMovieById } from './API/api';
 // import {
 //   // addMovieToLibrary,
 //   // removeMovieFromLibrary,
@@ -9,7 +10,7 @@ import { getSecondMovieById } from '../js/API/api';
 
 const refs = {
   backdrop: document.querySelector('.backdrop'),
-  // openModal: document.querySelector('.modal-films'),
+  openModal: document.querySelector('.modal-films'),
   cardList: document.querySelector('.modal-films'),
   libraryList: document.querySelector('.library-list'),
   modalCont: document.querySelector('.modal__container'),
