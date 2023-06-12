@@ -1,3 +1,4 @@
+import './js/switch-color-bkg';
 import './js/header';
 import './js/hero';
 import './js/footer';
