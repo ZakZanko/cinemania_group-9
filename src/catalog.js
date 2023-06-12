@@ -1,3 +1,6 @@
+import './js/header';
+import './js/hero';
+import './js/footer';
 import axios from 'axios';
 import Notiflix from 'notiflix';
 import { key } from './js/API/api-key';
