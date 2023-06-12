@@ -65,3 +65,8 @@ export const getSecondMovieById = async id => {
       console.error('Smth wrong with api ID fetch' + error);
     }
   };
+  // export function getGenreById(genreId) {
+  //   const genres = JSON.parse(localStorage.getItem('genresList')) || [];
+  //   const genre = genres.find((genre) => genre.id === genreId);
+  //   return genre ? genre.name : '';
+  // }

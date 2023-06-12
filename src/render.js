@@ -42,6 +42,7 @@ export async function getMovieGenres() {
       }
     });
   }
+  // пробувала зірочки 
   
   export function createListMarkup(data) {
     if (data) {
