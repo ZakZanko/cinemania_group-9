@@ -1,4 +1,6 @@
+import './js/modal';
 import './js/header';
+import './js/switch-color-bkg';
 import './js/hero';
 import './js/footer';
 import { createListMarkup } from './render';
@@ -22,7 +24,7 @@ if (refs.loadMoreButton) {
 }
 
 // localStorage
-export function addMovieToLibrary(movieId) {
+function addMovieToLibrary(movieId) {
   getMovieById2(movieId).then(movie => {
     movie.genre_names = movie.genres
       .map(genre => {
@@ -39,14 +41,14 @@ export function addMovieToLibrary(movieId) {
   });
 }
 
-export function removeMovieFromLibrary(movieId) {
+function removeMovieFromLibrary(movieId) {
   let libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
-  delete libraries[movieId];
+  // delete libraries[movieId];
   localStorage.setItem(librariesKey, JSON.stringify(libraries));
   if (refs.libraryList) renderLibraryData();
 }
 
-export function getMovieFromLibrary(movieId) {
+function getMovieFromLibrary(movieId) {
   const libraries = JSON.parse(localStorage.getItem(librariesKey)) || {};
   return libraries[movieId];
 }
@@ -56,7 +58,7 @@ function getMoviesFromLibrary() {
   return Object.values(libraries);
 }
 
-export function renderLibraryData() {
+function renderLibraryData() {
   let movieMarkup = renderMovies();
   if (!movieMarkup) {
     movieMarkup = `
