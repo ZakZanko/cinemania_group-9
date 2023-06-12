@@ -1,6 +1,5 @@
-import { IMG_BASE_URL, IMG_W400 } from './API/api-key';
-con;
-import { getSecondMovieById } from './API/api';
+import { IMG_BASE_URL, IMG_W400 } from '../js/API/api-key';
+import { getSecondMovieById } from '../js/API/api';
 // import {
 //   // addMovieToLibrary,
 //   // removeMovieFromLibrary,
