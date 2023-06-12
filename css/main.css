@@ -222,7 +222,6 @@ body {
   left: 12px;
   bottom: 12px;
   z-index: 1;
-  color: beige;
 }
 @media screen and (min-width: 1280px) {
   .cards__bloc-stars {
@@ -236,13 +235,11 @@ body {
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
-  line-height: 1.67;
   color: #b7b7b7;
 }
 @media screen and (min-width: 768px) {
   .cards__list-text {
-    line-height: 1.5;
-    width: 280px;
+    max-width: 250px;
   }
 }
 @media screen and (min-width: 1280px) {
@@ -259,10 +256,17 @@ body {
   font-size: 12px;
   line-height: 1.67;
   text-transform: uppercase;
+  color: beige;
 }
 @media screen and (min-width: 768px) {
   .cards__list-title {
     line-height: 1.5;
+    max-width: px;
+  }
+}
+@media screen and (min-width: 768px) and (min-width: 1280px) {
+  .cards__list-title {
     font-size: 20px;
+    max-width: px;
   }
 }/*# sourceMappingURL=main.css.map */
