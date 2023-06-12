@@ -3,6 +3,7 @@ import './js/header';
 import './js/switch-color-bkg';
 import './js/hero';
 import './js/footer';
+
 import { createListMarkup } from './render';
 import { getMovieById2 } from './js/API/api';
 
