@@ -28,7 +28,7 @@ const trailerModalTrailer = document.querySelector('#trailerModal .modal-trailer
 const trailerModalCloseBtn = document.querySelector('#trailerModal .modal-close-btn');
 const trailerModalContent = document.querySelector('.trailer-modal-content');
 
-// Пошук фільму дня
+//  Пошук фільму через ФЕЧ
 // async function getTrendingMovie() {
 //   try {
 //     const response = await fetch(trendingMoviesUrl);
@@ -48,6 +48,7 @@ const trailerModalContent = document.querySelector('.trailer-modal-content');
 //   }
 // }
 
+// Пошук фільму дня
 async function getTrendingMovie() {
   try {
     const response = await axios.get(trendingMoviesUrl);
@@ -66,6 +67,7 @@ async function getTrendingMovie() {
     displayDefaultHeroContent();
   }
 }
+
 // Відображення в герої інформації про фільм дня 
 
 function displayMovieInfo(movie) {
@@ -125,11 +127,11 @@ function displayDefaultHeroContent() {
   heroTitle.textContent = 'Let’s Make Your Own Cinema';
   heroRating.textContent = '';
   heroOverview.textContent = 'Is a guide to creating a personalized movie theater experience. You"ll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.';
-  detailsBtn.textContent = 'Get started';
-  detailsBtn.addEventListener('click', () => {
+  trailerBtn.textContent = 'Get started';
+  trailerBtn.addEventListener('click', () => {
     window.location.href = 'catalog.html';
   });
-  trailerBtn.style.display = 'none';
+  detailsBtn.style.display = 'none';trailerBtn
 }
 
 // Модальне вікно з інформацією
@@ -166,9 +168,15 @@ async function openTrailerModal(movieId) {
       
     }
   } catch (error) {
-    console.error(error);
-    trailerModalContent.classList.remove('trailer-modal-content');
-    trailerModalTrailer.innerHTML = '<div class="modal-trailer-defolt"><h3>OOPS...</h3><p>We are very sorry!</p><p>But we couldn"t the trailer</p><img></img></div>';
+      console.error(error);
+   
+      trailerModalContent.classList.add('modal-trailer-defolt');
+      const popUpHTML = `
+      <div class="modal-trailer-defolt">
+      <div class="modal-trailer-defolt-text">
+      <p class="modal-def">OOPS...<br>We are very sorry!<br>But we couldn't the trailer.</p>
+      </div>`;
+      trailerModalTrailer.innerHTML = popUpHTML;
   }
 
   trailerModal.style.display = 'flex';
