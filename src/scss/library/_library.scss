@@ -1,3 +1,6 @@
+.library-container{
+  background: black;
+}
 .library-hero__title {
   display: flex;
   align-items: center;
@@ -134,3 +137,72 @@ font-weight: 400;
 }
 
 
+.library-empty__mistake {
+  display: flex;
+  justify-content: center;
+  // color: #FFFFFF;
+  font-weight: 400;
+  line-height: 1.33;
+  text-align: center;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 24px;
+  }
+  @include desktop{
+  line-height: 1.1;
+    margin-bottom: 28px;
+  }
+}
+
+.library-list {
+  margin-bottom: 24px;
+}
+
+.btn-library__link {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 117px;
+  height: 34px;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  border-radius: 74px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  &::before {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+border-radius: 74px;
+        z-index: -1;
+        content: "";
+        background: linear-gradient(141.22deg, #FFC226 9.4%, #F84119 91.91%);
+            width: 104%;
+            height: 115%;
+  }
+  @include tablet {
+    width: 128px;
+    height: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+    width: 133px;
+    height: 40px;
+    margin-top: 40px;
+  }
+  @include desktop {
+    width: 152px;
+    height: 48px;
+    width: 158px;
+    height: 52px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+   line-height: 1.5;
+  }
+  &:hover,focus {
+    color: #FFC226;
+	background-color: black;
+}
+}

@@ -55,7 +55,7 @@ export const getSecondMovieById = async id => {
   export const getMovieById2 = async id => {
     try {
       const { data } = await axios.get(
-        `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${KEY}`
       );
       const result = {
         ...data,

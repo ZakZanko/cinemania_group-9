@@ -32,6 +32,10 @@ export async function getMovieGenres() {
           });
         });
       }
+      function saveLs(key, data) {
+        localStorage.setItem(key, JSON.stringify(data));
+      }
+      
       const markupList = createListMarkup(data.results);
       if (cards) {
         cards.innerHTML = markupList;
