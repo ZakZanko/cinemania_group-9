@@ -1,7 +1,6 @@
 import './js/modal';
 import './js/header';
 import './js/switch-color-bkg';
-import './js/hero';
 import './js/footer';
 
 import { createListMarkup } from './render';
@@ -99,4 +98,4 @@ window.onload = function () {
     document.body.classList.add('loaded');
     document.body.classList.remove('loaded_hiding');
   }, 500);
-}
+};
