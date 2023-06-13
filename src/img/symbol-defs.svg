@@ -1,0 +1,22 @@
+<svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-right_decktop-1" viewBox="0 0 18 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M1.89 2l14 14-14.002 14"></path>
+</symbol>
+<symbol id="icon-right_tablet-1" viewBox="0 0 20 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M3.25 2.5l13.5 13.5-13.5 13.5"></path>
+</symbol>
+<symbol id="icon-right_mobile-1" viewBox="0 0 18 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M2.715 3.143l12.857 12.857-12.857 12.857"></path>
+</symbol>
+<symbol id="icon-left_decktop-1" viewBox="0 0 18 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="3.5556" d="M15.89 2l-14.004 14 14 14"></path>
+</symbol>
+<symbol id="icon-left_tablet-1" viewBox="0 0 20 32">
+<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="4" d="M16.75 2.5l-13.5 13.5 13.5 13.5"></path>
+</symbol>
+<symbol id="icon-left_mobile-1" viewBox="0 0 18 32">
+<path  stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2.2857" d="M15.573 3.143l-12.857 12.857 12.857 12.857"></path>
+</symbol>
+</defs>
+</svg>
