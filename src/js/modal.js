@@ -184,7 +184,7 @@ function createFilmMarkup(data) {
                 <p class='film-list__text--about'>${overview}</p>
                  </div>
                  <div class="film__button-position">
-                 <button type="button" class="film__button">Add to my library</button>
+                 <button type="button" class="film__button library-button">Add to my library</button>
              </div>
             </li>
           </ul>
