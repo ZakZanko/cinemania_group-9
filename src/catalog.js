@@ -168,15 +168,7 @@ getWeeklyMovies(page)
 const markup = results => {
   const markup = results
     .map(
-      ({
-        poster_path,
-        title,
-        original_title,
-        vote_average,
-        id,
-        release_date,
-        genre_ids,
-      }) =>
+      ({ poster_path, title, vote_average, id, release_date, genre_ids }) =>
         `<li class="movies-card" data-id="${id}">
               <img
               class="movies-card-photo"
@@ -186,7 +178,8 @@ const markup = results => {
               width="395px"
               height="354px"
             />
-            <h2 class="movies-card-title">${original_title}</h2>
+            <div class="movies-card-overlay"></div>
+            <h2 class="movies-card-title">${title}</h2>
             <p class="movies-card-genres">${genre_ids.join(', ')} | ${dataCheck(
           release_date
         )}</p>
@@ -204,7 +197,7 @@ const markup = results => {
 const checkImg = url =>
   `${
     !url
-      ? `https://dummyimage.com/400x600/cfcfcf/ffffff&text=NO+POSTER+AVAILABLE`
+      ? `https://dummyimage.com/400x600/cfcfcf/ffffff&text=OOPS...+NO+POSTER+AVAILABLE`
       : `https://image.tmdb.org/t/p/w500${url}`
   }`;
 
