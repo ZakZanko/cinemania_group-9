@@ -1,11 +1,14 @@
 import axios from 'axios';
 import { KEY } from './API/api-key';
 
+const sectionTitle = document.querySelector('.upcoming-section-title');
 const container = document.querySelector('.container-upcoming-the-month');
 const addBtn = document.querySelector('.library-button');
 let movieData;
 
-addBtn.addEventListener('click', onBtnClick);
+
+let movieData;
+let addBtn;
 
 async function fetchUpcomingMovies() {
   const response = await axios.get(
@@ -26,10 +29,11 @@ async function fetchUpcomingMovies() {
 fetchUpcomingMovies()
   .then(movie => {
     movieData = movie;
+    console.log(movie);
     createMarkup(movie);
   })
   .catch(() => {
-    if (!movie) {
+    if (!movieData) {
       return notFoundMarkup();
     }
     errorMarkup();
@@ -72,42 +76,72 @@ async function createMarkup(movie) {
 
   const dateParts = movie.release_date.split('-');
   const dateFormat = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
-  const posterUrl = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
+  const posterUrl = getImageUrl(movie);
 
-  const markup = `<img src="${posterUrl}" alt="${movie.title}" />
-        <h3 class="month-movie-title">${movie.title}</h3>
-        <p class="info-key">
-          Release date <span class="info-value">${dateFormat}</span>
+  const markup = `<div class="upcoming-desktop-container"><img
+  class="upcoming-section-img"
+  src="${posterUrl}"
+  alt="${movie.title}"
+/>
+<div class="upcoming-desktop-flex">
+  <h3 class="upcoming-movie-title">${movie.title}</h3>
+  <div class="upcoming-flex-container">
+    <div class="upcoming-tablet-flex">
+      <div class="upcoming-data-flex">
+        <p class="info-key">Release date</p>
+        <p class="info-value info-value-date">${dateFormat}</p>
+      </div>
+      <div class="upcoming-data-flex">
+        <p class="info-key">Vote / Votes</p>
+        <p class="info-value">
+          <span class="info-value-vote"> ${movie.vote_average}</span> /
+          <span class="info-value-vote">${movie.vote_count}</span>
         </p>
-        <p class="info-key">
-          Vote / Votes <span class="info-value">${
-            movie.vote_average
-          }</span> / <span>${movie.vote_count}</span>
-        </p>
-        <p class="info-key">Popularity <span class="info-value">${movie.popularity.toFixed(
-          1
-        )}</span></p>
-        <p class="info-key">
-          Genre <span class="info-value">${genresList}</span>
-        </p>
-        <h4 class="about-title">About</h4>
-        <p class="about-description">
-          ${movie.overview}
-        </p>
+      </div>
+    </div>
+    <div class="upcoming-tablet-flex">
+      <div class="upcoming-data-flex">
+        <p class="info-key">Popularity</p>
+        <p class="info-value">${movie.popularity.toFixed(1)}</p>
+      </div>
+      <div class="upcoming-data-flex">
+        <p class="info-key">Genre</p>
+        <p class="info-value">${genresList}</p>
+      </div>
+    </div>
+  </div>
+
+  <h4 class="about-title">About</h4>
+  <p class="about-description">${movie.overview}</p>
+  <button class="library-button">Add to my library</button>
+</div></div>
         `;
-  container.insertAdjacentHTML('afterbegin', markup);
+  sectionTitle.insertAdjacentHTML('afterend', markup);
+  addBtn = document.querySelector('.library-button');
+  addBtn.addEventListener('click', onBtnClick);
+}
+
+function getImageUrl(movie) {
+  const baseImageUrl = 'https://image.tmdb.org/t/p/';
+  const deviceWidth = window.innerWidth;
+
+  if (deviceWidth >= 768) {
+    return `${baseImageUrl}w1280/${movie.backdrop_path}`;
+  } else {
+    return `${baseImageUrl}w500/${movie.poster_path}`;
+  }
 }
 
 function notFoundMarkup() {
   const markup =
     '<div class="error-message"><p>Oops...</p><p>We are very sorry!</p><p>There are no upcoming movies at the moment.</p></div> ';
-  container.insertAdjacentHTML('afterbegin', markup);
+  sectionTitle.insertAdjacentHTML('afterend', markup);
 }
 
 function errorMarkup() {
   const markup =
     '<div class="error-message"><p>Oops...</p><p>We are very sorry!</p><p>Something went wrong.</p></div>';
-  container.insertAdjacentHTML('afterbegin', markup);
+  sectionTitle.insertAdjacentHTML('afterend', markup);
 }
 
 function onBtnClick() {
@@ -122,7 +156,7 @@ function onBtnClick() {
     addBtn.textContent = 'Add to my library';
   } else {
     storedMovies.push(movieData);
-    localStorage.setItem('movie-info', JSON.stringify(storedMovies));
+    localStorage.setItem('librariesKey', JSON.stringify(storedMovies));
 
     addBtn.textContent = 'Remove from my library';
   }
