@@ -21,6 +21,7 @@ export async function getVideos(movie_id) {
     .catch(error => {});
 }
 
+
 // Фетч фильма по его ID
 // export async function getMovieById(id) {
 //   try {
