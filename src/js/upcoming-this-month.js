@@ -6,8 +6,6 @@ const container = document.querySelector('.container-upcoming-the-month');
 const addBtn = document.querySelector('.library-button');
 let movieData;
 
-
-let movieData;
 let addBtn;
 
 async function fetchUpcomingMovies() {
