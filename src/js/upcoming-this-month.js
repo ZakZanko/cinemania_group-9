@@ -6,8 +6,6 @@ const container = document.querySelector('.container-upcoming-the-month');
 const addBtn = document.querySelector('.library-button');
 let movieData;
 
-let addBtn;
-
 async function fetchUpcomingMovies() {
   const response = await axios.get(
     'https://api.themoviedb.org/3/movie/upcoming?language=en-US',
