@@ -1,9 +1,10 @@
 import './js/header';
 import './js/switch-color-bkg';
 import './js/hero';
+import './js/modal';
 import './js/footer';
 import axios from 'axios';
-import Notiflix from 'notiflix';
+// import Notiflix from 'notiflix';
 import { KEY } from './js/API/api-key';
 import Pagination from 'tui-pagination';
 
@@ -25,7 +26,7 @@ async function onKeyWord(searchQuery, page) {
     return response;
   } catch (error) {
     console.log(error);
-    Notify.failure('Oops, an error occurred');
+    // Notify.failure('Oops, an error occurred');
   }
 }
 
@@ -198,10 +199,10 @@ const markup = results => {
         release_date,
         genre_ids,
       }) =>
-        `<li class="movies-card" id="${id}">
+        `<li class="movies-card" data-id="${id}">
               <img
               class="movies-card-photo"
-              src="https://image.tmdb.org/t/p/w500${poster_path}"
+              src="${checkImg(poster_path)}"
               alt="${title}"
               loading="lazy"
               width="395px"
@@ -222,6 +223,14 @@ const markup = results => {
 
   return (refs.galleryContainer.innerHTML = markup);
 };
+
+//Перевірка наявності відео
+const checkImg = url =>
+  `${
+    !url
+      ? `https://dummyimage.com/400x600/cfcfcf/ffffff&text=NO+POSTER+AVAILABLE`
+      : `https://image.tmdb.org/t/p/w500${url}`
+  }`;
 
 // Перевірка року випуску фільма
 const dataCheck = value => `${!value ? 'Unknown' : `${value.slice(0, 4)}`}`;
@@ -253,14 +262,8 @@ function createPagination(total) {
       page: '<a href="#" class="tui-page-btn">{{page}}</a>',
       currentPage:
         '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-      moveButton:
-        '<a href="#" class="tui-page-btn tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
-        '</a>',
-      disabledMoveButton:
-        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
-        '</span>',
+      moveButton: '<a href="#" class="tui-page-btn tui-{{type}}">' + '</a>',
+
       moreButton:
         '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
         '<span class="tui-ico-ellip">...</span>' +
@@ -268,14 +271,9 @@ function createPagination(total) {
     },
   };
   const pagination = new Pagination(container, options);
-  //const pagePagination = pagination.getCurrentPage();
-  //console.log(pagePagination);
-  //pagination.reset(data.total_results);
-  //console.log(total_results);
-  pagination.on('afterMove', event => {
-    //galleryContainer.innerHTML = '';
-    const currentPage = event.page;
 
+  pagination.on('afterMove', event => {
+    const currentPage = event.page;
     createMoviesMarkup(currentPage);
   });
 }
@@ -285,7 +283,7 @@ function createPaginationKey(searchQuery, total) {
   const options = {
     totalItems: total,
     itemsPerPage: 20,
-    visiblePages: 10,
+    visiblePages: 5,
     page: 1,
     centerAlign: false,
     firstItemClassName: 'tui-first-child',
@@ -294,14 +292,8 @@ function createPaginationKey(searchQuery, total) {
       page: '<a href="#" class="tui-page-btn">{{page}}</a>',
       currentPage:
         '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-      moveButton:
-        '<a href="#" class="tui-page-btn tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
-        '</a>',
-      disabledMoveButton:
-        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-        '<span class="tui-ico-{{type}}">{{type}}</span>' +
-        '</span>',
+      moveButton: '<a href="#" class="tui-page-btn tui-{{type}}">' + '</a>',
+
       moreButton:
         '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
         '<span class="tui-ico-ellip">...</span>' +
