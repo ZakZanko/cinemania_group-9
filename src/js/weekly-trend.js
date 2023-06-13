@@ -186,7 +186,8 @@ function createMarkup(arr) {
         poster_path,
         release_date,
         genre,
-      }) => `<li class='cards-list-item'>
+        id,
+      }) => `<li class='cards-list-item' data-id='${id}'>
        <img class='cards__list-img' src="https://image.tmdb.org/t/p/w400${poster_path}" alt="${original_title}">
        <div class='weekly-trends__overlay'></div>
        <div class='cards__bloc-stars'>
