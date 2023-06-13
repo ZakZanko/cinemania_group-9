@@ -59,6 +59,8 @@
 
 .ctg-box-search {
   position: relative;
+    border: 1px solid #FFFFFF;
+      border-radius: 8px;
 }
 
 // .ctg-box-search-day{
@@ -75,8 +77,8 @@
   width: 224px;
   height: 40px;
   color: inherit;
-
-  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #595959;
   border-radius: 8px;
   outline: none;
 
