@@ -25,7 +25,7 @@
 // }
 
 .section-ctg-search {
-  background-color: var(--background);
+  // background-color: var(--background);
   padding-top: 40px;
   padding-bottom: 16px;
   @media screen and (min-width: 768px) {
@@ -42,7 +42,7 @@
   display: none;
 }
 .ctg-search-form {
-  background-color: var(--background);
+  // background-color: var(--background);
   box-sizing: border-box;
 
   display: flex;
@@ -59,20 +59,26 @@
 
 .ctg-box-search {
   position: relative;
+    border: 1px solid #FFFFFF;
+      border-radius: 8px;
 }
+
+// .ctg-box-search-day{
+//   border: 1px solid #595959;
+// }
 
 //==========Поле інпуту
 
 .ctg-search-input {
-  background-color: var(--background);
+  // background-color: var(--background);
   color: var(--grey);
 
   padding-left: 20px;
   width: 224px;
   height: 40px;
   color: inherit;
-
-  border: 1px solid #fff;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #595959;
   border-radius: 8px;
   outline: none;
 
@@ -115,13 +121,13 @@
   border: none;
   width: 18px;
   height: 18px;
-  background-color: var(--background);
+  // background-color: var(--background);
 }
 .ctg-btn-close-search:hover {
   stroke: var(--orange);
 }
 .ctg-svg-close-cross {
-  background-color: var(--background);
+  // background-color: var(--background);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -171,7 +177,7 @@
   font-size: 20px;
   line-height: 28px;
   /* or 140% */
-  color: var(--secondary-text);
+  // color: var(--secondary-text);
   @media screen and (min-width: 768px) {
     padding-top: 44px;
 
@@ -196,7 +202,7 @@
 //   padding-bottom: 0px;
 // }
 .ctg-movies {
-  background-color: var(--background);
+  // background-color: var(--background);
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -278,7 +284,7 @@
 // Стилізація пагінації
 
 .section-pagination {
-  background-color: var(--background);
+  // background-color: var(--background);
   padding-top: 20px;
   @media screen and (min-width: 768px) {
     padding-top: 44px;

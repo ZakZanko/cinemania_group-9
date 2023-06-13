@@ -1,1 +1,144 @@
+body {
+  background-color: var(--background);
+}
 
+.upcoming-section-title {
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--white);
+
+  @include tablet {
+    font-size: 24px;
+  }
+
+  @include desktop {
+    font-size: 28px;
+  }
+}
+
+.upcoming-section-img {
+  margin-bottom: 24px;
+
+  @include tablet {
+    margin-bottom: 32px;
+  }
+
+  @include desktop {
+    margin-bottom: 0px;
+  }
+}
+
+.upcoming-movie-title {
+  margin-bottom: 24px;
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+
+  @include tablet {
+    font-size: 28px;
+    line-height: 1.17;
+  }
+
+  @include desktop {
+    font-size: 32px;
+    line-height: 1.17;
+  }
+}
+
+.upcoming-flex-container {
+  margin-bottom: 20px;
+
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.upcoming-tablet-flex:first-child {
+  margin-bottom: 12px;
+  @include tablet {
+    margin-right: 122px;
+  }
+}
+
+.upcoming-data-flex {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.upcoming-data-flex:last-child {
+  margin-bottom: 0px;
+}
+
+.info-key {
+  width: 98px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--grey);
+}
+
+.info-value {
+  max-width: 140px;
+  margin-left: 57px;
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about-title {
+  margin-bottom: 16px;
+  color: var(--grey);
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about-description {
+  margin-bottom: 20px;
+  color: var(--secondary-text);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.info-value-date {
+  color: var(--orange);
+}
+
+.info-value-vote {
+  display: inline-block;
+  background-color: var(--white);
+  color: var(--background);
+  padding: 1px 8px;
+  border-radius: 5px;
+}
+
+.upcoming-desktop-flex {
+  @include desktop {
+    margin-left: 16px;
+  }
+}
+
+.library-button {
+  background-image: var(--liner-orange);
+  border: none;
+  border-radius: 74px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.upcoming-desktop-container {
+  @include desktop {
+    display: flex;
+  }
+}
+
+.upcoming-section-img {
+  @include desktop {
+    width: 805px;
+  }
+}
