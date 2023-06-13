@@ -1,5 +1,4 @@
 .footer {
-    position: absolute;
     width: 100%;
     left: 0;
     bottom: 0;
@@ -7,35 +6,34 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 42px 42px 28px;
+    padding-bottom: 28px;
     text-align: center;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.14;
-    color: #b7b7b7;
-    z-index: 1000;
-}
-
-@media screen and (min-width: 768px) {
-    .footer {
+    @include tablet {
         flex-wrap: nowrap;
         justify-content: center;
         font-size: 14px;
         line-height: 1.18;
+        padding-bottom: 40px;
+    }
+    @include desktop {
+        font-size: 16px;
+        padding-bottom: 80px;
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .footer {
-        font-size: 16px;
+
+@media screen and (max-width: 580px) {
+    .footer__text {
+        width: 236px;
     }
 }
 
 .footer__heart {
     position: relative;
     align-self: baseline;
-    margin-left: 9px;
-    margin-right: 9px;
 }
 
 .footer__heart:hover {
@@ -131,7 +129,7 @@
 .modal__button-close {
     position: absolute;
     z-index: 1;
-    top: 20px;
+    top: 30px;
     right: 30px;
     padding: 0;
     margin: 0;
@@ -184,14 +182,17 @@
 .team {
     position: relative;
     margin-bottom: 20px;
+    margin-top: 32px;
     text-align: center;
     font-family: Helvetica, Arial, sans-serif;
-    font-size: 2.5rem;
+    font-size: 24px;
     letter-spacing: 10px;
     color: #e3e6ee;
     text-shadow: 1px 4px 6px #b1b4bf, 1px -2px 2px #fff;
-    -webkit-animation: text 2500ms linear alternate 2500ms;
     animation: text 2500ms linear alternate 2500ms;
+    @include tablet {
+        font-size: 48px;
+    }
 }
 
 @-webkit-keyframes text {
@@ -250,6 +251,11 @@
     transition-property: scale;
     transition-duration: 500ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+    @include desktop {
+        flex-basis: calc((100% - 104px) / 5);
+        margin-bottom: 32px;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 1279.98px) {
@@ -261,12 +267,6 @@
     }
 }
 
-@media screen and (min-width: 1280px) {
-    .team__item {
-        flex-basis: calc((100% - 104px) / 5);
-        margin-bottom: 32px;
-    }
-}
 
 .team__item:hover,
 .team__item:active,
@@ -334,18 +334,10 @@
 
 .team__student-foto {
     width: 180px;
+    height: 100%;
     margin-bottom: 0;
-    -o-object-fit: cover;
     object-fit: cover;
-    -o-object-position: top;
     object-position: top;
-}
-
-@media screen and (min-width: 1280px) {
-    .team__student-foto {
-        height: 100%;
-    }
-
 }
 
 .team__student-card {
@@ -367,18 +359,7 @@
     text-shadow: 0.5px 0.5px 1px rgb(255, 255, 255);
 }
 
-.team__student-about {
-    margin-bottom: 0;
-    color: #9095a8;
-    text-shadow: 1px 1px 1px #fff;
-}
-
 .noScroll {
     overflow: hidden;
 }
 
-.is-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}

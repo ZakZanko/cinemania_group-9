@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { KEY, BASE_URL, ID_URL } from './api-key';
+import { KEY, BASE_URL } from './api-key';
 
 export async function getDayTrending(page = 1) {
   const url = `${BASE_URL}/trending/all/day?api_key=${KEY}&language=en-US&page=${page}`;
@@ -21,7 +21,8 @@ export async function getVideos(movie_id) {
     .catch(error => {});
 }
 
-// // Фетч фильма по его ID
+
+// Фетч фильма по его ID
 // export async function getMovieById(id) {
 //   try {
 //     const { data } = await axios.get(`${ID_URL}${id}?api_key=${KEY}`);

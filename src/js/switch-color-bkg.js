@@ -8,7 +8,7 @@ const refs = {
   catalogLink: document.getElementById('catalog-day'),
   myLiberyLink: document.getElementById('my-libery-day'),
   menuLink: document.getElementById('menu-link'),
-  weeklyTrend: document.getElementById('weekly-trend'),
+ 
 };
 
 refs.switchIcon.addEventListener('click', switchColor);
@@ -22,6 +22,7 @@ function switchColor() {
   refs.body.classList.toggle('bkg-white');
   switchIcon();
   switchColorLink();
+  
   refs.headerLogoText.classList.toggle('day-logo-text');
 
   const audit = refs.body.classList.contains('bkg-white');
@@ -34,12 +35,14 @@ function addClassColor() {
   //   console.log(localValue);
   if (localValue) {
     switchColorLinkOn();
+   
     refs.body.classList.add('bkg-white');
     refs.headerLogoText.classList.add('day-logo-text');
     refs.switchIcon.classList.add('icon-day');
     refs.switchIcon.classList.remove('icon-night');
   } else {
     switchColorLinkOff();
+
     refs.switchIcon.classList.remove('icon-day');
     refs.switchIcon.classList.add('icon-night');
     refs.headerLogoText.classList.remove('day-logo-text');
@@ -52,7 +55,7 @@ function switchIcon() {
 }
 
 function switchColorLinkOn() {
-  refs.weeklyTrend.classList.add('weekly-trend-day');
+
   refs.catalogLink.classList.add('menu-link-day');
   refs.homeLink.classList.add('menu-link-day');
   refs.myLiberyLink.classList.add('menu-link-day');
@@ -60,7 +63,7 @@ function switchColorLinkOn() {
 }
 
 function switchColorLinkOff() {
-  refs.weeklyTrend.classList.remove('weekly-trend-day');
+
   refs.catalogLink.classList.remove('menu-link-day');
   refs.homeLink.classList.remove('menu-link-day');
   refs.myLiberyLink.classList.remove('menu-link-day');
@@ -68,7 +71,7 @@ function switchColorLinkOff() {
 }
 
 function switchColorLink() {
-  refs.weeklyTrend.classList.toggle('weekly-trend-day');
+
   refs.catalogLink.classList.toggle('menu-link-day');
   refs.homeLink.classList.toggle('menu-link-day');
   refs.myLiberyLink.classList.toggle('menu-link-day');
