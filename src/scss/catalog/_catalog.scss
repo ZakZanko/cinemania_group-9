@@ -59,8 +59,8 @@
 
 .ctg-box-search {
   position: relative;
-    border: 1px solid #FFFFFF;
-      border-radius: 8px;
+  border: 1px solid #ffffff;
+  border-radius: 8px;
 }
 
 // .ctg-box-search-day{
@@ -72,7 +72,7 @@
 .ctg-search-input {
   // background-color: var(--background);
   color: var(--grey);
-
+  cursor: pointer;
   padding-left: 20px;
   width: 224px;
   height: 40px;
@@ -112,9 +112,9 @@
 
 .ctg-btn-close-search {
   position: absolute;
-
+  cursor: pointer;
   stroke: var(--secondary-text);
-
+  background-color: rgba(0, 0, 0, 0);
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
@@ -142,6 +142,7 @@
   position: relative;
   stroke: var(--white);
   fill-opacity: 0;
+
   border-radius: 50%;
   border: none;
   width: 40px;
@@ -210,7 +211,7 @@
 .ctg-movies__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  // justify-content: center;
   row-gap: 16px;
   @media screen and (min-width: 768px) {
     row-gap: 28px;
@@ -223,11 +224,29 @@
 .movies-card {
   position: relative;
   width: 100%;
+  box-shadow: 1px 1px 24px 2px rgba(1, 1, 1, 0.45);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    box-shadow: 7px -7px 21px rgba(126, 13, 233, 0.6);
+    transform: scale(1.12) translateZ(0);
+  }
   @media screen and (min-width: 768px) {
     flex-basis: calc((100% - 32px) / 3);
   }
 }
-
+.movies-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8)
+  );
+}
 .movies-card-photo {
   width: 100%;
   height: 100%;
@@ -244,14 +263,14 @@
 
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
+  //font-size: 12px;
+  line-height: 1.67;
   @media screen and (min-width: 768px) {
-    line-height: 18px;
+    line-height: 1.5;
   }
   @media screen and (min-width: 1280px) {
     font-size: 20px;
-    line-height: 23px;
+    line-height: 1.15;
   }
 }
 
@@ -263,8 +282,15 @@
 
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 20px;
+  //font-size: 12px;
+  line-height: 1.67;
+  @media screen and (min-width: 768px) {
+    line-height: 1.5;
+  }
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: 1.15;
+  }
 }
 .movies-card-rating {
   color: var(--orange);
@@ -404,3 +430,73 @@
 .tui-first {
   display: none;
 }
+//===========Скролл
+#scroll-to-top {
+  @include centerFlex();
+  position: fixed;
+  flex-direction: column;
+  bottom: 50px;
+  right: 50px;
+
+  background: transparent;
+  opacity: 0;
+  z-index: 50;
+  padding: 0;
+  // border-radius: 50%;
+  border: none;
+  transform: translateY(30%);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+  cursor: pointer;
+  @include tablet {
+    // right: 30px;
+  }
+  @include desktop {
+    // right: 50px;
+  }
+}
+
+// A R R O W
+
+.arrow {
+  width: 20px;
+  height: 20px;
+  border-bottom: 4px solid #ffc226;
+  border-right: 4px solid #ffc226;
+  margin: -10px;
+  animation: animate 2s infinite;
+  @include tablet {
+    width: 25px;
+    height: 25px;
+    margin: -5px;
+  }
+  @include desktop {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+// .arrow:nth-child(2) {
+//   animation-delay: -0.2s;
+//   border-bottom: 4px solid #fb801f;
+//   border-right: 4px solid #fb801f;
+// }
+
+// .arrow:nth-child(3) {
+//   animation-delay: -0.4s;
+//   border-bottom: 4px solid #f84119;
+//   border-right: 4px solid #f84119;
+// }
+
+// @keyframes animate {
+//   0% {
+//     opacity: 0;
+//     transform: rotate(-135deg) translate(-15px, -15px);
+//   }
+//   50% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//     transform: rotate(-135deg) translate(15px, 15px);
+//   }
+// }
