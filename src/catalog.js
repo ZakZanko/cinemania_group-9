@@ -1,7 +1,9 @@
 import './js/header';
 import './js/switch-color-bkg';
 import './js/hero';
+import './js/modal';
 import './js/footer';
+
 import axios from 'axios';
 import Notiflix from 'notiflix';
 import { KEY } from './js/API/api-key';
