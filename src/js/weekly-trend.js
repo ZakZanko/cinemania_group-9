@@ -62,12 +62,6 @@
 // </div></li>`).join('')
 // }
 
-const BASE_URL = 'https://api.themoviedb.org/3';
-const ENDPOINT = '/trending/movie/week';
-const API_KEY = 'b90b64a7e05f9e36894001e36eb3b3c7';
-// const IMG_W400 = /w400;
-const IMG_PATH = 'https://image.tmdb.org/t/p/w400';
-
 const list = document.querySelector('.js-list');
 let page = 1;
 let options = {
