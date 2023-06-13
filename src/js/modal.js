@@ -1,5 +1,6 @@
 import { IMG_BASE_URL, IMG_W400 } from '../js/API/api-key';
 import { getSecondMovieById } from '../js/API/api';
+import { onBtnClick, isMovieStored } from '../js/upcoming-this-month';
 // import {
 //   // addMovieToLibrary,
 //   // removeMovieFromLibrary,
@@ -16,6 +17,7 @@ const refs = {
   filmBtn: document.querySelector('.film__button'),
   closeModal: document.querySelector('.modal__close-btn'),
   cardsfilm: document.querySelector('.cards-film'),
+  addBtn: document.querySelector('.library-button'),
 };
 
 let posterPath = '';
@@ -42,6 +44,7 @@ function createModal(event) {
 function openModal(e) {
   refs.backdrop.classList.remove('is-hidden');
   refs.modalCont.classList.remove('is-hidden');
+  // refs.addBtn.addEventListener('click', onBtnClick);
   document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', onEscBtnPress);
   document.addEventListener('click', onBackdropClick);
@@ -105,7 +108,10 @@ async function createMarkup(filmID) {
     refs.cardsfilm.innerHTML = filmMarkup;
     // save the link to the button
     filmBtn = document.querySelector('.film__button');
-    filmBtn.addEventListener('click', AddFilmToLibrary);
+    filmBtn.addEventListener('click', onBtnClick);
+    //   ТУТ змінив функцію на ту що в upcoming this month !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+    // filmBtn.addEventListener('click', AddFilmToLibrary);
     // changeBtnLibrary(selectedMovieId, filmBtn);
   });
 }
