@@ -2,6 +2,10 @@ import axios from 'axios';
 import { KEY } from './API/api-key';
 
 const sectionTitle = document.querySelector('.upcoming-section-title');
+const container = document.querySelector('.container-upcoming-the-month');
+const addBtn = document.querySelector('.library-button');
+let movieData;
+
 
 let movieData;
 let addBtn;
