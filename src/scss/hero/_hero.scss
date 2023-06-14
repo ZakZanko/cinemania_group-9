@@ -226,7 +226,6 @@ h1 {
 /* ---------------- /mobile ----------------- */
 @media screen and (max-width: 480px) {
   .container {
-    max-width: 480px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -255,7 +254,6 @@ h1 {
 }
 @media screen and (min-width: 320px) {
   .container {
-    max-width: 480px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -298,7 +296,6 @@ h1 {
 /* ---------------- tablet ----------------- */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 768px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -365,7 +362,6 @@ h1 {
 /* ---------------- /desktop ----------------- */
 @media screen and (min-width: 1280px) {
   .container {
-    max-width: 1280px;
     margin-right: auto;
     margin-left: auto;
   }
