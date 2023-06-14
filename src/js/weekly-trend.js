@@ -176,24 +176,3 @@ getTrending()
     list.insertAdjacentHTML('beforeend', await createMarkup(data.results));
   })
   .catch(err => console.log(err));
-
-function createMarkup(arr) {
-  return arr
-    .slice(0, 3)
-    .map(
-      ({
-        original_title,
-        poster_path,
-        release_date,
-        genre,
-        id,
-      }) => `<li class='cards-list-item' data-id='${id}'>
-       <img class='cards__list-img' src="https://image.tmdb.org/t/p/w400${poster_path}" alt="${original_title}">
-       <div class='weekly-trends__overlay'></div>
-       <div class='cards__bloc-stars'>
-     <h2 class='cards__list-title'>${original_title}</h2>
-     <div class='cards__list-text'>${genre} | ${release_date.slice(0, 4)}</div> 
-</div></li>`
-    )
-    .join('');
-}
