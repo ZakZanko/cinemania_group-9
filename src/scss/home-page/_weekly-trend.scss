@@ -16,7 +16,6 @@
     margin-bottom: 28px;
   }
 }
-
 .weekly-trends__title {
   // color: var(--white);
   text-transform: uppercase;
@@ -170,7 +169,7 @@
   position: absolute;
   left: 12px;
   bottom: 12px;
-  z-index: 100;
+  z-index: 1;
   color: beige;
 max-width: 230px;
   @media screen and (min-width: 1280px) {
@@ -213,3 +212,4 @@ max-width: 230px;
     line-height: 1.15;
   }
 }
+

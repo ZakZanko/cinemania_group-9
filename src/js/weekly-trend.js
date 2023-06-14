@@ -92,7 +92,7 @@ function handlerPagination(entries, observer) {
     } 
   }); 
 } 
- 
+
 async function getTrending(page = 1) { 
   return fetch(`${BASE_URL}${ENDPOINT}?api_key=${API_KEY}&page=${page}`).then( 
     (resp) => { 
@@ -127,15 +127,17 @@ async function fetchGenres(movie) {
 async function createMarkup(arr) { 
   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids })); 
   const genresArrays = await Promise.all(genresPromises); 
-  const randomMovie = arr[Math.floor(Math.random() * arr.length)]; 
+  
   return arr 
     .slice(0, 3) 
-    .map(({ original_title, poster_path, release_date }, index) => { 
+    .map(({ original_title, poster_path,vote_average, id, release_date }, index) => { 
       const movieGenres = genresArrays[index]; 
-      return `<li class='cards-list-item'> 
-          <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}"> 
+      return `<li class='cards-list-item' data-id='${id}'> 
+          <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
+          width="395px" 
+          height="354px"> 
           <div class='weekly-trends__overlay'></div> 
-          <div class='cards__bloc-stars'> 
+         <div class='cards__bloc-stars'> 
             <h2 class='cards__list-title'>${original_title}</h2> 
             <div class='cards__list-text'>${movieGenres.join( 
               ', ' 
@@ -153,11 +155,4 @@ getTrending()
   .catch((err) => console.log(err));
 
 
- 
- const ratingItemsList =  document.querySelectorAll('.rating__item');
- const ratingItemsArray = Array.prototype.slice.call(ratingItemsList);
- 
- ratingItemsArray.forEach(item =>
-  item.addEventListener('click', () =>
-  item.parentNode.dataset.totalValue = item.dataset.itemValue
-  ));
+  
