@@ -3,6 +3,7 @@ import './js/switch-color-bkg';
 import './js/hero';
 import './js/modal';
 import './js/footer';
+
 import axios from 'axios';
 // import Notiflix from 'notiflix';
 import { KEY } from './js/API/api-key';
@@ -121,28 +122,6 @@ function noSuccsessChangeClass() {
   refs.sectionPagination.classList.add('is-hidden');
 }
 
-// const notifyInfoSearch = () => {
-//   refs.messageEmpty.classList.remove('is-hidden');
-//   refs.moviesSection.classList.remove('section-catalog');
-//   refs.moviesSection.classList.add('section-nosuccsess-msg');
-//   refs.sectionPagination.classList.add('is-hidden');
-//  };
-
-// const notifyNoSearch = () => {
-//   refs.btnResetSearch.classList.remove('is-hidden');
-//   refs.messageNoSearch.classList.remove('is-hidden');
-//   refs.moviesSection.classList.remove('section-catalog');
-//   refs.moviesSection.classList.add('section-nosuccsess-msg');
-//   refs.sectionPagination.classList.add('is-hidden');
-//   };
-
-// const notifyNoWeeklyMovies = () => {
-//   refs.messageNoWeeklyMovie.classList.remove('is-hidden');
-//   refs.moviesSection.classList.remove('section-catalog');
-//   refs.moviesSection.classList.add('section-nosuccsess-msg');
-//   refs.sectionPagination.classList.add('is-hidden');
-// };
-
 async function createMoviesMarkupKey(searchQuery, page) {
   const response = await onKeyWord(searchQuery, page);
   const results = response.data.results;
@@ -190,15 +169,7 @@ getWeeklyMovies(page)
 const markup = results => {
   const markup = results
     .map(
-      ({
-        poster_path,
-        title,
-        original_title,
-        vote_average,
-        id,
-        release_date,
-        genre_ids,
-      }) =>
+      ({ poster_path, title, vote_average, id, release_date, genre_ids }) =>
         `<li class="movies-card" data-id="${id}">
               <img
               class="movies-card-photo"
@@ -206,20 +177,19 @@ const markup = results => {
               alt="${title}"
               loading="lazy"
               width="395px"
-              height="354px"
+              height="574px"
             />
-            <h2 class="movies-card-title">${original_title}</h2>
+            <div class="movies-card-overlay"></div>
+            <h2 class="movies-card-title">${title}</h2>
             <p class="movies-card-genres">${genre_ids.join(', ')} | ${dataCheck(
           release_date
         )}</p>
-            <p class="movies-card-rating">${displayMovieRating(
-              vote_average
-            )}</p>
-        
+            <p class="movies-card-rating">${getStars(vote_average)}</p>
           </li>`
     )
     .join('');
-  console.log(markup);
+
+  //console.log(markup);
 
   return (refs.galleryContainer.innerHTML = markup);
 };
@@ -228,7 +198,7 @@ const markup = results => {
 const checkImg = url =>
   `${
     !url
-      ? `https://dummyimage.com/400x600/cfcfcf/ffffff&text=NO+POSTER+AVAILABLE`
+      ? `https://dummyimage.com/400x600/cfcfcf/ffffff&text=OOPS...+NO+POSTER+AVAILABLE`
       : `https://image.tmdb.org/t/p/w500${url}`
   }`;
 
@@ -236,7 +206,6 @@ const checkImg = url =>
 const dataCheck = value => `${!value ? 'Unknown' : `${value.slice(0, 4)}`}`;
 
 // Функція очищення рядку пошуку
-
 function onResetSearch(event) {
   event.preventDefault();
   refs.galleryContainer.innerHTML = '';
@@ -307,7 +276,7 @@ function createPaginationKey(searchQuery, total) {
     createMoviesMarkupKey(searchQuery, currentPage);
   });
 }
-
+//Функція для отримання жанрів
 function replaceIdtoGanr(arrGanr, arrGanrId) {
   arrGanrId.forEach(item => {
     for (let i = 0; i < item.length; i += 1) {
@@ -318,16 +287,180 @@ function replaceIdtoGanr(arrGanr, arrGanrId) {
   });
 }
 
+//Функція для отримання зірочок №1
+// function displayMovieRat(rating) {
+//   const roundedRating = Math.round(rating);
+//   let stars = '';
+//   for (let i = 0; i < 5; i++) {
+//     if (i < roundedRating / 2) {
+//       stars += '★';
+//     } else {
+//       stars += '☆';
+//     }
+//   }
+
+//   return stars;
+// }
+
+//Функція для отримання зірочок №2 не працює
 function displayMovieRating(rating) {
   const roundedRating = Math.round(rating);
   let stars = '';
   for (let i = 0; i < 5; i++) {
-    if (i < roundedRating / 2) {
-      stars += '★';
-    } else {
-      stars += '☆';
+    for (let j = 0; j < roundedRating / 2; j++) {
+      createFullStar();
     }
+    // for (let j = 0; j < 5 - roundedRating / 2; j++) {
+    //   createEmptyStar();
+    // }
   }
-
-  return stars;
+  //return (refs.galleryContainer.innerHTML = markup);
+  //return stars;
 }
+// function createFullStar() {
+//   const makeup =
+//     '<svg class="ctg-svg-magnifying-glass" width="15px" height="15px"><use href="/src/img/sprite.svg#icon-magnifying-glass"></use></svg>';
+//   console.log('FullStar', makeup);
+//   return makeup;
+// }
+// function createEmptyStar() {
+//   const makeup =
+//     '<svg class="ctg-svg-magnifying-glass" width="15px" height="15px"><use href="/src/img/sprite.svg#icon-cross""></use></svg>';
+//   console.log('Emptystar', makeup);
+//   return makeup;
+// }
+// createEmptyStar(1);
+// createFullStar(1);
+
+//Функція для отримання зірочок №3
+function getStars(vote_average) {
+  const emptyStar = `<svg class="star" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.875 7.3125H10.8281L9 1.6875L7.17188 7.3125H1.125L6.04688 10.6875L4.14844 16.3125L9 12.7969L13.8516 16.3125L11.9531 10.6875L16.875 7.3125Z" stroke="url(#paint0_linear_405_766)" stroke-linejoin="round"/>
+    <defs>
+    <linearGradient id="paint0_linear_405_766" x1="3.375" y1="2.625" x2="13.5" y2="16.5" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#F84119"/>
+    <stop offset="1" stop-color="#F89F19" stop-opacity="0.68"/>
+    </linearGradient>
+    </defs>
+    </svg>`;
+
+  const fullStar = `<svg class="star" width="18" height="18" viewBox="0 0 18 18" fill="rgba(248, 65, 25, 1)" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.875 7.3125H10.8281L9 1.6875L7.17188 7.3125H1.125L6.04688 10.6875L4.14844 16.3125L9 12.7969L13.8516 16.3125L11.9531 10.6875L16.875 7.3125Z" stroke="url(#paint0_linear_405_766)" stroke-linejoin="round"/>
+    <defs>
+    <linearGradient id="paint0_linear_405_766" x1="3.375" y1="2.625" x2="13.5" y2="16.5" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#F84119"/>
+    <stop offset="1" stop-color="#F89F19" stop-opacity="0.68"/>
+    </linearGradient>
+    </defs>
+    </svg>`;
+
+  const halfStar = `<svg class="star" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.875 7.3125H10.8281L9 1.6875L7.17188 7.3125H1.125L6.04688 10.6875L4.14844 16.3125L9 12.7969L13.8516 16.3125L11.9531 10.6875L16.875 7.3125Z" stroke="url(#paint0_linear_148_6991)" stroke-linejoin="round"/>
+    <path d="M9 1.6875V12.7969L4.14844 16.3125L6.04688 10.6875L1.125 7.3125H7.17188L9 1.6875Z" fill="url(#paint1_linear_148_6991)"/>
+    <defs>
+    <linearGradient id="paint0_linear_148_6991" x1="3.04877" y1="2.73251" x2="13.478" y2="16.7124" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#F84119"/>
+    <stop offset="1" stop-color="#F89F19" stop-opacity="0.68"/>
+    </linearGradient>
+    <linearGradient id="paint1_linear_148_6991" x1="2.08688" y1="2.73251" x2="12.1506" y2="9.47748" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#F84119"/>
+    <stop offset="1" stop-color="#F89F19" stop-opacity="0.68"/>
+    </linearGradient>
+    </defs>
+    </svg>`;
+
+  let ratingStars = '';
+
+  const rating = Math.round(vote_average);
+
+  switch (rating) {
+    case 0:
+      ratingStars = `${emptyStar.repeat(5)}`;
+      break;
+    case 1:
+      ratingStars = `${halfStar}${emptyStar.repeat(4)}`;
+      break;
+    case 2:
+      ratingStars = `${fullStar}${emptyStar.repeat(4)}`;
+      break;
+    case 3:
+      ratingStars = `${fullStar}${halfStar}${emptyStar.repeat(3)}`;
+      break;
+    case 4:
+      ratingStars = `${fullStar.repeat(2)}${emptyStar.repeat(3)}`;
+      break;
+    case 5:
+      ratingStars = `${fullStar.repeat(2)}${halfStar}${emptyStar.repeat(2)}`;
+      break;
+    case 6:
+      ratingStars = `${fullStar.repeat(3)}${emptyStar.repeat(2)}`;
+      break;
+    case 7:
+      ratingStars = `${fullStar.repeat(3)}${halfStar}${emptyStar}`;
+      break;
+    case 8:
+      ratingStars = `${fullStar.repeat(4)}${emptyStar}`;
+      break;
+    case 9:
+      ratingStars = `${fullStar.repeat(4)}${halfStar}`;
+      break;
+    case 10:
+      ratingStars = `${fullStar.repeat(5)}`;
+      break;
+    default:
+      throw new Error('Invalid rating');
+  }
+  return ratingStars;
+}
+
+function hasScrollBehavior() {
+  return 'scrollBehavior' in document.documentElement.style;
+}
+
+function smoothScroll() {
+  let currentY = window.scrollY;
+  const scrollInterval = setInterval(() => {
+    window.scrollTo(0, currentY);
+
+    if (currentY > 500) {
+      currentY -= 70;
+    } else if (currentY > 100) {
+      currentY -= 50;
+    } else {
+      currentY -= 10;
+    }
+
+    if (currentY <= 0) {
+      clearInterval(scrollInterval);
+    }
+  }, 1000 / 60); // Змінено на 60fps
+}
+
+function scrollToTop() {
+  if (hasScrollBehavior()) {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    smoothScroll();
+  }
+}
+
+function toggleScrollUpButton() {
+  const y = window.scrollY;
+  const e = document.getElementById('scroll-to-top');
+  if (y >= 200) {
+    e.style.transform = 'translateY(-30%)';
+    e.style.opacity = '1';
+  } else {
+    e.style.opacity = '0';
+    e.style.transform = 'translateY(30%)';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  window.removeEventListener('DOMContentLoaded', toggleScrollUpButton, false);
+
+  window.addEventListener('scroll', toggleScrollUpButton);
+
+  const e = document.getElementById('scroll-to-top');
+  e.addEventListener('click', scrollToTop, false);
+});
