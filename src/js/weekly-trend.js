@@ -138,8 +138,8 @@ async function createMarkup(arr) {
         const movieGenres = genresArrays[index];
         return `<li class='cards-list-item' data-id='${id}'> 
           <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
-          width="395" 
-          height="574"> 
+          width="395px" 
+          height="574px"> 
 
           <div class='weekly-trends__overlay'></div> 
          <div class='cards__bloc-stars'> 
