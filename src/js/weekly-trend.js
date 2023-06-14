@@ -66,7 +66,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const ENDPOINT = '/trending/movie/week';
 const API_KEY = 'b90b64a7e05f9e36894001e36eb3b3c7';
 // const IMG_W400 = /w400;
-const IMG_PATH = 'https://image.tmdb.org/t/p/w400';
+const IMG_PATH = 'https://image.tmdb.org/t/p/w300';
 
 const list = document.querySelector('.js-list');
 let page = 1;
@@ -124,30 +124,6 @@ async function fetchGenres(movie) {
   return genresArray;
 }
 
-function displayMovieInfo(movie) {
-  const movieRating = movie.vote_average;
-  displayMovieRating(movieRating);
-}
-
-function displayMovieRating(rating) {
-  const roundedRating = Math.round(rating);
-
-  const starsElement = document.querySelector('.stars');
-  const ratingValueElement = document.querySelector('.rating-value');
-
-  let stars = '';
-  for (let i = 0; i < 5; i++) {
-    if (i < roundedRating / 2) {
-      stars += '★';
-    } else {
-      stars += '☆';
-    }
-  }
-
-  starsElement.textContent = stars;
-  ratingValueElement.textContent = `Rating: ${rating.toFixed(1)}`;
-}
-
 async function createMarkup(arr) {
   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids }));
   const genresArrays = await Promise.all(genresPromises);
@@ -164,7 +140,6 @@ async function createMarkup(arr) {
             <div class='cards__list-text'>${movieGenres.join(
               ', '
             )} | ${release_date.slice(0, 4)}</div>  
-              
           </div> 
         </li>`;
     })
