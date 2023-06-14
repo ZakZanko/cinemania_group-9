@@ -29,6 +29,7 @@ body {
 }
 
 .upcoming-section-img {
+  max-width: 100%;
   margin-bottom: 24px;
 
   @include tablet {
@@ -37,6 +38,7 @@ body {
   }
 
   @include desktop {
+    width: 805px;
     margin-bottom: 0px;
   }
 }
