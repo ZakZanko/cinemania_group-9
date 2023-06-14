@@ -1,12 +1,7 @@
 import { IMG_BASE_URL, IMG_W400 } from '../js/API/api-key';
 import { getSecondMovieById } from '../js/API/api';
-import { onBtnClick, isMovieStored } from '../js/upcoming-this-month';
-// import {
-//   // addMovieToLibrary,
-//   // removeMovieFromLibrary,
-//   // getMovieFromLibrary,
-//   // renderLibraryData,
-// } from './library';
+import { onBtnClick } from '../js/upcoming-this-month';
+import { isMovieStored } from '../js/upcoming-this-month';
 
 const refs = {
   backdrop: document.querySelector('.backdrop'),
@@ -44,56 +39,35 @@ function createModal(event) {
 function openModal(e) {
   refs.backdrop.classList.remove('is-hidden');
   refs.modalCont.classList.remove('is-hidden');
-  // refs.addBtn.addEventListener('click', onBtnClick);
+  refs.addBtn.addEventListener('click', onBtnClick);
   document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', onEscBtnPress);
   document.addEventListener('click', onBackdropClick);
 }
 
-// function onBtnClick() {
-//   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
-//   const movieId = movieData.id;
+function onBtnClick() {
+  const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
+  const movieId = movieData.id;
 
-//   if (isMovieStored(movieId)) {
-//     const index = storedMovies.findIndex(movie => movie.id === movieId);
-//     storedMovies.splice(index, 1);
-//     localStorage.setItem('librariesKey', JSON.stringify(storedMovies));
+  if (isMovieStored(movieId)) {
+    const index = storedMovies.findIndex(movie => movie.id === movieId);
+    storedMovies.splice(index, 1);
+    localStorage.setItem('librariesKey', JSON.stringify(storedMovies));
 
-//     addBtn.textContent = 'Add to my library';
-//   } else {
-//     storedMovies.push(movieData);
-//     localStorage.setItem('movie-info', JSON.stringify(storedMovies));
+    addBtn.textContent = 'Add to my library';
+  } else {
+    storedMovies.push(movieData);
+    localStorage.setItem('movie-info', JSON.stringify(storedMovies));
 
-//     addBtn.textContent = 'Remove from my library';
-//   }
-// }
+    addBtn.textContent = 'Remove from my library';
+  }
+}
 
-// function isMovieStored(movieId) {
-//   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
-//   return storedMovies.some(movie => movie.id === movieId);
-// }
-//  --------------------------------------------------ВАРІАНТ 2--------------------------------------------//
-// function AddFilmToLibrary() {
-//   const filmsSecId = filmBtn.dataset.id;
-//   if (getMovieFromLibrary(selectedMovieId)) {
-//     removeMovieFromLibrary(selectedMovieId);
-//     filmBtn.innerHTML = 'Add to Library';
-//   } else {
-//     addMovieToLibrary(selectedMovieId);
-//     filmBtn.innerHTML = 'Remove from Library';
-//   }
-// }
+function isMovieStored(movieId) {
+  const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
+  return storedMovies.some(movie => movie.id === movieId);
+}
 
-// // Verefy LS
-// function changeBtnLibrary(filmsId, filmBtn) {
-//   if (getMovieFromLibrary(filmsId)) {
-//     filmBtn.innerHTML = 'Remove from Library';
-//   } else {
-//     filmBtn.innerHTML = 'Add to Library';
-//   }
-// }
-//////---------------------------------------------------------------------------------------------------------//
-// Add markup  movie
 async function createMarkup(filmID) {
   const film = getSecondMovieById(filmID);
   genresList = [];
@@ -110,9 +84,6 @@ async function createMarkup(filmID) {
     filmBtn = document.querySelector('.film__button');
     filmBtn.addEventListener('click', onBtnClick);
     //   ТУТ змінив функцію на ту що в upcoming this month !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-    // filmBtn.addEventListener('click', AddFilmToLibrary);
-    // changeBtnLibrary(selectedMovieId, filmBtn);
   });
 }
 
@@ -137,9 +108,6 @@ function closeModalDescr(e) {
   document.body.style.overflow = 'scroll';
   document.removeEventListener('keydown', onEscBtnPress);
   document.removeEventListener('click', onBackdropClick);
-  // document.removeEventListener('click', AddFilmToLibrary);
-  // if (refs.libraryList) {
-  //   renderLibraryData();
   refs.cardList = document.querySelector('.modal-films');
   if (refs.cardList) refs.cardList.addEventListener('click', createModal);
 }
@@ -180,8 +148,12 @@ function createFilmMarkup(data) {
                     <p class='film-list__sub--title'>Genre</p>
                   </div>
                   <div  class="film-list__title--wood">
-                    <p class='film-list__text--average'><span  class='film-list__average'>${vote_average}</span>  /  <span  class='film-list__average'>${vote_count}</span></p>
-                    <p class='film-list__last--text'>${popularity}</p>
+                    <p class='film-list__text--average'><span  class='film-list__average'>${vote_average.toFixed(
+                      1
+                    )}</span>  /  <span  class='film-list__average'>${vote_count}</span></p>
+                    <p class='film-list__last--text'>${popularity.toFixed(
+                      1
+                    )}</p>
                     <p class='film-list__last--text'>${genresList}</p>
                   </div>
                 </div>
