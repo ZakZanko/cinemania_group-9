@@ -21,7 +21,6 @@
   text-transform: uppercase;
   font-size: 16px;
   line-height: 1.19;
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   @media screen and (min-width: 768px) {
@@ -52,7 +51,6 @@
 
 .weekly-trends__link {
   color: var(--orange);
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   text-transform: uppercase;
@@ -118,7 +116,6 @@
 }
 
 .cards__list-text {
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -134,7 +131,6 @@
 }
 
 .cards__list-title {
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -165,7 +161,6 @@
 }
 
 .cards__list-text {
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -183,7 +178,6 @@
 }
 
 .cards-list-title {
-  font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
@@ -204,12 +198,11 @@
   position: relative;
 }
 .stars {
-  color: #F87719;
+  color: #f87719;
   font-size: 18px;
   position: absolute;
   z-index: 1;
   right: 10px;
-  
 }
 .rating-value {
   margin-left: 10px;
