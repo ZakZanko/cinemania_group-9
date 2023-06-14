@@ -136,11 +136,12 @@ async function createMarkup(arr) {
           <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
           width="395px" 
           height="354px"> 
+
           <div class='weekly-trends__overlay'></div> 
          <div class='cards__bloc-stars'> 
             <h2 class='cards__list-title'>${original_title}</h2> 
-            <div class='cards__list-text'>${movieGenres.join( 
-              ', ' 
+            <div class='cards__list-text'>${movieGenres.join(
+              ', '
             )} | ${release_date.slice(0, 4)}</div>  
           </div> 
         </li>`; 
@@ -153,6 +154,3 @@ getTrending()
     list.insertAdjacentHTML('beforeend', await createMarkup(data.results)); 
   }) 
   .catch((err) => console.log(err));
-
-
-  

@@ -2,6 +2,16 @@ body {
   background-color: var(--background);
 }
 
+.upcoming-container {
+  max-width: 320px;
+  @include tablet {
+    max-width: 768px;
+  }
+  @include desktop {
+    max-width: 1280px;
+  }
+}
+
 .upcoming-section-title {
   margin-bottom: 24px;
   font-size: 16px;
@@ -19,13 +29,16 @@ body {
 }
 
 .upcoming-section-img {
+  max-width: 100%;
   margin-bottom: 24px;
 
   @include tablet {
+    max-width: 100%;
     margin-bottom: 32px;
   }
 
   @include desktop {
+    width: 805px;
     margin-bottom: 0px;
   }
 }
@@ -122,7 +135,7 @@ body {
   }
 }
 
-.library-button {
+.upcoming-button {
   background-image: var(--liner-orange);
   border: none;
   border-radius: 74px;

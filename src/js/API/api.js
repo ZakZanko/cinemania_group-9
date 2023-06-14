@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { KEY, BASE_URL, ID_URL } from './api-key';
+import { KEY, BASE_URL } from './api-key';
 
 export async function getDayTrending(page = 1) {
   const url = `${BASE_URL}/trending/all/day?api_key=${KEY}&language=en-US&page=${page}`;
@@ -22,21 +22,22 @@ export async function getVideos(movie_id) {
 }
 
 // Фетч фильма по его ID
-export async function getMovieById(id) {
-  try {
-    const { data } = await axios.get(`${ID_URL}${id}?api_key=${KEY}`);
 
-    const result = {
-      ...data,
-      year: createYear(data),
-      customGenres: createGenresFromID(data),
-    };
+// export async function getMovieById(id) {
+//   try {
+//     const { data } = await axios.get(`${ID_URL}${id}?api_key=${KEY}`);
 
-    return result;
-  } catch (error) {
-    console.error('Smth wrong with api ID fetch' + error);
-  }
-}
+//     const result = {
+//       ...data,
+//       year: createYear(data),
+//       customGenres: createGenresFromID(data),
+//     };
+
+//     return result;
+//   } catch (error) {
+//     console.error('Smth wrong with api ID fetch' + error);
+//   }
+// }
 
 export const getSecondMovieById = async id => {
   try {
