@@ -123,31 +123,96 @@ async function fetchGenres(movie) {
   } 
   return genresArray; 
 } 
- 
-async function createMarkup(arr) { 
-  const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids })); 
-  const genresArrays = await Promise.all(genresPromises); 
+//  --------------------------------------------------------------------------------------------------
 
-  return arr 
-    .slice(0, 3) 
-    .map(({ original_title, poster_path,vote_average, id, release_date }, index) => { 
-      const movieGenres = genresArrays[index]; 
-      return `<li class='cards-list-item' data-id='${id}'> 
-          <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
-          width="395px" 
-          height="574px"> 
-          <div class='weekly-trends__overlay'></div> 
-         <div class='cards__bloc-stars'> 
-            <h2 class='cards__list-title'>${original_title}</h2> 
-            <div class='cards__list-text'>${movieGenres.join( 
-              ', ' 
-            )} | ${release_date.slice(0, 4)}</div>  
-          </div> 
-          
-        </li>`; 
-    }) 
-    .join(''); 
-} 
+
+
+const createMarkup = async (arr) => {
+  const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids }));
+  const genresArrays = await Promise.all(genresPromises);
+
+  return arr
+    .slice(0, 3)
+    .map(
+      ({ original_title, poster_path, vote_average, id, release_date }, index) => {
+        const movieGenres = genresArrays[index];
+        return `<li class='cards-list-item' data-id='${id}'>
+          <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" width="395px" height="354px">
+          <div class='weekly-trends__overlay'></div>
+          <div class='cards__bloc-stars'>
+            <h2 class='cards__list-title'>${original_title}</h2>
+            <div class='cards__list-text'>${movieGenres.join(', ')} | ${release_date.slice(0, 4)}</div>
+          </div>
+          <div class="movie-rating hero-rating">
+            <div class="stars">${getStars(vote_average)}</div>
+          </div>
+        </li>`;
+      }
+    )
+    .join('');
+};
+
+function getStars(vote_average) {
+  const fullStar = '★';
+  const emptyStar = '☆';
+
+  const roundedRating = Math.round(vote_average);
+  let stars = '';
+  for (let i = 0; i < 5; i++) {
+    if (i < roundedRating / 2) {
+      stars += fullStar;
+    } else {
+      stars += emptyStar;
+    }
+  }
+
+  return stars;
+}
+
+async function displayMovieRating(rating) {
+  const roundedRating = Math.round(rating);
+  const starsElement = document.querySelector('.stars');
+  const ratingValueElement = document.querySelector('.rating-value');
+
+  let stars = '';
+  for (let i = 0; i < 5; i++) {
+    if (i < roundedRating / 2) {
+      stars += '★';
+    } else {
+      stars += '☆';
+    }
+  }
+
+  starsElement.textContent = stars;
+  ratingValueElement.textContent = `Rating: ${rating.toFixed(1)}`;
+}
+
+// ------------------------------------------------------------------------------------
+// async function createMarkup(arr) { 
+//   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids })); 
+//   const genresArrays = await Promise.all(genresPromises); 
+
+//   return arr 
+//     .slice(0, 3) 
+//     .map(({ original_title, poster_path,vote_average, id, release_date }, index) => { 
+//       const movieGenres = genresArrays[index]; 
+//       return `<li class='cards-list-item' data-id='${id}'> 
+//           <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
+//           width="395px" 
+//           height="574px"> 
+//           <div class='weekly-trends__overlay'></div> 
+//          <div class='cards__bloc-stars'> 
+//             <h2 class='cards__list-title'>${original_title}</h2> 
+//             <div class='cards__list-text'>${movieGenres.join( 
+//               ', ' 
+//             )} | ${release_date.slice(0, 4)}</div>  
+//           </div> 
+//           <div class="rating-value"></div
+//         </li>`; 
+//     }) 
+//     .join(''); 
+
+// } 
  
 getTrending() 
   .then(async (data) => { 
@@ -155,5 +220,4 @@ getTrending()
   }) 
   .catch((err) => console.log(err));
 
-
-  
+// -------------------------------------

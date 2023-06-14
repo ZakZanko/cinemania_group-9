@@ -73,7 +73,6 @@
   color: #ff001b;
   transform: scale(1.12) translateZ(0);
 }
-
 // ul
 .js-list {
   display: flex;
@@ -118,40 +117,6 @@
   );
 }
 
-.cards__list-text {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  color: #b7b7b7;
-
-  @media screen and (min-width: 768px) {
-    max-width: 250px;
-  }
-  @media screen and (min-width: 1280px) {
-    font-size: 20px;
-    line-height: 1.15;
-  }
-}
-
-.cards__list-title {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.67;
-  text-transform: uppercase;
-  color: beige;
-
-  @media screen and (min-width: 768px) {
-    line-height: 1.5;
-    max-width: px;
-    @media screen and (min-width: 1280px) {
-      font-size: 20px;
-      max-width: px;
-    }
-  }
-}
 .cards__bloc-stars {
   position: absolute;
   left: 12px;
@@ -199,16 +164,19 @@ max-width: 230px;
     line-height: 1.15;
   }
 }
-
 .movie-rating {
   display: flex;
   align-items: center;
+  position: relative;
 }
 .stars {
-  color: gold;
-  font-size: 24px;
+  color: #F87719;
+  font-size: 18px;
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  
 }
-
 .rating-value {
   margin-left: 10px;
 }
