@@ -224,7 +224,7 @@ h1 {
 }
 
 /* ---------------- /mobile ----------------- */
-@media screen and (max-width: 480px) {
+@media screen and (min-width: 480px) {
   .container {
     margin-right: auto;
     margin-left: auto;
