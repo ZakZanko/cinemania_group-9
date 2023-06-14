@@ -139,7 +139,7 @@ function errorMarkup() {
   sectionTitle.insertAdjacentHTML('afterend', markup);
 }
 
-function onBtnClick() {
+export function onBtnClick() {
   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
   const movieId = movieData.id;
 
@@ -157,7 +157,7 @@ function onBtnClick() {
   }
 }
 
-function isMovieStored(movieId) {
+export function isMovieStored(movieId) {
   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
   return storedMovies.some(movie => movie.id === movieId);
 }
