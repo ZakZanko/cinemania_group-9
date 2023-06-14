@@ -73,7 +73,6 @@
   color: #ff001b;
   transform: scale(1.12) translateZ(0);
 }
-
 // ul
 .js-list {
   display: flex;
@@ -198,4 +197,20 @@
     font-size: 20px;
     line-height: 1.15;
   }
+}
+.movie-rating {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.stars {
+  color: #F87719;
+  font-size: 18px;
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  
+}
+.rating-value {
+  margin-left: 10px;
 }
