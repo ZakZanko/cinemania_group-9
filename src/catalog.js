@@ -177,7 +177,7 @@ const markup = results => {
               alt="${title}"
               loading="lazy"
               width="395px"
-              height="354px"
+              height="574px"
             />
             <div class="movies-card-overlay"></div>
             <h2 class="movies-card-title">${title}</h2>
