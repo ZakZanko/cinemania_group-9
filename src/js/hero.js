@@ -177,7 +177,8 @@ async function openTrailerModal(movieId) {
 
     trailerModalContent.classList.add('modal-trailer-defolt');
     const popUpHTML = `
-    
+
+      <div class="modal-trailer-defolt">
       <div class="modal-trailer-defolt-text">
       <p class="modal-def">OOPS...<br>We are very sorry!<br>But we couldn't the trailer.</p>
       </div>`;
