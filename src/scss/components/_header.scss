@@ -1,9 +1,8 @@
 // main styles
-body{
+body {
   background-color: #000000;
   color: #ffffff;
 }
-
 
 .header {
   padding-top: 8px;
@@ -54,10 +53,9 @@ body{
   }
 }
 
-.day-logo-text{
+.day-logo-text {
   color: #282828;
 }
-
 
 .menu-list {
   display: flex;
@@ -86,7 +84,7 @@ body{
 
 // !========= Add Andriy
 
-.menu-link-day{
+.menu-link-day {
   color: #595959;
 }
 
@@ -168,14 +166,12 @@ body{
 // icon-switcher
 
 .bkg-white {
- background-color: #ffffff;
- color: #575757;
- border-color: #575757;
+  background-color: #ffffff;
+  color: #575757;
+  border-color: #575757;
 }
 
-
 .icon-day {
-
   padding: 0;
   width: 44px;
   height: 18px;
@@ -188,7 +184,6 @@ body{
 }
 
 .icon-night {
-
   padding: 0;
   width: 44px;
   height: 18px;
@@ -201,16 +196,15 @@ body{
 }
 
 @media screen and (min-width: 768px) {
-.icon-day{
-  width: 60px;
+  .icon-day {
+    width: 60px;
     height: 24px;
-  background-image: url(../img/icon-day.svg);
-}
+    background-image: url(../img/icon-day.svg);
+  }
 
-.icon-night {
-  width: 60px;
+  .icon-night {
+    width: 60px;
     height: 24px;
-background-image: url(../img/icon-night.svg);
-}
-
+    background-image: url(../img/icon-night.svg);
+  }
 }

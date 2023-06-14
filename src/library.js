@@ -10,8 +10,7 @@ const librariesKey = 'b90b64a7e05f9e36894001e36eb3b3c7';
 let page = 1;
 let perPage = 9;
 
-
-const KEY_LOCAL_STOREG_LIBRARY = "librariesKey";
+const KEY_LOCAL_STOREG_LIBRARY = 'librariesKey';
 // let localLibrary ='';
 
 const refs = {
@@ -20,37 +19,29 @@ const refs = {
   loadMoreButton: document.getElementById('loadMore'),
 };
 
-window.addEventListener('DOMContentLoaded', createLibraryLocal)
-
+window.addEventListener('DOMContentLoaded', createLibraryLocal);
 
 function createLibraryLocal() {
   const localLibrary = load(KEY_LOCAL_STOREG_LIBRARY);
-  
-  
+
   if (localLibrary) {
     createMarkup(localLibrary);
+  } else {
+    const opsText =
+      '<li class="oppsText"><p>OOPS...</p> <p>We are very sorry!</p> <p> You don’t have any movies at your library.</p><li>';
+    refs.listFilms.innerHTML = opsText;
   }
-  else {
-     const opsText = '<li class="oppsText"><p>OOPS...</p> <p>We are very sorry!</p> <p> You don’t have any movies at your library.</p><li>'
-  refs.listFilms.innerHTML = opsText;
-  }
-
-
 }
 
-
-
-
 function createMarkup(localLibrary) {
-  localLibrary
+  localLibrary;
   console.log(localLibrary);
   const markup = localLibrary.reduce(
     (markup, film) => markup + createFilmItem(film),
     ''
   );
-  
+
   updateMarkup(markup);
-  
 }
 
 function createFilmItem({
@@ -73,11 +64,12 @@ function createFilmItem({
     />
     <div class="movies-card-overlay"></div>
     <h2 class="movies-card-title">${title}</h2>
-    <p class="movies-card-genres">${genre_ids.join(', ')} | ${dataCheck(release_date)}</p>
+    <p class="movies-card-genres">${genre_ids.join(', ')} | ${dataCheck(
+    release_date
+  )}</p>
     <p class="movies-card-rating">${getStars(vote_average)}</p>
   </li>`;
 }
-
 
 const checkImg = url =>
   `${
@@ -169,12 +161,9 @@ function getStars(vote_average) {
 }
 
 function updateMarkup(markup) {
-  console.log(markup)
+  console.log(markup);
   refs.listFilms.insertAdjacentHTML('beforeend', markup);
-    
 }
-
-
 
 // const save = (key, value) => {
 //   try {
@@ -194,23 +183,6 @@ const load = key => {
   }
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // if (refs.libraryList) renderLibraryData();
 // if (refs.loadMoreButton) {
 //   refs.loadMoreButton.addEventListener('click', () => {
@@ -218,26 +190,6 @@ const load = key => {
 //     renderLibraryData();
 //   });
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // // localStorage
 // function addMovieToLibrary(movieId) {
