@@ -1,6 +1,6 @@
-// body {
-//   background-color: var(--background);
-// }
+body {
+  background-color: var(--background);
+}
 
 .upcoming-container {
   max-width: 320px;
@@ -133,7 +133,7 @@
   }
 }
 
-.library-button {
+.upcoming-button {
   background-image: var(--liner-orange);
   border: none;
   border-radius: 74px;

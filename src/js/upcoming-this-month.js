@@ -108,7 +108,7 @@ async function createMarkup(movie) {
 
   <h4 class="about-title">About</h4>
   <p class="about-description">${movie.overview}</p>
-  <button class="library-button">Add to my library</button>
+  <button class="library-button upcoming-button">Add to my library</button>
 </div></div>
         `;
   sectionTitle.insertAdjacentHTML('afterend', markup);
