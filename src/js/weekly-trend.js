@@ -127,7 +127,7 @@ async function fetchGenres(movie) {
 async function createMarkup(arr) { 
   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids })); 
   const genresArrays = await Promise.all(genresPromises); 
- 
+  const randomMovie = arr[Math.floor(Math.random() * arr.length)]; 
   return arr 
     .slice(0, 3) 
     .map(({ original_title, poster_path, release_date }, index) => { 
@@ -151,3 +151,13 @@ getTrending()
     list.insertAdjacentHTML('beforeend', await createMarkup(data.results)); 
   }) 
   .catch((err) => console.log(err));
+
+
+ 
+ const ratingItemsList =  document.querySelectorAll('.rating__item');
+ const ratingItemsArray = Array.prototype.slice.call(ratingItemsList);
+ 
+ ratingItemsArray.forEach(item =>
+  item.addEventListener('click', () =>
+  item.parentNode.dataset.totalValue = item.dataset.itemValue
+  ));
