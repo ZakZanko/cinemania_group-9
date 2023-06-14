@@ -1,13 +1,9 @@
-<<<<<<< HEAD
 import defaultImg from '../images/img/img.png';
-=======
+import axios from 'axios';
 import Defoltimg from '../images/hero-desktop-1x.jpg';
 import DefoltImgTablet from '../images/hero-tablet-1x.jpg';
 import DefoltImgMobil from '../images/hero-mobile-1x.jpg';
-import DefoltImgPopup from '../images/pop-up.jpg';
 
-
->>>>>>> 1351e2371b15d5b44f6662dbcbf6f03681adbe1e
 const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89dd';
 const trendingMoviesUrl = `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`;
 const backdropBaseUrl = 'https://image.tmdb.org/t/p/original/';
@@ -32,18 +28,13 @@ const detailsModalCloseBtn = document.querySelector(
 
 const trailerModal = document.getElementById('trailerModal');
 const trailerModalTitle = document.querySelector('#trailerModal .modal-title');
-<<<<<<< HEAD
 const trailerModalTrailer = document.querySelector(
   '#trailerModal .modal-trailer'
 );
 const trailerModalCloseBtn = document.querySelector(
   '#trailerModal .modal-close-btn'
 );
-=======
-const trailerModalTrailer = document.querySelector('#trailerModal .modal-trailer');
-const trailerModalCloseBtn = document.querySelector('#trailerModal .modal-close-btn');
 const trailerModalContent = document.querySelector('.trailer-modal-content');
->>>>>>> 1351e2371b15d5b44f6662dbcbf6f03681adbe1e
 
 //  Пошук фільму через ФЕЧ
 // async function getTrendingMovie() {
@@ -84,11 +75,8 @@ async function getTrendingMovie() {
     displayDefaultHeroContent();
   }
 }
-<<<<<<< HEAD
-=======
 
-// Відображення в герої інформації про фільм дня 
->>>>>>> 1351e2371b15d5b44f6662dbcbf6f03681adbe1e
+// Відображення в герої інформації про фільм дня
 
 function displayMovieInfo(movie) {
   hero.style.backgroundImage = `url(${backdropBaseUrl}${movie.backdrop_path})`;
@@ -131,13 +119,7 @@ function displayMovieRating(rating) {
 // Інформація в герої за замовчуванням
 function displayDefaultHeroContent() {
   const windowWidth = window.innerWidth;
-<<<<<<< HEAD
-
-  let backgroundImageURL = defaultImg;
-=======
-  
   let backgroundImageURL = Defoltimg;
->>>>>>> 1351e2371b15d5b44f6662dbcbf6f03681adbe1e
 
   if (windowWidth <= 480) {
     backgroundImageURL = DefoltImgMobil;
@@ -146,26 +128,16 @@ function displayDefaultHeroContent() {
   }
 
   hero.style.backgroundImage = `url(${backgroundImageURL})`;
-<<<<<<< HEAD
-
   heroTitle.textContent = 'Let’s Make Your Own Cinema';
   heroRating.textContent = '';
   heroOverview.textContent =
     'Is a guide to creating a personalized movie theater experience. You"ll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.';
-  detailsBtn.textContent = 'Get started';
-  detailsBtn.addEventListener('click', () => {
-=======
- 
-
-  heroTitle.textContent = 'Let’s Make Your Own Cinema';
-  heroRating.textContent = '';
-  heroOverview.textContent = 'Is a guide to creating a personalized movie theater experience. You"ll need a projector, screen, and speakers. Decorate your space, choose your films, and stock up on snacks for the full experience.';
   trailerBtn.textContent = 'Get started';
   trailerBtn.addEventListener('click', () => {
->>>>>>> 1351e2371b15d5b44f6662dbcbf6f03681adbe1e
     window.location.href = 'catalog.html';
   });
-  detailsBtn.style.display = 'none';trailerBtn
+  detailsBtn.style.display = 'none';
+  trailerBtn;
 }
 
 // Модальне вікно з інформацією
@@ -199,18 +171,17 @@ async function openTrailerModal(movieId) {
     } else {
       trailerModalTrailer.textContent = 'Failed to load trailer.';
       trailerModalContent.classList.remove('trailer-modal-content');
-      
     }
   } catch (error) {
-      console.error(error);
-   
-      trailerModalContent.classList.add('modal-trailer-defolt');
-      const popUpHTML = `
-      <div class="modal-trailer-defolt">
+    console.error(error);
+
+    trailerModalContent.classList.add('modal-trailer-defolt');
+    const popUpHTML = `
+    
       <div class="modal-trailer-defolt-text">
       <p class="modal-def">OOPS...<br>We are very sorry!<br>But we couldn't the trailer.</p>
       </div>`;
-      trailerModalTrailer.innerHTML = popUpHTML;
+    trailerModalTrailer.innerHTML = popUpHTML;
   }
 
   trailerModal.style.display = 'flex';
