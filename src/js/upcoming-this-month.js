@@ -162,3 +162,5 @@ function isMovieStored(movieId) {
   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
   return storedMovies.some(movie => movie.id === movieId);
 }
+
+export { onBtnClick, isMovieStored };
