@@ -130,9 +130,9 @@ async function createMarkup(arr) {
   const randomMovie = arr[Math.floor(Math.random() * arr.length)];
   return arr
     .slice(0, 3)
-    .map(({ original_title, poster_path, release_date, id }, index) => {
+    .map(({ original_title, poster_path, release_date }, index) => {
       const movieGenres = genresArrays[index];
-      return `<li class="cards-list-item" data-id="${id}"> 
+      return `<li class='cards-list-item'> 
           <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}"> 
           <div class='weekly-trends__overlay'></div> 
           <div class='cards__bloc-stars'> 
