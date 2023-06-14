@@ -1,7 +1,8 @@
+import axios from 'axios';
 import Defoltimg from '../images/hero-desktop-1x.jpg';
 import DefoltImgTablet from '../images/hero-tablet-1x.jpg';
 import DefoltImgMobil from '../images/hero-mobile-1x.jpg';
-import DefoltImgPopup from '../images/pop-up.jpg';
+
 
 
 const API_KEY = 'b0c24f4300d90d0bb33ad49b06fe89dd';
@@ -172,7 +173,7 @@ async function openTrailerModal(movieId) {
    
       trailerModalContent.classList.add('modal-trailer-defolt');
       const popUpHTML = `
-      <div class="modal-trailer-defolt">
+    
       <div class="modal-trailer-defolt-text">
       <p class="modal-def">OOPS...<br>We are very sorry!<br>But we couldn't the trailer.</p>
       </div>`;
