@@ -196,33 +196,28 @@ h1 {
 }
 /* ---------------- /модалка ----------------- */
 
+/* вікно модального трейлера з дефолтним написом  */
 
-  /* вікно модального трейлера з дефолтним написом  */
-  
-  .modal-trailer-defolt {
-    background-color: #111111;
-    // background-image: url(./hero-images/IMG_PopupMob.png);
-    background-repeat: no-repeat;
-    background-position: right 20px bottom 20px; ;
-  } 
-  .modal-trailer-defolt-text {
-    margin-top: 50px;
-    margin-left: 50px;
-    max-width: 321px;
-    
-  }
-  .modal-def {
-    text-align: left;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.18;
-    color: #ffffff;
-    background: none;
-  }
-
-
-
+.modal-trailer-defolt {
+  background-color: #111111;
+  // background-image: url(./hero-images/IMG_PopupMob.png);
+  background-repeat: no-repeat;
+  background-position: right 20px bottom 20px;
+}
+.modal-trailer-defolt-text {
+  margin-top: 50px;
+  margin-left: 50px;
+  max-width: 321px;
+}
+.modal-def {
+  text-align: left;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.18;
+  color: #ffffff;
+  background: none;
+}
 
 /* ---------------- /mobile ----------------- */
 @media screen and (max-width: 479px) {
@@ -253,7 +248,6 @@ h1 {
     line-height: 1.18;
     margin-bottom: 12px;
   }
-  
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -353,14 +347,13 @@ h1 {
     line-height: 1.18;
   }
   // .modal-trailer-defolt {
-  //   background-image: url(./hero-images/IMG_popUpTablet.png); 
+  //   background-image: url(./hero-images/IMG_popUpTablet.png);
   // }
 
   .modal-trailer-defolt-text {
     margin-top: 150px;
     margin-left: 50px;
     max-width: 321px;
-    
   }
 }
 
@@ -451,7 +444,6 @@ h1 {
     top: 5px;
     right: -10px;
   }
-<<<<<<< HEAD
 
   // вікно модального трейлера з дефолтним написом
   .modal-trailer-defolt {
@@ -469,10 +461,7 @@ h1 {
     line-height: 1.16;
     color: #ffffff;
   }
-=======
   // .modal-trailer-defolt {
   //   background-image: url(./hero-images/IMG_PopUpDesktop.png);
   // }
- 
->>>>>>> 366193a7a573888b2d768a67e04dbf651c6efd10
 }
