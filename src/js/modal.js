@@ -9,10 +9,8 @@ const refs = {
   cardList: document.querySelector('.modal-films'),
   libraryList: document.querySelector('.library-list'),
   modalCont: document.querySelector('.modal__container'),
-  filmBtn: document.querySelector('.film__button'),
   closeModal: document.querySelector('.modal__close-btn'),
   cardsfilm: document.querySelector('.cards-film'),
-  addModalBtn: document.querySelector('.modal-library-button'),
 };
 
 let posterPath = '';
@@ -21,6 +19,7 @@ let filmMarkup = '';
 let filmBtn;
 let selectedMovieId;
 let modalMovieData;
+let addModalBtn;
 
 if (refs.cardList) {
   refs.cardList.addEventListener('click', createModal);
@@ -40,7 +39,6 @@ function createModal(event) {
 function openModal(e) {
   refs.backdrop.classList.remove('is-hidden');
   refs.modalCont.classList.remove('is-hidden');
-  refs.addModalBtn.addEventListener('click', onBtnClick);
   document.body.style.overflow = 'hidden';
   document.addEventListener('keydown', onEscBtnPress);
   document.addEventListener('click', onBackdropClick);
@@ -60,7 +58,6 @@ async function createMarkup(filmID) {
     refs.cardsfilm.innerHTML = filmMarkup;
     // save the link to the button
     filmBtn = document.querySelector('.film__button');
-    console.log(modalMovieData);
     filmBtn.addEventListener('click', onBtnClick);
     //   ТУТ змінив функцію на ту що в upcoming this month !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   });
@@ -150,6 +147,8 @@ function createFilmMarkup(data) {
 }
 
 function onBtnClick() {
+  addModalBtn = document.querySelector('.modal-library-button');
+  addModalBtn.addEventListener('click', onBtnClick);
   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
   const movieId = modalMovieData.id;
 
@@ -158,12 +157,12 @@ function onBtnClick() {
     storedMovies.splice(index, 1);
     localStorage.setItem('librariesKey', JSON.stringify(storedMovies));
 
-    refs.addModalBtn.textContent = 'Add to my library';
+    addModalBtn.innerHTML = 'Add to my library';
   } else {
     storedMovies.push(modalMovieData);
     localStorage.setItem('librariesKey', JSON.stringify(storedMovies));
 
-    refs.addModalBtn.textContent = 'Remove from my library';
+    addModalBtn.innerHTML = 'Remove from my library';
   }
 }
 
