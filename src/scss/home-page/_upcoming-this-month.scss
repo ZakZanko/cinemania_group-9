@@ -1,5 +1,15 @@
-body {
-  background-color: var(--background);
+// body {
+//   background-color: var(--background);
+// }
+
+.upcoming-container {
+  max-width: 320px;
+  @include tablet {
+    max-width: 768px;
+  }
+  @include desktop {
+    max-width: 1280px;
+  }
 }
 
 .upcoming-section-title {
@@ -22,6 +32,7 @@ body {
   margin-bottom: 24px;
 
   @include tablet {
+    max-width: 100%;
     margin-bottom: 32px;
   }
 

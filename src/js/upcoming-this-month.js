@@ -25,7 +25,6 @@ async function fetchUpcomingMovies() {
 fetchUpcomingMovies()
   .then(movie => {
     movieData = movie;
-    console.log(movie);
     createMarkup(movie);
   })
   .catch(() => {
