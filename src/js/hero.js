@@ -81,8 +81,16 @@ async function getTrendingMovie() {
 function displayMovieInfo(movie) {
   hero.style.backgroundImage = `url(${backdropBaseUrl}${movie.backdrop_path})`;
   heroTitle.textContent = movie.title;
-  // heroRating.textContent = `Rating: ${movie.vote_average}`;
-  heroOverview.textContent = movie.overview;
+  const overviewText = movie.overview;
+
+  // Обмеження кількості слів (15) та додавання '...' в кінці
+  const maxWords = 15;
+  let limitText = overviewText.split(' ').slice(0, maxWords).join(' ');
+  if (overviewText.split(' ').length > maxWords) {
+    limitText += '...';
+  }
+  heroOverview.textContent = limitText;
+
   detailsBtn.addEventListener('click', () => {
     openDetailsModal(movie);
   });

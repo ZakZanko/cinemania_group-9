@@ -44,8 +44,9 @@ h1 {
 .hero-overview {
   font-family: 'Roboto';
   font-style: normal;
-  max-width: 367px;
-  height: 30px;
+  max-width: 177px;
+  max-height: 69px;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2;
@@ -76,10 +77,11 @@ h1 {
   align-items: center;
 }
 .stars {
-  color: gold;
+  color: #f87719;
   font-size: 24px;
 }
 .orange {
+  color: gold;
   color: #f87719;
 }
 .rating-value {
@@ -93,6 +95,7 @@ h1 {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
+  object-position: 50% 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -275,7 +278,8 @@ h1 {
   }
 
   .hero-overview {
-    height: 30px;
+    max-width: 295px;
+    max-height: 69px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.2;
@@ -402,7 +406,7 @@ h1 {
   }
   .hero-overview {
     max-width: 367px;
-    height: 40px;
+    max-height: 80px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
