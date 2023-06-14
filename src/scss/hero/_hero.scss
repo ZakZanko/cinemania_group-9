@@ -44,8 +44,9 @@ h1 {
 .hero-overview {
   font-family: 'Roboto';
   font-style: normal;
-  max-width: 367px;
-  height: 30px;
+  max-width: 177px;
+  max-height: 69px;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 1.2;
@@ -76,10 +77,11 @@ h1 {
   align-items: center;
 }
 .stars {
-  color: gold;
+  color: #f87719;
   font-size: 24px;
 }
 .orange {
+  color: gold;
   color: #f87719;
 }
 .rating-value {
@@ -93,6 +95,7 @@ h1 {
   background-position: right;
   background-repeat: no-repeat;
   background-size: cover;
+  object-position: 50% 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,33 +199,28 @@ h1 {
 }
 /* ---------------- /модалка ----------------- */
 
+/* вікно модального трейлера з дефолтним написом  */
 
-  /* вікно модального трейлера з дефолтним написом  */
-  
-  .modal-trailer-defolt {
-    background-color: #111111;
-    // background-image: url(./hero-images/IMG_PopupMob.png);
-    background-repeat: no-repeat;
-    background-position: right 20px bottom 20px; ;
-  } 
-  .modal-trailer-defolt-text {
-    margin-top: 50px;
-    margin-left: 50px;
-    max-width: 321px;
-    
-  }
-  .modal-def {
-    text-align: left;
-    font-family: 'Roboto';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 1.18;
-    color: #ffffff;
-    background: none;
-  }
-
-
-
+.modal-trailer-defolt {
+  background-color: #111111;
+  background-image: url(/src/images/IMG_PopupMob.png);
+  background-repeat: no-repeat;
+  background-position: right 20px bottom 20px;
+}
+.modal-trailer-defolt-text {
+  margin-top: 50px;
+  margin-left: 50px;
+  max-width: 321px;
+}
+.modal-def {
+  text-align: left;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.18;
+  color: #ffffff;
+  background: none;
+}
 
 /* ---------------- /mobile ----------------- */
 @media screen and (max-width: 479px) {
@@ -253,7 +251,6 @@ h1 {
     line-height: 1.18;
     margin-bottom: 12px;
   }
-  
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -281,7 +278,8 @@ h1 {
   }
 
   .hero-overview {
-    height: 30px;
+    max-width: 295px;
+    max-height: 69px;
     font-weight: 400;
     font-size: 14px;
     line-height: 1.2;
@@ -352,15 +350,14 @@ h1 {
     font-size: 24px;
     line-height: 1.18;
   }
-  // .modal-trailer-defolt {
-  //   background-image: url(./hero-images/IMG_popUpTablet.png); 
-  // }
+  .modal-trailer-defolt {
+    background-image: url(/src/images/IMG_popUpTablet.png);
+  }
 
   .modal-trailer-defolt-text {
     margin-top: 150px;
     margin-left: 50px;
     max-width: 321px;
-    
   }
 }
 
@@ -409,7 +406,7 @@ h1 {
   }
   .hero-overview {
     max-width: 367px;
-    height: 40px;
+    max-height: 80px;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.2;
@@ -451,7 +448,6 @@ h1 {
     top: 5px;
     right: -10px;
   }
-<<<<<<< HEAD
 
   // вікно модального трейлера з дефолтним написом
   .modal-trailer-defolt {
@@ -469,10 +465,7 @@ h1 {
     line-height: 1.16;
     color: #ffffff;
   }
-=======
-  // .modal-trailer-defolt {
-  //   background-image: url(./hero-images/IMG_PopUpDesktop.png);
-  // }
- 
->>>>>>> 366193a7a573888b2d768a67e04dbf651c6efd10
+  .modal-trailer-defolt {
+    background-image: url(/src/images/IMG_PopUpDesktop.png);
+  }
 }
