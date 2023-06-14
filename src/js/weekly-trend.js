@@ -127,7 +127,7 @@ async function fetchGenres(movie) {
 async function createMarkup(arr) { 
   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids })); 
   const genresArrays = await Promise.all(genresPromises); 
-  
+
   return arr 
     .slice(0, 3) 
     .map(({ original_title, poster_path,vote_average, id, release_date }, index) => { 
@@ -135,7 +135,7 @@ async function createMarkup(arr) {
       return `<li class='cards-list-item' data-id='${id}'> 
           <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
           width="395px" 
-          height="354px"> 
+          height="574px"> 
           <div class='weekly-trends__overlay'></div> 
          <div class='cards__bloc-stars'> 
             <h2 class='cards__list-title'>${original_title}</h2> 
@@ -143,6 +143,7 @@ async function createMarkup(arr) {
               ', ' 
             )} | ${release_date.slice(0, 4)}</div>  
           </div> 
+          
         </li>`; 
     }) 
     .join(''); 
