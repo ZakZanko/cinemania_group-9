@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { key } from './API/api-key';
+import { KEY } from './API/api-key';
 
 const sectionTitle = document.querySelector('.upcoming-section-title');
 
@@ -11,7 +11,7 @@ async function fetchUpcomingMovies() {
     'https://api.themoviedb.org/3/movie/upcoming?language=en-US',
     {
       params: {
-        api_key: key,
+        api_key: KEY,
       },
     }
   );
@@ -39,7 +39,7 @@ async function fetchGenres(movie) {
     'https://api.themoviedb.org/3/genre/movie/list?language=en',
     {
       params: {
-        api_key: key,
+        api_key: KEY,
       },
     }
   );
