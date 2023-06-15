@@ -33,21 +33,6 @@
     line-height: 1.18;
   }
 }
-.weekly-trends__title {
-  // color: #ffffff;
-  text-transform: uppercase;
-  font-size: 16px;
-  line-height: 1.19;
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-    line-height: 1.17;
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-size: 28px;
-    line-height: 1.18;
-  }
-}
 
 .weekly-trends__link {
   color: var(--orange);
@@ -80,7 +65,6 @@
 
 .cards-list-item {
   position: relative;
-  width: 100%;
   margin-left: 20px;
   // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 63.48%, rgba(0, 0, 0, 0.9) 92.16%);
   border-radius: 5px;
@@ -91,7 +75,7 @@
 }
 
 .cards-list-item:not(:first-child) {
-  @media (max-width: 767px) {
+  @media screen and (max-width: 767px) {
     position: absolute;
     clip: rect(0 0 0 0);
     justify-content: center;
@@ -115,45 +99,12 @@
   );
 }
 
-.cards__list-text {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  color: #b7b7b7;
-
-  @media screen and (min-width: 768px) {
-    max-width: 250px;
-  }
-  @media screen and (min-width: 1280px) {
-    font-size: 20px;
-    line-height: 1.15;
-  }
-}
-
-.cards__list-title {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.67;
-  text-transform: uppercase;
-  color: beige;
-
-  @media screen and (min-width: 768px) {
-    line-height: 1.5;
-    max-width: px;
-    @media screen and (min-width: 1280px) {
-      font-size: 20px;
-      max-width: px;
-    }
-  }
-}
 .cards__bloc-stars {
   position: absolute;
   left: 12px;
   bottom: 12px;
   z-index: 1;
   color: beige;
-  max-width: 230px;
   @media screen and (min-width: 1280px) {
     left: 20px;
     bottom: 20px;
@@ -169,14 +120,12 @@
 
   @media screen and (min-width: 768px) {
     line-height: 1.5;
-    max-width: 200px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 20px;
     line-height: 1.15;
   }
 }
-
 .cards-list-title {
   font-style: normal;
   font-weight: 500;
@@ -185,25 +134,37 @@
 
   @media screen and (min-width: 768px) {
     line-height: 1.5;
-    max-width: 100px;
   }
   @media screen and (min-width: 1280px) {
     font-size: 20px;
     line-height: 1.15;
   }
 }
-.movie-rating {
+.weekly__rating {
   display: flex;
   align-items: center;
   position: relative;
 }
-.stars {
+.weekly__stars {
   color: #f87719;
   font-size: 18px;
   position: absolute;
   z-index: 1;
   right: 10px;
+  bottom: 10px;
 }
-.rating-value {
-  margin-left: 10px;
+.cards__list-img{
+  @media screen and (min-width: 320px) {
+  width: 280px;
+  height: 406px;
+}
+@media screen and (min-width: 768px){
+  width: 224px;
+  height: 335px;
+}
+
+@media screen and (min-width: 1280px) {
+  width: 395px;
+  height: 574px;
+}
 }
