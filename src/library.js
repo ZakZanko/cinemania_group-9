@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', createLibraryLocal);
 
 function createLibraryLocal() {
   const localLibrary = load(KEY_LOCAL_STOREG_LIBRARY);
-
+  console.log(localLibrary)
   if (localLibrary) {
     createMarkup(localLibrary);
     refs.btnMyLabrary.style.display = "none";
@@ -48,12 +48,13 @@ function createFilmItem({
   vote_average,
   id,
   release_date,
-  genre_ids,
+  
 }) {
+  
   return `
   <li class="movies-card" data-id="${id}">
       <img
-      class="movies-card-photo"
+      class="movies-card-photo-labrary"
       src="${checkImg(poster_path)}"
       alt="${title}"
       loading="lazy"
@@ -62,7 +63,7 @@ function createFilmItem({
     />
     <div class="movies-card-overlay"></div>
     <h2 class="movies-card-title">${title}</h2>
-    <p class="movies-card-genres">${genre_ids} | ${dataCheck(release_date)}</p>
+    <p class="movies-card-genres"> | ${dataCheck(release_date)}</p>
     <p class="movies-card-rating">${getStars(vote_average)}</p>
   </li>`;
 }
