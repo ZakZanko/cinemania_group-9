@@ -111,18 +111,6 @@ async function fetchGenres(movie) {
       API_KEY
   );
 
-  const data = await response.json();
-  let genresArray = [];
-  const genres = data.genres;
-
-  for (const genre of genres) {
-    if (movie.genre_ids.includes(genre.id)) {
-      genresArray.push(genre.name);
-    }
-  }
-  return genresArray.slice(0, 2);
-}
-//  --------------------------------------------------------------------------------------------------
 
 const createMarkup = async arr => {
   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids }));
