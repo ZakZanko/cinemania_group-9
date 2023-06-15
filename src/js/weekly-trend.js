@@ -145,8 +145,8 @@ const createMarkup = async (arr) => {
             <h2 class='cards__list-title'>${original_title}</h2>
             <div class='cards__list-text'>${movieGenres.join(', ')} | ${release_date.slice(0, 4)}</div>
           </div>
-          <div class="movie-rating hero-rating">
-            <div class="stars">${getStars(vote_average)}</div>
+          <div class="weekly__rating">
+            <div class="weekly__stars">${getStars(vote_average)}</div>
           </div>
         </li>`;
       }
@@ -190,33 +190,6 @@ async function displayMovieRating(rating) {
   ratingValueElement.textContent = `Rating: ${rating.toFixed(1)}`;
 }
 
-// ------------------------------------------------------------------------------------
-// async function createMarkup(arr) { 
-//   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids })); 
-//   const genresArrays = await Promise.all(genresPromises); 
-
-//   return arr 
-//     .slice(0, 3) 
-//     .map(({ original_title, poster_path,vote_average, id, release_date }, index) => { 
-//       const movieGenres = genresArrays[index]; 
-//       return `<li class='cards-list-item' data-id='${id}'> 
-//           <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
-//           width="395px" 
-//           height="574px"> 
-//           <div class='weekly-trends__overlay'></div> 
-//          <div class='cards__bloc-stars'> 
-//             <h2 class='cards__list-title'>${original_title}</h2> 
-//             <div class='cards__list-text'>${movieGenres.join( 
-//               ', ' 
-//             )} | ${release_date.slice(0, 4)}</div>  
-//           </div> 
-//           <div class="rating-value"></div
-//         </li>`; 
-//     }) 
-//     .join(''); 
-
-// } 
- 
 getTrending() 
   .then(async (data) => { 
     list.insertAdjacentHTML('beforeend', await createMarkup(data.results)); 

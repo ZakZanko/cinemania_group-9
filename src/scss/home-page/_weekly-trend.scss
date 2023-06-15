@@ -33,21 +33,6 @@
     line-height: 1.18;
   }
 }
-.weekly-trends__title {
-  // color: #ffffff;
-  text-transform: uppercase;
-  font-size: 16px;
-  line-height: 1.19;
-  @media screen and (min-width: 768px) {
-    font-size: 24px;
-    line-height: 1.17;
-  }
-
-  @media screen and (min-width: 1280px) {
-    font-size: 28px;
-    line-height: 1.18;
-  }
-}
 
 .weekly-trends__link {
   color: var(--orange);
@@ -92,7 +77,6 @@
 
 .cards-list-item:not(:first-child) {
   @media (max-width: 767px) {
-  
     position: absolute;
     clip: rect(0 0 0 0);
     justify-content: center;
@@ -144,7 +128,6 @@
     line-height: 1.15;
   }
 }
-
 .cards-list-title {
   font-style: normal;
   font-weight: 500;
@@ -159,31 +142,32 @@
     line-height: 1.15;
   }
 }
-.movie-rating {
+.weekly__rating {
   display: flex;
   align-items: center;
   position: relative;
 }
-.stars {
+.weekly__stars {
   color: #f87719;
   font-size: 18px;
   position: absolute;
   z-index: 1;
   right: 10px;
+  bottom: 10px;
 }
-.rating-value {
-  margin-left: 10px;
-}
+// .rating-value {
+//   margin-left: 10px;
+// }
 
-.cards__list-img{
-  width: 100%;
+// .cards__list-img{
+  
 
-  @media screen and (min-width: 768px) {
-    width: 224px;
-    height: 325px;
-  }
+//   @media screen and (min-width: 768px) {
+//     width: 224px;
+//     height: 325px;
+//   }
 
-  @media screen and (min-width: 1280px) {
-    width: 395px;
-    height: 574px;          
-}}
+//   @media screen and (min-width: 1280px) {
+//     width: 395px;
+//     height: 574px;          
+// }}
