@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', createLibraryLocal);
 
 function createLibraryLocal() {
   const localLibrary = load(KEY_LOCAL_STOREG_LIBRARY);
-  console.log(localLibrary)
+  // console.log(localLibrary)
   if (localLibrary) {
     createMarkup(localLibrary);
     refs.btnMyLabrary.style.display = "none";
