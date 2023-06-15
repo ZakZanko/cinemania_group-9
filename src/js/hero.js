@@ -66,7 +66,7 @@ async function getTrendingMovie() {
         data.results[Math.floor(Math.random() * data.results.length)];
       displayMovieInfo(movie);
 
-      console.log(movie);
+      // console.log(movie);
     } else {
       displayDefaultHeroContent();
     }
