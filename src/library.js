@@ -19,13 +19,13 @@ window.addEventListener('DOMContentLoaded', createLibraryLocal);
 
 function createLibraryLocal() {
   const localLibrary = load(KEY_LOCAL_STOREG_LIBRARY);
-  console.log(localLibrary)
+  // console.log(localLibrary)
   if (localLibrary) {
     createMarkup(localLibrary);
     refs.btnMyLabrary.style.display = "none";
   } else {
     const opsText =
-      '<li class="oppsText"><p>OOPS...</p> <p>We are very sorry!</p> <p> You don’t have any movies at your library.</p><li>';
+      '<li class="oppsText"><p class="text-oops">OOPS...</p> <p class="text-oops">We are very sorry!</p> <p class="text-oops"> You don’t have any movies at your library.</p><li>';
     refs.listFilms.innerHTML = opsText;
     refs.btnMyLabrary.textContent = "Search movie";
   }
@@ -58,8 +58,7 @@ function createFilmItem({
       src="${checkImg(poster_path)}"
       alt="${title}"
       loading="lazy"
-      width="395px"
-      height="574px"
+      
     />
     <div class="movies-card-overlay"></div>
     <h2 class="movies-card-title">${title}</h2>

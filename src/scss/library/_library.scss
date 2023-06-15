@@ -199,6 +199,24 @@
   gap: 10px;
 }
 
+
+
+
+.movies-card-photo-labrary{
+  width: 280px;
+  height: 406px;
+
+@media screen and (min-width: 768px) {
+    width: 224px;
+      height: 325px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 415px;
+      height: 574px;
+  }
+
+}
 .section-ctg-search {
   // background-color: var(--background);
   padding-top: 40px;
