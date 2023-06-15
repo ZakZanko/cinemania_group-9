@@ -132,6 +132,10 @@ h1 {
   right: 1px;
   background: none;
 }
+.modal-close-btn.trailer-close-btn:hover,
+.modal-close-btn.trailer-close-btn:focus {
+  color: #f8f8f8;
+}
 /* ---------------- модалка ----------------- */
 .modal {
   position: fixed;
@@ -185,12 +189,12 @@ h1 {
 }
 
 .modal-close-btn {
-  background-color: #dfc1c1;
+  background-color: var(--secondary-black);
   color: #000;
   border: none;
   font-size: 12px;
   line-height: 1.16;
-  padding: 8px 16px;
+  padding: 4px 8px;
   cursor: pointer;
   background: linear-gradient(141.22deg, #ffc226 9.4%, #f84119 91.91%);
   border-radius: 74px;
@@ -220,9 +224,8 @@ h1 {
 }
 
 /* ---------------- /mobile ----------------- */
-@media screen and (max-width: 479px) {
+@media screen and (min-width: 480px) {
   .container {
-    max-width: 479px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -249,9 +252,8 @@ h1 {
     margin-bottom: 12px;
   }
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 320px) {
   .container {
-    max-width: 480px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -294,7 +296,6 @@ h1 {
 /* ---------------- tablet ----------------- */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 768px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -360,6 +361,10 @@ h1 {
 
 /* ---------------- /desktop ----------------- */
 @media screen and (min-width: 1280px) {
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+  }
   .section-hero {
     height: 720px;
   }

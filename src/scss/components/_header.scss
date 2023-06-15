@@ -7,6 +7,7 @@ body {
 .header {
   padding-top: 8px;
   padding-bottom: 8px;
+  position: relative;
 
   // background-color: #000000;
 }
@@ -14,10 +15,8 @@ body {
 .header-container {
   display: flex;
   align-items: center;
-  @media screen and (max-width: 767px) {
-    justify-content: space-between;
-  }
   @media screen and (min-width: 768px) {
+    justify-content: space-between;
   }
 }
 .header-link {
@@ -44,7 +43,6 @@ body {
   margin-left: 8px;
 
   font-weight: 400;
-  font-size: 24px;
   line-height: calc(28px / 24px);
 
   color: #ffffff;
@@ -76,7 +74,6 @@ body {
 // }
 
 .menu-link {
-  font-size: 14px;
   line-height: calc(16px / 14px);
 
   color: #b7b7b7;
