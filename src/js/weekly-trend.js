@@ -126,7 +126,6 @@ async function fetchGenres(movie) {
 //  --------------------------------------------------------------------------------------------------
 
 
-
 const createMarkup = async (arr) => {
   const genresPromises = arr.map(({ genre_ids }) => fetchGenres({ genre_ids }));
   const genresArrays = (await Promise.all(genresPromises));
