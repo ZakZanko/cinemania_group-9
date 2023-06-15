@@ -1,6 +1,22 @@
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: 'Roboto', sans-serif;
 }
+
+.body__wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
 .section {
   padding-top: 40px;
   padding-bottom: 40px;
