@@ -137,7 +137,9 @@ const createMarkup = async (arr) => {
       ({ original_title, poster_path, vote_average, id, release_date }, index) => {
         const movieGenres = genresArrays[index];
         return `<li class='cards-list-item' data-id='${id}'>
-          <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" width="395px" height="354px">
+          <img class='cards__list-img' src="${IMG_PATH}${poster_path}" alt="${original_title}" loading="lazy" 
+          width="395px" 
+           height="574px">
           <div class='weekly-trends__overlay'></div>
           <div class='cards__bloc-stars'>
             <h2 class='cards__list-title'>${original_title}</h2>
@@ -153,9 +155,10 @@ const createMarkup = async (arr) => {
 };
 
 function getStars(vote_average) {
-  const fullStar = '★';
-  const emptyStar = '☆';
-
+ 
+// ----------------------------------------------------------
+const fullStar = '★';
+const emptyStar = '☆';
   const roundedRating = Math.round(vote_average);
   let stars = '';
   for (let i = 0; i < 5; i++) {
