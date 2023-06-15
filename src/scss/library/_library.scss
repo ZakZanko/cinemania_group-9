@@ -157,7 +157,7 @@
 //   // padding-right: 20px;
 // }
 
-.container-my-labrary{
+.container-my-labrary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,16 +166,16 @@
   padding-top: 96px;
   padding-bottom: 40px;
 
-    @media screen and (min-width: 768px) {
-        padding-top: 130px;
-        padding-bottom: 60px;
-      }
+  @media screen and (min-width: 768px) {
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
   @media screen and (min-width: 1280px) {
-      padding-top: 160px;
-      padding-bottom: 96px;
-    }
+    padding-top: 160px;
+    padding-bottom: 96px;
+  }
 }
-.btn-my-labrary{
+.btn-my-labrary {
   // margin-left: auto;
   // margin-right: auto;
 
@@ -422,7 +422,7 @@
 
   &:hover {
     box-shadow: 7px -7px 21px rgba(126, 13, 233, 0.6);
-    transform: scale(1.12) translateZ(0);
+    transform: scale(1.05) translateZ(0);
   }
 
   @media screen and (min-width: 768px) {
