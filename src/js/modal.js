@@ -48,14 +48,19 @@ async function createMarkup(filmID) {
   const film = getSecondMovieById(filmID);
   genresList = [];
   refs.cardsfilm.innerHTML = '';
-  console.log(film)
+  console.log(film);
   film.then(data => {
     const genres = data.genres;
     modalMovieData = data;
     genres.forEach(genre => {
       genresList.push(` ${genre.name}`);
     });
-    filmMarkup = createFilmMarkup(data);
+
+    const movieId = modalMovieData.id;
+    const isStored = isMovieStored(movieId);
+
+    filmMarkup = createFilmMarkup(data, isStored);
+
     refs.cardsfilm.innerHTML = filmMarkup;
     // save the link to the button
     filmBtn = document.querySelector('.film__button');
@@ -91,7 +96,8 @@ function closeModalDescr(e) {
 // }
 
 // render mark
-function createFilmMarkup(data) {
+function createFilmMarkup(data, isStored) {
+  const buttonLabel = isStored ? 'Remove from my library' : 'Add to my library';
   if (data) {
     const {
       original_title,
@@ -106,6 +112,11 @@ function createFilmMarkup(data) {
     if (poster_path) {
       posterPath = `${IMG_BASE_URL}${IMG_W400}${poster_path}`;
     }
+
+    // if (isMovieStored(movie.id)) {
+    //   addModalBtn.textContent = 'Remove from my library';
+    // }
+    // addModalBtn.addEventListener('click', onBtnClick);
 
     return `<div class='film-wrap' data-id='${id}'>
           <ul class='film-list'>
@@ -139,7 +150,7 @@ function createFilmMarkup(data) {
                 <p class='film-list__text--about'>${overview}</p>
                  </div>
                  <div class="film__button-position">
-                 <button type="button" class="film__button modal-library-button">Add to my library</button>
+                 <button type="button" class="film__button modal-library-button">${buttonLabel}</button>
              </div>
             </li>
           </ul>
@@ -149,20 +160,18 @@ function createFilmMarkup(data) {
 
 function onBtnClick() {
   addModalBtn = document.querySelector('.modal-library-button');
+
   addModalBtn.addEventListener('click', onBtnClick);
   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
   const movieId = modalMovieData.id;
-
   if (isMovieStored(movieId)) {
     const index = storedMovies.findIndex(movie => movie.id === movieId);
     storedMovies.splice(index, 1);
     localStorage.setItem('librariesKey', JSON.stringify(storedMovies));
-
     addModalBtn.innerHTML = 'Add to my library';
   } else {
     storedMovies.push(modalMovieData);
     localStorage.setItem('librariesKey', JSON.stringify(storedMovies));
-
     addModalBtn.innerHTML = 'Remove from my library';
   }
 }
