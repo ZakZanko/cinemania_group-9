@@ -112,7 +112,11 @@ async function createMarkup(movie) {
 </div></div> 
         `;
   sectionTitle.insertAdjacentHTML('afterend', markup);
+
   addBtn = document.querySelector('.library-button');
+  if (isMovieStored(movie.id)) {
+    addBtn.textContent = 'Remove from my library';
+  }
   addBtn.addEventListener('click', onBtnClick);
 }
 

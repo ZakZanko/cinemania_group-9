@@ -181,7 +181,7 @@ const markup = results => {
             />
             <div class="movies-card-overlay"></div>
             <h2 class="movies-card-title">${title}</h2>
-            <p class="movies-card-genres">${genre_ids.join(', ')} | ${dataCheck(
+            <p class="movies-card-genres">${genre_ids.slice(0, 2).join(', ')} | ${dataCheck(
           release_date
         )}</p>
             <p class="movies-card-rating">${getStars(vote_average)}</p>
@@ -286,6 +286,9 @@ function replaceIdtoGanr(arrGanr, arrGanrId) {
     }
   });
 }
+
+
+
 
 //Функція для отримання зірочок №1
 // function displayMovieRat(rating) {

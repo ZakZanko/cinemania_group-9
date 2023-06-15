@@ -192,6 +192,11 @@
     /* or 112% */
   }
 }
+.container-error {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
 
 // ====//Повідомлення для користувача//
 
