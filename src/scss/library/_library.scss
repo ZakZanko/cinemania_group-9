@@ -190,6 +190,7 @@
   // margin-top: 160px;
   // margin-left: auto;
   // margin-right: auto;
+  width:280px ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -197,9 +198,20 @@
   font-size: 32px;
   line-height: 1.12;
   gap: 10px;
+
+@media screen and (min-width: 768px) {
+    width: 438px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 700px;
+  }
+
 }
 
-
+.text-oops{
+    text-align: center;
+}
 
 
 .movies-card-photo-labrary{
