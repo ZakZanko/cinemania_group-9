@@ -112,7 +112,7 @@ async function fetchGenres(movie) {
   ); 
  
   const data = await response.json(); 
- 
+  console.log(movie);
   let genresArray = []; 
   const genres = data.genres; 
  
@@ -197,3 +197,4 @@ getTrending()
   .catch((err) => console.log(err));
 
 // -------------------------------------
+

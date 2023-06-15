@@ -15,13 +15,14 @@ a {
 ul {
   list-style: none;
   padding-left: 0;
+  padding-bottom: 0;
   margin: 0;
 }
 
 img {
   display: block;
-  max-width: 100%;
-  height: auto;
+  // max-width: 100%;
+  // height: auto;
 }
 
 button {

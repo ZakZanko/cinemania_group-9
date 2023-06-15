@@ -2,9 +2,9 @@ import axios from 'axios';
 import { KEY } from './API/api-key';
 
 const sectionTitle = document.querySelector('.upcoming-section-title');
-const container = document.querySelector('.container-upcoming-the-month');
-const addBtn = document.querySelector('.library-button');
+
 let movieData;
+let addBtn;
 
 async function fetchUpcomingMovies() {
   const response = await axios.get(
@@ -25,7 +25,6 @@ async function fetchUpcomingMovies() {
 fetchUpcomingMovies()
   .then(movie => {
     movieData = movie;
-    console.log(movie);
     createMarkup(movie);
   })
   .catch(() => {
@@ -74,43 +73,43 @@ async function createMarkup(movie) {
   const dateFormat = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
   const posterUrl = getImageUrl(movie);
 
-  const markup = `<div class="upcoming-desktop-container"><img
-  class="upcoming-section-img"
-  src="${posterUrl}"
-  alt="${movie.title}"
-/>
-<div class="upcoming-desktop-flex">
-  <h3 class="upcoming-movie-title">${movie.title}</h3>
-  <div class="upcoming-flex-container">
-    <div class="upcoming-tablet-flex">
-      <div class="upcoming-data-flex">
-        <p class="info-key">Release date</p>
-        <p class="info-value info-value-date">${dateFormat}</p>
-      </div>
-      <div class="upcoming-data-flex">
-        <p class="info-key">Vote / Votes</p>
-        <p class="info-value">
-          <span class="info-value-vote"> ${movie.vote_average}</span> /
-          <span class="info-value-vote">${movie.vote_count}</span>
-        </p>
-      </div>
-    </div>
-    <div class="upcoming-tablet-flex">
-      <div class="upcoming-data-flex">
-        <p class="info-key">Popularity</p>
-        <p class="info-value">${movie.popularity.toFixed(1)}</p>
-      </div>
-      <div class="upcoming-data-flex">
-        <p class="info-key">Genre</p>
-        <p class="info-value">${genresList}</p>
-      </div>
-    </div>
-  </div>
-
-  <h4 class="about-title">About</h4>
-  <p class="about-description">${movie.overview}</p>
-  <button class="library-button">Add to my library</button>
-</div></div>
+  const markup = `<div class="upcoming-desktop-container"><img 
+  class="upcoming-section-img" 
+  src="${posterUrl}" 
+  alt="${movie.title}" 
+/> 
+<div class="upcoming-desktop-flex"> 
+  <h3 class="upcoming-movie-title">${movie.title}</h3> 
+  <div class="upcoming-flex-container"> 
+    <div class="upcoming-tablet-flex"> 
+      <div class="upcoming-data-flex"> 
+        <p class="info-key">Release date</p> 
+        <p class="info-value info-value-date">${dateFormat}</p> 
+      </div> 
+      <div class="upcoming-data-flex"> 
+        <p class="info-key">Vote / Votes</p> 
+        <p class="info-value"> 
+          <span class="info-value-vote"> ${movie.vote_average}</span> / 
+          <span class="info-value-vote">${movie.vote_count}</span> 
+        </p> 
+      </div> 
+    </div> 
+    <div class="upcoming-tablet-flex"> 
+      <div class="upcoming-data-flex"> 
+        <p class="info-key">Popularity</p> 
+        <p class="info-value">${movie.popularity.toFixed(1)}</p> 
+      </div> 
+      <div class="upcoming-data-flex"> 
+        <p class="info-key">Genre</p> 
+        <p class="info-value">${genresList}</p> 
+      </div> 
+    </div> 
+  </div> 
+ 
+  <h4 class="about-title">About</h4> 
+  <p class="about-description">${movie.overview}</p> 
+  <button class="library-button upcoming-button">Add to my library</button> 
+</div></div> 
         `;
   sectionTitle.insertAdjacentHTML('afterend', markup);
   addBtn = document.querySelector('.library-button');
@@ -140,7 +139,7 @@ function errorMarkup() {
   sectionTitle.insertAdjacentHTML('afterend', markup);
 }
 
-function onBtnClick() {
+export function onBtnClick() {
   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
   const movieId = movieData.id;
 
@@ -158,7 +157,7 @@ function onBtnClick() {
   }
 }
 
-function isMovieStored(movieId) {
+export function isMovieStored(movieId) {
   const storedMovies = JSON.parse(localStorage.getItem('librariesKey')) || [];
   return storedMovies.some(movie => movie.id === movieId);
 }

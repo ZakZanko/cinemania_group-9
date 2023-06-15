@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cinemania</title>
     <link rel="stylesheet" href="./scss/main.scss" />
+
+    <!-- favicon -->
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.svg" />
   </head>
 
   <body>
-    <include src="./partials/header.html"></include>
-    <main>
-      <include src="./partials/hero/hero.html"></include>
-      <include src="./partials/weekly-trend/weekly-trend.html"></include>
-      <include src="./partials/modal/modal.html"></include>
-      <include
-        src="./partials/upcoming-this-month/upcoming-the-month.html"
-      ></include>
-    </main>
-    <include src="./partials/footer.html"></include>
+    <div class="body__wrapper">
+      <include src="./partials/header.html"></include>
+      <main>
+        <include src="./partials/hero/hero.html"></include>
+        <include src="./partials/weekly-trend/weekly-trend.html"></include>
+        <include src="./partials/modal/modal.html"></include>
+        <include src="./partials/upcoming-this-month/upcoming-the-month.html"></include>
+      </main>
+      <include src="./partials/footer.html"></include>
+    </div>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
