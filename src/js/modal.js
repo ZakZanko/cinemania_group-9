@@ -48,7 +48,6 @@ async function createMarkup(filmID) {
   const film = getSecondMovieById(filmID);
   genresList = [];
   refs.cardsfilm.innerHTML = '';
-  console.log(film)
   film.then(data => {
     const genres = data.genres;
     modalMovieData = data;
