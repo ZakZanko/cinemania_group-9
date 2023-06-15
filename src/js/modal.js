@@ -14,7 +14,7 @@ const refs = {
 };
 
 let posterPath = '';
-let genresList = [];
+export let genresList = [];
 let filmMarkup = '';
 let filmBtn;
 let selectedMovieId;
@@ -48,6 +48,7 @@ async function createMarkup(filmID) {
   const film = getSecondMovieById(filmID);
   genresList = [];
   refs.cardsfilm.innerHTML = '';
+  console.log(film)
   film.then(data => {
     const genres = data.genres;
     modalMovieData = data;
