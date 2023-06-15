@@ -25,7 +25,7 @@ function createLibraryLocal() {
     refs.btnMyLabrary.style.display = "none";
   } else {
     const opsText =
-      '<li class="oppsText"><p>OOPS...</p> <p>We are very sorry!</p> <p> You don’t have any movies at your library.</p><li>';
+      '<li class="oppsText"><p class="text-oops">OOPS...</p> <p class="text-oops">We are very sorry!</p> <p class="text-oops"> You don’t have any movies at your library.</p><li>';
     refs.listFilms.innerHTML = opsText;
     refs.btnMyLabrary.textContent = "Search movie";
   }

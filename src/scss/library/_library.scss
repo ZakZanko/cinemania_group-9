@@ -187,6 +187,9 @@
   font-weight: 500;
 }
 .oppsText {
+  width: 280px;
+  font-size: 20px;
+    line-height: 28px;
   // margin-top: 160px;
   // margin-left: auto;
   // margin-right: auto;
@@ -197,6 +200,34 @@
   font-size: 32px;
   line-height: 1.12;
   gap: 10px;
+
+@media screen and (min-width: 768px) {
+    width: 600px;
+  }
+  
+}
+
+
+
+.movies-card-photo-labrary{
+  width: 280px;
+  height: 406px;
+
+@media screen and (min-width: 768px) {
+    width: 224px;
+    height: 325px;
+  }
+
+    @media screen and (min-width: 1280px) {
+  width: 394px;
+    height: 574px;
+    }
+
+}
+
+
+.text-oops{
+  text-align: center;
 }
 
 .section-ctg-search {
