@@ -5,6 +5,7 @@
   bottom: 0;
   transform: translateY(100%);
   display: flex;
+  margin-top: auto;
   justify-content: center;
   align-items: center;
   padding-bottom: 28px;
@@ -194,23 +195,6 @@
   }
 }
 
-@-webkit-keyframes text {
-  0% {
-    color: #ff6b08;
-    margin-bottom: 10px;
-  }
-
-  30% {
-    letter-spacing: 25px;
-    margin-bottom: 10px;
-  }
-
-  85% {
-    letter-spacing: 10px;
-    margin-bottom: 10px;
-  }
-}
-
 @keyframes text {
   0% {
     color: #ff6b08;
@@ -356,6 +340,4 @@
   text-shadow: 0.5px 0.5px 1px rgb(255, 255, 255);
 }
 
-.noScroll {
-  overflow: hidden;
-}
+
